@@ -5740,6 +5740,7 @@
   "packageFolders": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "C:\\Users\\taikh\\.nuget\\packages\\": {},
 =======
     "C:\\Users\\phuon\\.nuget\\packages\\": {},
@@ -5750,11 +5751,15 @@
     "C:\\Users\\anhtr\\.nuget\\packages\\": {},
 >>>>>>> DAnh
 >>>>>>> Develop
+=======
+    "C:\\Users\\Asus\\.nuget\\packages\\": {},
+>>>>>>> Develop
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\taikh\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\3.PL\\3.PL.csproj",
@@ -5783,11 +5788,19 @@
       "outputPath": "C:\\Users\\anhtr\\OneDrive\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\3.PL\\obj\\",
 >>>>>>> DAnh
 >>>>>>> Develop
+=======
+      "projectUniqueName": "C:\\Users\\Asus\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\3.PL\\3.PL.csproj",
+      "projectName": "3.PL",
+      "projectPath": "C:\\Users\\Asus\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\3.PL\\3.PL.csproj",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Asus\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\3.PL\\obj\\",
+>>>>>>> Develop
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         "C:\\Users\\taikh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5799,6 +5812,9 @@
 =======
         "C:\\Users\\anhtr\\AppData\\Roaming\\NuGet\\NuGet.Config",
 >>>>>>> DAnh
+>>>>>>> Develop
+=======
+        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
 >>>>>>> Develop
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -5816,6 +5832,7 @@
           "projectReferences": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "C:\\Users\\taikh\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\2.BUS\\2.BUS.csproj": {
               "projectPath": "C:\\Users\\taikh\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\2.BUS\\2.BUS.csproj"
 =======
@@ -5829,6 +5846,10 @@
             "C:\\Users\\anhtr\\OneDrive\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\2.BUS\\2.BUS.csproj": {
               "projectPath": "C:\\Users\\anhtr\\OneDrive\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\2.BUS\\2.BUS.csproj"
 >>>>>>> DAnh
+>>>>>>> Develop
+=======
+            "C:\\Users\\Asus\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\2.BUS\\2.BUS.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\2.BUS\\2.BUS.csproj"
 >>>>>>> Develop
             }
           }
@@ -5863,6 +5884,7 @@
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
 =======
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
@@ -5872,6 +5894,9 @@
 =======
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
 >>>>>>> DAnh
+>>>>>>> Develop
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
 >>>>>>> Develop
       }
     }
