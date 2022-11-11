@@ -11,7 +11,10 @@
   <ItemGroup>
     <Folder Include="Resource\" />
     <Folder Include="Utilities\" />
-    <Folder Include="Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\2.BUS\2.BUS.csproj" />
   </ItemGroup>
 
 </Project>
