@@ -62,3 +62,7 @@ C:\Users\anhtr\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-wi
 C:\Users\anhtr\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmChucVu.resources
 C:\Users\anhtr\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmMauSac.resources
 C:\Users\anhtr\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmNhanVien.resources
+C:\Users\anhtr\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmChiTietSale.resources
+C:\Users\anhtr\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmGiaiDau.resources
+C:\Users\anhtr\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmSale.resources
+C:\Users\anhtr\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmTeam.resources
