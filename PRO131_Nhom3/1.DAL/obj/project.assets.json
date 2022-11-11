@@ -5798,15 +5798,23 @@
   },
   "packageFolders": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "C:\\Users\\taikh\\.nuget\\packages\\": {},
 =======
     "C:\\Users\\phuon\\.nuget\\packages\\": {},
+>>>>>>> Develop
+=======
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\anhtr\\.nuget\\packages\\": {},
+>>>>>>> DAnh
 >>>>>>> Develop
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
 <<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\taikh\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\1.DAL\\1.DAL.csproj",
       "projectName": "1.DAL",
@@ -5820,15 +5828,36 @@
       "packagesPath": "C:\\Users\\phuon\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\phuon\\OneDrive\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\1.DAL\\obj\\",
 >>>>>>> Develop
+=======
+      "projectUniqueName": "C:\\Users\\ADMIN\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\1.DAL\\1.DAL.csproj",
+      "projectName": "1.DAL",
+      "projectPath": "C:\\Users\\ADMIN\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\1.DAL\\1.DAL.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ADMIN\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\1.DAL\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\anhtr\\OneDrive\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\1.DAL\\1.DAL.csproj",
+      "projectName": "1.DAL",
+      "projectPath": "C:\\Users\\anhtr\\OneDrive\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\1.DAL\\1.DAL.csproj",
+      "packagesPath": "C:\\Users\\anhtr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\anhtr\\OneDrive\\Desktop\\DuAn1Part2\\PRO131_Nhom3\\1.DAL\\obj\\",
+>>>>>>> DAnh
+>>>>>>> Develop
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
 <<<<<<< HEAD
+<<<<<<< HEAD
         "C:\\Users\\taikh\\AppData\\Roaming\\NuGet\\NuGet.Config",
 =======
         "C:\\Users\\phuon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> Develop
+=======
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\anhtr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> DAnh
 >>>>>>> Develop
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -5887,9 +5916,16 @@
           }
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
 =======
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+>>>>>>> Develop
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+>>>>>>> DAnh
 >>>>>>> Develop
       }
     }

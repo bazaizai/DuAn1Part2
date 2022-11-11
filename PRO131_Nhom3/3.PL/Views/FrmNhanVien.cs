@@ -1,0 +1,209 @@
+﻿using _1.DAL.DomainClass;
+using _2.BUS.IServices;
+using _2.BUS.Services;
+using _2.BUS.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace _3.PL.Views
+{
+    public partial class FrmNhanVien : Form
+    {
+        private INhanVienServices _iNhanVien;
+        private IChucVuServices _iChucVu;
+        private NhanVienView _nvv;
+        public FrmNhanVien()
+        {
+            InitializeComponent();
+            rdb_hoatdong.Checked = true;
+            tb_ma.Enabled = false;
+            _iChucVu = new ChucVuServices();
+            _iNhanVien = new NhanVienServices();
+            loadData();
+            loadComboBox();
+        }
+        public void loadData()
+        {
+            dtgv_show.ColumnCount = 13;
+            dtgv_show.Columns[0].Name = "Id";
+            dtgv_show.Columns[0].Visible = false;
+            dtgv_show.Columns[1].Name = "Chức vụ";
+            dtgv_show.Columns[2].Name = "Mã";
+            dtgv_show.Columns[3].Name = "Tên";
+            dtgv_show.Columns[4].Name = "Giới tính";
+            dtgv_show.Columns[5].Name = "Ngày sinh";
+            dtgv_show.Columns[6].Name = "Địa chỉ";
+            dtgv_show.Columns[7].Name = "SĐT";
+            dtgv_show.Columns[8].Name = "CCCD";
+            dtgv_show.Columns[9].Name = "Mật khẩu";
+            dtgv_show.Columns[10].Name = "Email";
+            dtgv_show.Columns[11].Name = "Tài khoản";
+            dtgv_show.Columns[12].Name = "Trạng thái";
+            dtgv_show.Rows.Clear();
+            var lstViewNV = _iNhanVien.GetAll();
+
+            foreach (var item in lstViewNV)
+            {
+                dtgv_show.Rows.Add(
+                    item.Id,
+                    item.TenCV,
+                    item.Ma,
+                    item.HoVaTen,
+                    item.GioiTinh,
+                    item.NgaySinh.ToString(),
+                    item.DiaChi,
+                    item.Sdt,
+                    item.Cccd,
+                    item.MatKhau,
+                    item.Email,
+                    item.TaiKhoan,
+                    item.TrangThai == 1 ? "Hoạt động" : "Không hoạt động"
+                    );
+            }
+            loadComboBox();
+        }
+        public void loadComboBox()
+        {
+            cbb_chucvu.Items.Clear();
+            cbb_gioitinh.Items.Clear();
+            foreach (var item in _iChucVu.GetAll())
+            {
+                cbb_chucvu.Items.Add(item.Ten);
+            }
+            cbb_gioitinh.Items.Add("Nam");
+            cbb_gioitinh.Items.Add("Nữ");
+        }
+
+        public NhanVienView GetData()
+        {
+            NhanVienView cvv = new NhanVienView()
+            {
+                Id = new Guid(),
+                Ma = tb_ma.Text,
+                Ten = tb_ten.Text,
+                TenDem = tb_tendem.Text,
+                Ho = tb_ho.Text,
+                GioiTinh = cbb_chucvu.Text,
+                NgaySinh = dtp_ngaysinh.Value,
+                DiaChi = tb_diachi.Text,
+                Sdt = tb_sdt.Text,
+                Cccd = tb_cccd.Text,
+                MatKhau = tb_matkhau.Text,
+                Email = tb_email.Text,
+                TaiKhoan = tb_taikhoan.Text,
+                TrangThai = rdb_hoatdong.Checked ? 1 : 0
+            };
+            return cvv;
+        }
+        public static bool IsEmail(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+                return false;
+
+            return Regex.IsMatch(email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+        }
+        private void btn_them_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Bạn có muốn thêm không!", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                //if (IsEmail(tb_email.Text) == false)
+                //{
+                //    MessageBox.Show("Sai định dạng email");
+                //}
+                _iNhanVien.Add(GetData());
+                MessageBox.Show("thêm thành công");
+            }
+            loadData();
+        }
+
+        private void btn_sua_Click(object sender, EventArgs e)
+        {
+            NhanVienView cvv = new NhanVienView()
+            {
+                Id = Guid.Parse(dtgv_show.CurrentRow.Cells[0].Value.ToString()),
+                Ma = tb_ma.Text,
+                Ten = tb_ten.Text,
+                TenDem = tb_tendem.Text,
+                Ho = tb_ho.Text,
+                GioiTinh = cbb_chucvu.Text,
+                NgaySinh = dtp_ngaysinh.Value,
+                DiaChi = tb_diachi.Text,
+                Sdt = tb_sdt.Text,
+                Cccd = tb_cccd.Text,
+                MatKhau = tb_matkhau.Text,
+                Email = tb_email.Text,
+                TaiKhoan = tb_taikhoan.Text,
+                TrangThai = rdb_hoatdong.Checked ? 1 : 0
+            };
+            DialogResult dialog = MessageBox.Show("Bạn có muốn sửa không!", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                _iNhanVien.Update(cvv);
+                MessageBox.Show("sửa thành công");
+            }
+            loadData();
+        }
+
+        private void btn_xoa_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa không", "thông báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (_nvv == null)
+                {
+                    MessageBox.Show("vui lòng chọn nhân viên");
+                }
+                _iNhanVien.Delete(_nvv);
+                MessageBox.Show("xóa thành công");
+            }
+            loadData();
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            tb_ma.Text = "";
+            tb_ho.Text = "";
+            tb_tendem.Text = "";
+            tb_ten.Text = "";
+            cbb_gioitinh.SelectedValue = 0;
+            dtp_ngaysinh.Value = DateTime.Now;
+            tb_diachi.Text = "";
+            tb_sdt.Text = "";
+            tb_cccd.Text = "";
+            tb_matkhau.Text = "";
+            tb_email.Text = "";
+            tb_taikhoan.Text = "";
+            rdb_hoatdong.Checked = false;
+            rdb_khonghd.Checked = false;
+        }
+
+        private void dtgv_show_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            _nvv = _iNhanVien.GetAll().FirstOrDefault(c => c.Id == Guid.Parse(dtgv_show.CurrentRow.Cells[0].Value.ToString()));
+            cbb_chucvu.Text = _iChucVu.GetAll().FirstOrDefault(c => c.Id == _nvv.IdCv).Ten;
+            tb_ma.Text = dtgv_show.CurrentRow.Cells[2].Value.ToString();
+            tb_ho.Text = _nvv.Ho;
+            tb_tendem.Text = _nvv.TenDem;
+            tb_ten.Text = _nvv.Ten;
+            cbb_gioitinh.SelectedValue = dtgv_show.CurrentRow.Cells[4].Value.ToString();
+            dtp_ngaysinh.Value = Convert.ToDateTime(dtgv_show.CurrentRow.Cells[5].Value.ToString());
+            tb_diachi.Text = dtgv_show.CurrentRow.Cells[6].Value.ToString();
+            tb_sdt.Text = dtgv_show.CurrentRow.Cells[7].Value.ToString();
+            tb_cccd.Text = dtgv_show.CurrentRow.Cells[8].Value.ToString();
+            tb_matkhau.Text = dtgv_show.CurrentRow.Cells[9].Value.ToString();
+            tb_email.Text = dtgv_show.CurrentRow.Cells[10].Value.ToString();
+            tb_taikhoan.Text = dtgv_show.CurrentRow.Cells[11].Value.ToString();
+            rdb_hoatdong.Checked = _nvv.TrangThai == 1;
+            rdb_khonghd.Checked = _nvv.TrangThai == 0;
+        }
+    }
+}
