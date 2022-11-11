@@ -44,8 +44,12 @@ C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\bin\Debug\net5.0-wi
 C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\bin\Debug\net5.0-windows\2.BUS.pdb
 C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\bin\Debug\net5.0-windows\1.DAL.pdb
 C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\3.PL.csproj.AssemblyReference.cache
+C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmChiTietSale.resources
+C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmGiaiDau.resources
 C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmKhachHang.resources
 C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmLichSuTichDiem.resources
+C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmSale.resources
+C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmTeam.resources
 C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmTichDiem.resources
 C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmUuDaiTichDiem.resources
 C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\3.PL.csproj.GenerateResource.cache
@@ -59,7 +63,3 @@ C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-wi
 C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\3.PL.pdb
 C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\3.PL.genruntimeconfig.cache
 C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\ref\3.PL.dll
-C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmChiTietSale.resources
-C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmGiaiDau.resources
-C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmSale.resources
-C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmTeam.resources
