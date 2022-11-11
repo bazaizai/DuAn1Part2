@@ -44,6 +44,11 @@ C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\bin\Debug\net5.0-windows\2.BU
 C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\bin\Debug\net5.0-windows\2.BUS.pdb
 C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\bin\Debug\net5.0-windows\1.DAL.pdb
 C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\3.PL.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmKhachHang.resources
+C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmLichSuTichDiem.resources
+C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmTichDiem.resources
+C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmUuDaiTichDiem.resources
+C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\3.PL.csproj.GenerateResource.cache
 C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\3.PL.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\3.PL.AssemblyInfoInputs.cache
 C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\3.PL.AssemblyInfo.cs
