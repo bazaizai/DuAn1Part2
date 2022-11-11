@@ -9,10 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <Folder Include="Resource\" />
   </ItemGroup>
 
   <ItemGroup>
+=======
+>>>>>>> DAnh
     <ProjectReference Include="..\2.BUS\2.BUS.csproj" />
   </ItemGroup>
 
