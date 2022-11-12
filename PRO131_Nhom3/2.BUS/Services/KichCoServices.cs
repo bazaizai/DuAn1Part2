@@ -83,9 +83,9 @@ namespace _2.BUS.Services
         {
             if (_IKichCoRepos.GetAll().Count > 0)
             {
-                return "KichCo" + Convert.ToString(_IKichCoRepos.GetAll().Max(c => Convert.ToInt32(c.Ma.Substring(4, c.Ma.Length - 4)) + 1));
+                return "KC" + Convert.ToString(_IKichCoRepos.GetAll().Max(c => Convert.ToInt32(c.Ma.Substring(2, c.Ma.Length - 2)) + 1));
             }
-            else return "KichCo1";
+            else return "KC1";
         }
 
     }
