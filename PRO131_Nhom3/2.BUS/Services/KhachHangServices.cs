@@ -45,7 +45,6 @@ namespace _2.BUS.Services
             {
                 return e.Message.ToString();
             }
-
         }
 
         public string Delete(KhachHangView obj)
@@ -61,20 +60,18 @@ namespace _2.BUS.Services
             }
             catch (Exception e)
             {
-
                 return e.Message.ToString();
             }
-
-
         }
 
         public List<KhachHangView> GetAll()
         {
             var lst = (from a in _iKhachHangRepos.GetAll()
-                       //join b in _iTichDiemRepos.GetAll() on a.IdtichDiem equals b.Id
+                       join b in _iTichDiemRepos.GetAll() on a.IdtichDiem equals b.Id
                        select new KhachHangView()
                        {
                            Id = a.Id,
+                           IdtichDiem = b.Id,
                            Ma = a.Ma,
                            Ten = a.Ten,
                            TenDem = a.TenDem,
@@ -83,7 +80,7 @@ namespace _2.BUS.Services
                            Sdt = a.Sdt,
                            DiaChi = a.DiaChi,
                            Email = a.Email,
-                           //SoDiem = b.SoDiem,
+                           SoDiem = b.SoDiem,
                            TrangThai = a.TrangThai
                        }).ToList();
             return lst;

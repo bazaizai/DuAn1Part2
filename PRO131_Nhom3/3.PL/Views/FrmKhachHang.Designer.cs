@@ -57,6 +57,8 @@
             this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_sua = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
+            this.tb_sodiem = new System.Windows.Forms.Label();
+            this.cbb_sodiem = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_show)).BeginInit();
@@ -65,6 +67,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbb_sodiem);
+            this.groupBox1.Controls.Add(this.tb_sodiem);
             this.groupBox1.Controls.Add(this.rdb_khd);
             this.groupBox1.Controls.Add(this.rdb_hd);
             this.groupBox1.Controls.Add(this.dtp_ngaysinh);
@@ -87,7 +91,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1025, 441);
+            this.groupBox1.Size = new System.Drawing.Size(1039, 441);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
@@ -95,7 +99,7 @@
             // rdb_khd
             // 
             this.rdb_khd.AutoSize = true;
-            this.rdb_khd.Location = new System.Drawing.Point(688, 377);
+            this.rdb_khd.Location = new System.Drawing.Point(813, 362);
             this.rdb_khd.Name = "rdb_khd";
             this.rdb_khd.Size = new System.Drawing.Size(212, 34);
             this.rdb_khd.TabIndex = 18;
@@ -106,7 +110,7 @@
             // rdb_hd
             // 
             this.rdb_hd.AutoSize = true;
-            this.rdb_hd.Location = new System.Drawing.Point(688, 317);
+            this.rdb_hd.Location = new System.Drawing.Point(662, 362);
             this.rdb_hd.Name = "rdb_hd";
             this.rdb_hd.Size = new System.Drawing.Size(144, 34);
             this.rdb_hd.TabIndex = 17;
@@ -116,56 +120,56 @@
             // 
             // dtp_ngaysinh
             // 
-            this.dtp_ngaysinh.Location = new System.Drawing.Point(198, 371);
+            this.dtp_ngaysinh.Location = new System.Drawing.Point(154, 370);
             this.dtp_ngaysinh.Name = "dtp_ngaysinh";
             this.dtp_ngaysinh.Size = new System.Drawing.Size(292, 37);
             this.dtp_ngaysinh.TabIndex = 16;
             // 
             // tb_sdt
             // 
-            this.tb_sdt.Location = new System.Drawing.Point(688, 74);
+            this.tb_sdt.Location = new System.Drawing.Point(662, 74);
             this.tb_sdt.Name = "tb_sdt";
             this.tb_sdt.Size = new System.Drawing.Size(287, 37);
             this.tb_sdt.TabIndex = 15;
             // 
             // tb_diachi
             // 
-            this.tb_diachi.Location = new System.Drawing.Point(688, 155);
+            this.tb_diachi.Location = new System.Drawing.Point(662, 147);
             this.tb_diachi.Name = "tb_diachi";
             this.tb_diachi.Size = new System.Drawing.Size(287, 37);
             this.tb_diachi.TabIndex = 14;
             // 
             // tb_email
             // 
-            this.tb_email.Location = new System.Drawing.Point(688, 236);
+            this.tb_email.Location = new System.Drawing.Point(662, 220);
             this.tb_email.Name = "tb_email";
             this.tb_email.Size = new System.Drawing.Size(287, 37);
             this.tb_email.TabIndex = 13;
             // 
             // tb_ho
             // 
-            this.tb_ho.Location = new System.Drawing.Point(198, 296);
+            this.tb_ho.Location = new System.Drawing.Point(154, 295);
             this.tb_ho.Name = "tb_ho";
             this.tb_ho.Size = new System.Drawing.Size(287, 37);
             this.tb_ho.TabIndex = 12;
             // 
             // tb_ten
             // 
-            this.tb_ten.Location = new System.Drawing.Point(198, 146);
+            this.tb_ten.Location = new System.Drawing.Point(154, 145);
             this.tb_ten.Name = "tb_ten";
             this.tb_ten.Size = new System.Drawing.Size(287, 37);
             this.tb_ten.TabIndex = 11;
             // 
             // tb_tendem
             // 
-            this.tb_tendem.Location = new System.Drawing.Point(198, 221);
+            this.tb_tendem.Location = new System.Drawing.Point(154, 220);
             this.tb_tendem.Name = "tb_tendem";
             this.tb_tendem.Size = new System.Drawing.Size(287, 37);
             this.tb_tendem.TabIndex = 10;
             // 
             // tb_ma
             // 
-            this.tb_ma.Location = new System.Drawing.Point(198, 71);
+            this.tb_ma.Location = new System.Drawing.Point(154, 70);
             this.tb_ma.Name = "tb_ma";
             this.tb_ma.Size = new System.Drawing.Size(287, 37);
             this.tb_ma.TabIndex = 9;
@@ -173,7 +177,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(520, 317);
+            this.label7.Location = new System.Drawing.Point(494, 362);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 30);
             this.label7.TabIndex = 8;
@@ -182,7 +186,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(520, 237);
+            this.label8.Location = new System.Drawing.Point(494, 223);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(66, 30);
             this.label8.TabIndex = 7;
@@ -191,7 +195,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(520, 157);
+            this.label9.Location = new System.Drawing.Point(494, 150);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(81, 30);
             this.label9.TabIndex = 6;
@@ -200,7 +204,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(520, 77);
+            this.label10.Location = new System.Drawing.Point(494, 77);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(145, 30);
             this.label10.TabIndex = 5;
@@ -348,6 +352,23 @@
             this.btn_them.UseVisualStyleBackColor = true;
             this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
+            // tb_sodiem
+            // 
+            this.tb_sodiem.AutoSize = true;
+            this.tb_sodiem.Location = new System.Drawing.Point(494, 296);
+            this.tb_sodiem.Name = "tb_sodiem";
+            this.tb_sodiem.Size = new System.Drawing.Size(94, 30);
+            this.tb_sodiem.TabIndex = 19;
+            this.tb_sodiem.Text = "Số điểm";
+            // 
+            // cbb_sodiem
+            // 
+            this.cbb_sodiem.FormattingEnabled = true;
+            this.cbb_sodiem.Location = new System.Drawing.Point(662, 293);
+            this.cbb_sodiem.Name = "cbb_sodiem";
+            this.cbb_sodiem.Size = new System.Drawing.Size(287, 38);
+            this.cbb_sodiem.TabIndex = 20;
+            // 
             // FrmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -399,5 +420,7 @@
         private System.Windows.Forms.Button btn_xoa;
         private System.Windows.Forms.Button btn_sua;
         private System.Windows.Forms.Button btn_them;
+        private System.Windows.Forms.ComboBox cbb_sodiem;
+        private System.Windows.Forms.Label tb_sodiem;
     }
 }
