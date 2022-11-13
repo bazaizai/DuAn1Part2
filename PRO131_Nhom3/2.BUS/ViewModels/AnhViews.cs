@@ -21,6 +21,17 @@ namespace _2.BUS.ViewModels
         public string TenAnh { get; set; }
         public byte[] DuongDan { get; set; }
         public int? TrangThai { get; set; }
+        public Guid? IdSp { get; set; }
+        public Guid? IdMauSac { get; set; }
+        public Guid? IdKichCo { get; set; }
+        public Guid? IdTeam { get; set; }
+        public Guid? IdChatLieu { get; set; }
+        public string BaoHanh { get; set; }
+        [StringLength(50)]
+        public string MoTa { get; set; }
+        public int? SoLuongTon { get; set; }
+        public decimal? GiaBan { get; set; }
+        public int? TrangThaiKhuyenMai { get; set; }
 
         ChiTietSp ChiTietSp { get; set; }
 
@@ -32,7 +43,7 @@ namespace _2.BUS.ViewModels
             TrangThai = trangThai;
         }
 
-        public AnhViews(Guid id, Guid? idChiTietSp, string tenAnh, byte[] duongDan, int? trangThai)
+        public AnhViews(Guid id, string tenAnh, byte[] duongDan, int? trangThai)
         {
             Id = id;
             TenAnh = tenAnh;

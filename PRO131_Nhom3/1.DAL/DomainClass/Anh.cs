@@ -31,5 +31,14 @@ namespace _1.DAL.DomainClass
             DuongDan = duongDan;
             TrangThai = trangThai;
         }
+
+        public Anh(Guid id, Guid? idChiTietSp, string tenAnh, byte[] duongDan, int? trangThai)
+        {
+            Id = id;
+            IdChiTietSp = idChiTietSp;
+            TenAnh = tenAnh;
+            DuongDan = duongDan;
+            TrangThai = trangThai;
+        }
     }
 }

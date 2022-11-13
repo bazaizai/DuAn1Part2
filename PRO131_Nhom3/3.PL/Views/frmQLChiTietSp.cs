@@ -335,16 +335,16 @@ namespace _3.PL.Views
                         var Anh = new AnhViews()
                         {
                             Id = GetListAnh(_SelectID)[0].Id,
-                            TenAnh = String.Concat(cbbChatLieu1.Text + cbbSP1.Text + cbbTeam1.Text + "Show"),
-                            DuongDan = (byte[])new ImageConverter().ConvertTo(AnhExit.Image, typeof(Byte[])),
+                            TenAnh = String.Concat(cbbSP1.Text + cbbTeam1.Text + "Show"),
+                            DuongDan = (byte[])(new ImageConverter().ConvertTo(AnhExit.Image, typeof(Byte[]))),
                             TrangThai = 0
                         };
                         _IAnhServices.Update(Anh);
                         var Anh1 = new AnhViews()
                         {
                             Id = GetListAnh(_SelectID)[1].Id,
-                            TenAnh = String.Concat(cbbChatLieu1.Text + cbbSP1.Text + cbbTeam1.Text),
-                            DuongDan = (byte[])new ImageConverter().ConvertTo(AnhExit1.Image, typeof(Byte[])),
+                            TenAnh = String.Concat(cbbSP1.Text + cbbTeam1.Text),
+                            DuongDan = (byte[])(new ImageConverter().ConvertTo(AnhExit1.Image, typeof(Byte[]))),
                             TrangThai = 0
                         };
                         _IAnhServices.Update(Anh1);

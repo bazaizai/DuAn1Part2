@@ -14,23 +14,36 @@ namespace _2.BUS.Services
     public class AnhServices : IAnhServices
     {
         IAnhRespos _IAnhRespo;
+        IChiTietSpRespos _IChiTietSPRepos;
         public AnhServices()
         {
             _IAnhRespo = new AnhRespos();
+            _IChiTietSPRepos = new ChiTietSpRespos();
         }
 
         public string Add(AnhViews Obj) => Obj != null && _IAnhRespo.Add(new Anh(Obj.IdChiTietSp, Obj.TenAnh, Obj.DuongDan, Obj.TrangThai)) ? "Add succsess" : "Add not succsess";
 
         public string Delete(AnhViews Obj) => Obj != null && _IAnhRespo.Delete(_IAnhRespo.GetAll().Find(x => x.Id == Obj.Id)) ? "Delete success" : "Delete not succsess";
 
-        public List<AnhViews> GetAll() =>( from a in _IAnhRespo.GetAll()
+        public List<AnhViews> GetAll() =>( from a in _IAnhRespo.GetAll() join sp in _IChiTietSPRepos.GetAll() on a.IdChiTietSp equals sp.Id
                                          select new AnhViews()
                                          {
                                              Id = a.Id,
                                              IdChiTietSp = a.IdChiTietSp,
                                              TenAnh = a.TenAnh,
                                              DuongDan = a.DuongDan,
-                                             TrangThai = a.TrangThai
+                                             TrangThai = a.TrangThai,
+                                             BaoHanh = sp.BaoHanh,
+                                             GiaBan = sp.GiaBan,
+                                             IdChatLieu = sp.IdChatLieu,
+                                             IdKichCo = sp.IdKichCo,
+                                             IdMauSac=sp.IdMauSac,
+                                             IdSp = sp.IdSp,
+                                             IdTeam = sp.IdTeam,
+                                             SoLuongTon = sp.SoLuongTon ,
+                                             MoTa = sp.MoTa,
+                                             TrangThaiKhuyenMai= sp.TrangThaiKhuyenMai,
+
                                          }).ToList();
 
         public AnhViews GetByID(Guid ID) => GetAll().Find(x => x.Id == ID);
