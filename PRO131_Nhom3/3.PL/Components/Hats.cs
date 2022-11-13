@@ -22,6 +22,8 @@ namespace _3.PL.Components
         private string Sizeview;
         private String SoLuongView;
         private Image _Icon;
+        private Guid _Idspct;
+        public event EventHandler Onselect = null;
 
 
         public Hats()
@@ -36,16 +38,12 @@ namespace _3.PL.Components
         public string SoLuongSP { get => SoLuongView; set { SoLuongView = value; SoLuong.Text ="Số lượng: " + value; }   }
         public Image Icon { get => _Icon; set { _Icon = value; Anh.Image = value; } }
         public double Price { get => price; set { price = value; Gia.Text = double.Parse(price.ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ"; } }
+        public Guid IdSPCTSP { get => _Idspct; set { _Idspct = value; IdSPCT.Text = value.ToString(); } }
 
-        public Hats(string tenSP1, string chatLieuSP, string mauSacSP, string sizesp, string soLuongSP, Image icon, double price)
+
+        private void Add_Click(object sender, EventArgs e)
         {
-            TenSP1 = tenSP1;
-            ChatLieuSP = chatLieuSP;
-            MauSacSP = mauSacSP;
-            Sizesp = sizesp;
-            SoLuongSP = soLuongSP;
-            Icon = icon;
-            Price = price;
+            Onselect?.Invoke(this, e);
         }
     }
 }

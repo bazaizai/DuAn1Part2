@@ -45,13 +45,6 @@ namespace _3.PL.Views
             TabHoaDon.TabPages.Add(tabPage);
         }
 
-        //private void btnRemovetab_Click(object sender, EventArgs e)
-        //{
-        //    if (tabHoaDon.SelectedTab != null)
-        //    {
-        //        tabHoaDon.TabPages.Remove(tabHoaDon.SelectedTab);
-        //    }
-        //}
 
         private string NamrTabTS()
         {
@@ -60,22 +53,6 @@ namespace _3.PL.Views
 
         private void LoadItem()
         {
-            //foreach (var x in _anhServices.GetAll().GroupBy(x=>x.IdChiTietSp).Select(sp=>sp.First()).ToList())
-            //{
-            //MessageBox.Show(_ISanPhamServices.GetAll().Find(sp => sp.Id == x.IdSp).Ten);
-            //ListAnh.Controls.Add(new Hats(_ISanPhamServices.GetAll().Find(sp => sp.Id == x.IdSp).Ten, _IChatLieuServices.GetAll().Find(cl => cl.Id == x.IdChatLieu).Ten, _IMauSacServices.GetAll().Find(ms => ms.Id == x.IdMauSac).Ten, _ISizeServices.GetAll().Find(s => s.Id == x.IdKichCo).Size, x.SoLuongTon.ToString(), Image.FromStream(new MemoryStream((byte[])x.DuongDan)), Convert.ToDouble(x.GiaBan)));
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    Hats[] TEST = new Hats[1];
-            //    TEST[0] = new Hats();
-            //    TEST[0].TenSP1 = 1.ToString();
-            //    TEST[0].ChatLieuSP = 1.ToString();
-            //    TEST[0].MauSacSP = 1.ToString();
-            //    TEST[0].Sizesp = 1.ToString();
-            //    TEST[0].SoLuongSP = 9000000.ToString();
-            //    TEST[0].Price = 900000;
-            //    ListItem.Controls.Add(TEST[0]);
-            //}
             Hats[] TEST = new Hats[_IanhServices.GetAll().GroupBy(x => x.IdChiTietSp).Select(sp => sp.First()).ToList().Count];
             List<AnhViews> ListAnh = _IanhServices.GetAll().GroupBy(x => x.IdChiTietSp).Select(sp => sp.First()).ToList();
             for (int i = 0; i < ListAnh.Count; i++)
@@ -88,7 +65,12 @@ namespace _3.PL.Views
                 TEST[i].Icon = Image.FromStream(new MemoryStream((byte[])ListAnh[i].DuongDan));
                 TEST[i].SoLuongSP = ListAnh[i].SoLuongTon.ToString();
                 TEST[i].Price = Convert.ToDouble(ListAnh[i].GiaBan);
+                TEST[i].IdSPCTSP = ListAnh[i].IdChiTietSp.GetValueOrDefault();
                 ListItem.Controls.Add(TEST[i]);
+                TEST[i].Onselect += (ss, ee) =>
+                {
+                    var wdg = (Hats)ss;
+                };
             }
         }
     }

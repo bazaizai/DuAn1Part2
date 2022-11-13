@@ -37,6 +37,7 @@
             this.SizeHat = new System.Windows.Forms.Label();
             this.MauSac = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.IdSPCT = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Anh)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -100,6 +101,7 @@
             this.Add.Text = "Add";
             this.Add.TextColor = System.Drawing.Color.White;
             this.Add.UseVisualStyleBackColor = false;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
             // SoLuong
             // 
@@ -154,6 +156,7 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(14)))), ((int)(((byte)(26)))));
+            this.panel1.Controls.Add(this.IdSPCT);
             this.panel1.Controls.Add(this.MauSac);
             this.panel1.Controls.Add(this.SizeHat);
             this.panel1.Controls.Add(this.ChatLieu);
@@ -166,6 +169,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(309, 172);
             this.panel1.TabIndex = 0;
+            // 
+            // IdSPCT
+            // 
+            this.IdSPCT.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.IdSPCT.AutoSize = true;
+            this.IdSPCT.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.IdSPCT.ForeColor = System.Drawing.Color.Silver;
+            this.IdSPCT.Location = new System.Drawing.Point(76, 117);
+            this.IdSPCT.Name = "IdSPCT";
+            this.IdSPCT.Size = new System.Drawing.Size(64, 12);
+            this.IdSPCT.TabIndex = 8;
+            this.IdSPCT.Text = "Số lượng: 500";
+            this.IdSPCT.Visible = false;
             // 
             // Hats
             // 
@@ -193,5 +209,6 @@
         private System.Windows.Forms.Label SizeHat;
         private System.Windows.Forms.Label MauSac;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label IdSPCT;
     }
 }

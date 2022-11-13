@@ -138,6 +138,9 @@ namespace _3.PL.Views
             dtgView.Columns[8].Name = "Giá nhập";
             dtgView.Columns[9].Name = "Số lượng tồn";
             dtgView.Columns[10].Name = "Trạng Thái";
+            dtgView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
+
+            dtgView.RowHeadersVisible = false;
 
             foreach (var x in _lst)
             {
