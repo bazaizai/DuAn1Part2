@@ -183,6 +183,16 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "Bunifu.Utils": {
+              "target": "Package",
+              "version": "[1.0.6, )"
+            },
+            "FontAwesome.Sharp": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
