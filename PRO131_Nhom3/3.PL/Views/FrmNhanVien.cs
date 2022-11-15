@@ -49,7 +49,6 @@ namespace _3.PL.Views
             dtgv_show.Columns[12].Name = "Trạng thái";
             dtgv_show.Rows.Clear();
             var lstViewNV = _iNhanVien.GetAll();
-
             foreach (var item in lstViewNV)
             {
                 dtgv_show.Rows.Add(
@@ -65,7 +64,7 @@ namespace _3.PL.Views
                     item.MatKhau,
                     item.Email,
                     item.TaiKhoan,
-                    item.TrangThai == 1 ? "Hoạt động" : "Không hoạt động"
+                    item.TrangThai == 0 ? "Hoạt động" : "Không hoạt động"
                     );
             }
             loadComboBox();
@@ -87,11 +86,12 @@ namespace _3.PL.Views
             NhanVienView cvv = new NhanVienView()
             {
                 Id = new Guid(),
+                IdCv = _iChucVu.GetAll().FirstOrDefault(c => c.Ten == cbb_chucvu.Text).Id,
                 Ma = tb_ma.Text,
                 Ten = tb_ten.Text,
                 TenDem = tb_tendem.Text,
                 Ho = tb_ho.Text,
-                GioiTinh = cbb_chucvu.Text,
+                GioiTinh = cbb_gioitinh.Text,
                 NgaySinh = dtp_ngaysinh.Value,
                 DiaChi = tb_diachi.Text,
                 Sdt = tb_sdt.Text,
@@ -99,7 +99,7 @@ namespace _3.PL.Views
                 MatKhau = tb_matkhau.Text,
                 Email = tb_email.Text,
                 TaiKhoan = tb_taikhoan.Text,
-                TrangThai = rdb_hoatdong.Checked ? 1 : 0
+                TrangThai = rdb_hoatdong.Checked ? 0 : 1
             };
             return cvv;
         }
@@ -115,7 +115,7 @@ namespace _3.PL.Views
             DialogResult dialog = MessageBox.Show("Bạn có muốn thêm không!", "Thông báo", MessageBoxButtons.YesNo);
             if (dialog == DialogResult.Yes)
             {
-                //if (IsEmail(tb_email.Text) == false)
+                //if ()
                 //{
                 //    MessageBox.Show("Sai định dạng email");
                 //}
@@ -130,11 +130,12 @@ namespace _3.PL.Views
             NhanVienView cvv = new NhanVienView()
             {
                 Id = Guid.Parse(dtgv_show.CurrentRow.Cells[0].Value.ToString()),
+                IdCv = _iChucVu.GetAll().FirstOrDefault(c => c.Ten == cbb_chucvu.Text).Id,
                 Ma = tb_ma.Text,
                 Ten = tb_ten.Text,
                 TenDem = tb_tendem.Text,
                 Ho = tb_ho.Text,
-                GioiTinh = cbb_chucvu.Text,
+                GioiTinh = cbb_gioitinh.Text,
                 NgaySinh = dtp_ngaysinh.Value,
                 DiaChi = tb_diachi.Text,
                 Sdt = tb_sdt.Text,
@@ -142,7 +143,7 @@ namespace _3.PL.Views
                 MatKhau = tb_matkhau.Text,
                 Email = tb_email.Text,
                 TaiKhoan = tb_taikhoan.Text,
-                TrangThai = rdb_hoatdong.Checked ? 1 : 0
+                TrangThai = rdb_hoatdong.Checked ? 0 : 1
             };
             DialogResult dialog = MessageBox.Show("Bạn có muốn sửa không!", "Thông báo", MessageBoxButtons.YesNo);
             if (dialog == DialogResult.Yes)
@@ -170,6 +171,7 @@ namespace _3.PL.Views
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
+            cbb_chucvu.SelectedValue = 0;
             tb_ma.Text = "";
             tb_ho.Text = "";
             tb_tendem.Text = "";
@@ -202,8 +204,8 @@ namespace _3.PL.Views
             tb_matkhau.Text = dtgv_show.CurrentRow.Cells[9].Value.ToString();
             tb_email.Text = dtgv_show.CurrentRow.Cells[10].Value.ToString();
             tb_taikhoan.Text = dtgv_show.CurrentRow.Cells[11].Value.ToString();
-            rdb_hoatdong.Checked = _nvv.TrangThai == 1;
-            rdb_khonghd.Checked = _nvv.TrangThai == 0;
+            rdb_hoatdong.Checked = _nvv.TrangThai == 0;
+            rdb_khonghd.Checked = _nvv.TrangThai == 1;
         }
     }
 }

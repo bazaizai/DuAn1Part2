@@ -27,8 +27,8 @@ namespace _2.BUS.Services
                 HeSoTich = obj.HeSoTich,
                 TrangThai = obj.TrangThai
             };
-            _iCtTinhDiemRepos.Add(vcv);
-            return "thêm thành công";
+            if (_iCtTinhDiemRepos.Add(vcv)) return "thêm thành công";
+            return "thêm thất bại";
         }
 
         public string Delete(CtTinhDiemView obj)
@@ -40,8 +40,8 @@ namespace _2.BUS.Services
                 HeSoTich = obj.HeSoTich,
                 TrangThai = obj.TrangThai
             };
-            _iCtTinhDiemRepos.Delete(vcv);
-            return "xóa thành công";
+            if (_iCtTinhDiemRepos.Delete(vcv)) return "xóa thành công";
+            return "xóa thất bại";
         }
 
         public List<CtTinhDiemView> GetAll()
@@ -67,8 +67,8 @@ namespace _2.BUS.Services
                 HeSoTich = obj.HeSoTich,
                 TrangThai = obj.TrangThai
             };
-            _iCtTinhDiemRepos.Update(vcv);
-            return "sửa thành công";
+            if (_iCtTinhDiemRepos.Update(vcv)) return "sửa thành công";
+            return "sửa thất bại";
         }
     }
 }

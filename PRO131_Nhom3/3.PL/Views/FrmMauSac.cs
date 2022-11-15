@@ -38,7 +38,7 @@ namespace _3.PL.Views
             var lstMauSac = _iMauSac.GetAll();
             foreach (var item in lstMauSac)
             {
-                dtg_show.Rows.Add(item.Id, item.Ma, item.Ten, item.TrangThai == 1 ? "Hoạt động" : "Không hoạt động");
+                dtg_show.Rows.Add(item.Id, item.Ma, item.Ten, item.TrangThai == 0 ? "Hoạt động" : "Không hoạt động");
             }
         }
 
@@ -49,7 +49,7 @@ namespace _3.PL.Views
                 Id = new Guid(),
                 Ma = tbt_ma.Text,
                 Ten = tbt_ten.Text,
-                TrangThai = rdb_hoatdong.Checked ? 1 : 0,
+                TrangThai = rdb_hoatdong.Checked ? 0 : 1,
             };
             return cvv;
         }
@@ -76,7 +76,7 @@ namespace _3.PL.Views
                 Id = Guid.Parse(dtg_show.CurrentRow.Cells[0].Value.ToString()),
                 Ma = tbt_ma.Text,
                 Ten = tbt_ten.Text,
-                TrangThai = rdb_hoatdong.Checked ? 1 : 0,
+                TrangThai = rdb_hoatdong.Checked ? 0 : 1,
             };
             DialogResult dialogResult = MessageBox.Show("Bạn có muốn sửa không", "thông báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -92,8 +92,8 @@ namespace _3.PL.Views
             _msv = _iMauSac.GetAll().FirstOrDefault(c => c.Id == Guid.Parse(dtg_show.CurrentRow.Cells[0].Value.ToString()));
             tbt_ma.Text = dtg_show.CurrentRow.Cells[1].Value.ToString();
             tbt_ten.Text = dtg_show.CurrentRow.Cells[2].Value.ToString();
-            rdb_khonghd.Checked = _msv.TrangThai == 0;
-            rdb_hoatdong.Checked = _msv.TrangThai == 1;
+            rdb_khonghd.Checked = _msv.TrangThai == 1;
+            rdb_hoatdong.Checked = _msv.TrangThai == 0;
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)

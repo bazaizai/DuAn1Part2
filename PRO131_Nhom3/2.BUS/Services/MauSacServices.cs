@@ -34,8 +34,8 @@ namespace _2.BUS.Services
                 Ten = obj.Ten,
                 TrangThai = obj.TrangThai
             };
-            _iMauSacRepos.Add(ms);
-            return "thêm thành công";
+            if (_iMauSacRepos.Add(ms)) return "thêm thành công";
+            return "thêm thất bại";
         }
 
         public string Delete(MauSacView obj)
@@ -48,8 +48,8 @@ namespace _2.BUS.Services
                 Ten = obj.Ten,
                 TrangThai = obj.TrangThai
             };
-            _iMauSacRepos.Delete(ms);
-            return "xóa thành công";
+            if (_iMauSacRepos.Delete(ms)) return "xóa thành công";
+            return "xóa thất bại";
         }
 
         public List<MauSacView> GetAll()
@@ -77,8 +77,8 @@ namespace _2.BUS.Services
                 Ten = obj.Ten,
                 TrangThai = obj.TrangThai
             };
-            _iMauSacRepos.Update(ms);
-            return "sửa thành công";
+            if (_iMauSacRepos.Update(ms)) return "sửa thành công";
+            return "sửa thất bại";
         }
     }
 }

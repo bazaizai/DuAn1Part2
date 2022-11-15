@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-namespace _3.PL.Views
+using _3.PL.Views;
+
+namespace _3.PL
 {
     static class Program
     {
@@ -16,9 +18,7 @@ namespace _3.PL.Views
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
-
-
+            Application.Run(new FrmCtTichDiem());
         }
     }
 }

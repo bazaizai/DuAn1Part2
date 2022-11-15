@@ -34,8 +34,8 @@ namespace _2.BUS.Services
                 Ten = obj.Ten,
                 TrangThai = obj.TrangThai
             };
-            _iChucVuRepos.Add(vcv);
-            return "thêm thành công";
+            if (_iChucVuRepos.Add(vcv)) return "thêm thành công";
+            return "thêm thất bại";
         }
 
         public string Delete(ChucVuView obj)
@@ -48,8 +48,8 @@ namespace _2.BUS.Services
                 Ten = obj.Ten,
                 TrangThai = obj.TrangThai
             };
-            _iChucVuRepos.Delete(vcv);
-            return "xóa thành công";
+            if (_iChucVuRepos.Delete(vcv)) return "xóa thành công";
+            return "xóa thất bại";
         }
 
         public List<ChucVuView> GetAll()
@@ -77,8 +77,8 @@ namespace _2.BUS.Services
                 Ten = obj.Ten,
                 TrangThai = obj.TrangThai
             };
-            _iChucVuRepos.Update(vcv);
-            return "sửa thành công";
+            if(_iChucVuRepos.Update(vcv)) return"sửa thành công";
+            return "sửa thất bại";
         }
     }
 }
