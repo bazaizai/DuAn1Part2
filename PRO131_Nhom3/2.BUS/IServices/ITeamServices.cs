@@ -11,7 +11,7 @@ namespace _2.BUS.IServices
     {
         string Add(TeamView team);
         string Update(TeamView team);
-        string Delete(Guid id);
+        string Delete(TeamView team);
         Guid GetIdByName(string name);
         List<TeamView> GetAll();
     }

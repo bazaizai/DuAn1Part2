@@ -1,4 +1,5 @@
-﻿using _2.BUS.IServices;
+﻿using _1.DAL.DomainClass;
+using _2.BUS.IServices;
 using _2.BUS.Services;
 using _2.BUS.ViewModels;
 using System;
@@ -18,6 +19,7 @@ namespace _3.PL.Views
         private IGiaiDauServices _giaiDauServices;
         private List<GiaiDauView> lstGiaiDau;
         private Guid _idgd;
+        private GiaiDauView _gdv;
         public FrmGiaiDau()
         {
             InitializeComponent();
@@ -94,13 +96,13 @@ namespace _3.PL.Views
             DialogResult result = MessageBox.Show("Bạn có muốn xóa ?", "Cảnh báo", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                if (_idgd == Guid.Empty)
+                if (_gdv == null)
                 {
                     MessageBox.Show("Vui lòng chọn giải đấu cần xóa");
                 }
                 else
                 {
-                    MessageBox.Show(_giaiDauServices.Delete(_idgd));
+                    MessageBox.Show(_giaiDauServices.Delete(_gdv));
                     ClearForm();
                     loadData();
                 }
@@ -143,6 +145,7 @@ namespace _3.PL.Views
 
         private void dtg_show_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            _gdv = _giaiDauServices.GetAll().FirstOrDefault(c => c.Id == Guid.Parse(dtg_show.CurrentRow.Cells[0].Value.ToString()));
             _idgd = (Guid)(dtg_show.CurrentRow.Cells[0].Value);
             tb_ma.Text = dtg_show.CurrentRow.Cells[1].Value.ToString();
             tb_ten.Text = dtg_show.CurrentRow.Cells[2].Value.ToString();

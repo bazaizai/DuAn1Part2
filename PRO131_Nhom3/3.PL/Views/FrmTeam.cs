@@ -19,6 +19,7 @@ namespace _3.PL.Views
         private IGiaiDauServices _giaiDauServices;
         private List<TeamView> lstTeam;
         private Guid _idteam;
+        private TeamView _team;
         
         public FrmTeam()
         {
@@ -151,13 +152,13 @@ namespace _3.PL.Views
             DialogResult result = MessageBox.Show("Bạn có muốn xóa ?", "Cảnh báo", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                if (_idteam == Guid.Empty)
+                if (_team==null)
                 {
                     MessageBox.Show("Vui lòng chọn team cần xóa");
                 }
                 else
                 {
-                    MessageBox.Show(_TeamServices.Delete(_idteam));
+                    MessageBox.Show(_TeamServices.Delete(_team));
                     ClearForm();
                     loadData();
                 }
@@ -180,6 +181,7 @@ namespace _3.PL.Views
 
         private void dtg_show_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            _team =  _TeamServices.GetAll().FirstOrDefault(c => c.Id == Guid.Parse(dtg_show.CurrentRow.Cells[0].Value.ToString()));
             _idteam = (Guid)(dtg_show.CurrentRow.Cells[0].Value);
             tb_ma.Text = dtg_show.CurrentRow.Cells[1].Value.ToString();
             tb_ten.Text = dtg_show.CurrentRow.Cells[2].Value.ToString();

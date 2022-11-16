@@ -89,5 +89,24 @@ namespace _2.BUS.Services
         {
             return GetAll().FirstOrDefault(x => x.Ten == name).Id;
         }
+
+        public string Delete(SaleView sale)
+        {
+            if (sale == null) return "Xóa thất bại";
+            Sale sale1 = new Sale()
+            {
+                Id = sale.Id,
+                Ma = sale.Ma,
+                Ten = sale.Ten,
+                NgayBatDau = sale.NgayBatDau,
+                NgayKetThuc = sale.NgayKetThuc,
+                LoaiHinhKm = sale.LoaiHinhKm,
+                MucGiam = sale.MucGiam,
+                MoTa = sale.MoTa,
+                TrangThai = sale.TrangThai,
+            };
+            _saleRepos.Delete(sale1);
+            return "Xóa thành công";
+        }
     }
 }

@@ -20,6 +20,7 @@ namespace _3.PL.Views
         private ISaleServices _saleServices;
         private List<SaleView> lstSale;
         private Guid idSale;
+        private SaleView _slv;
         public FrmSale()
         {
             InitializeComponent();
@@ -203,13 +204,13 @@ namespace _3.PL.Views
             DialogResult result = MessageBox.Show("Bạn có muốn xóa ?", "Cảnh báo", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                if (idSale == Guid.Empty)
+                if (_slv ==null)
                 {
                     MessageBox.Show("Vui lòng chọn sale cần xóa");
                 }
                 else
                 {
-                    MessageBox.Show(_saleServices.Delete(idSale));
+                    MessageBox.Show(_saleServices.Delete(_slv));
                     ClearForm();
                     loadData();
                 }
@@ -232,6 +233,7 @@ namespace _3.PL.Views
 
         private void dtg_show_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            _slv = _saleServices.GetAll().FirstOrDefault(c => c.Id == Guid.Parse(dtg_show.CurrentRow.Cells[0].Value.ToString()));
             idSale = (Guid)(dtg_show.CurrentRow.Cells[0].Value);
             tb_ma.Text = dtg_show.CurrentRow.Cells[1].Value.ToString();
             tb_ten.Text = dtg_show.CurrentRow.Cells[2].Value.ToString();
