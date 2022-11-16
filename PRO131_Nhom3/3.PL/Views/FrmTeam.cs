@@ -86,6 +86,15 @@ namespace _3.PL.Views
                 {
                     MessageBox.Show("Vui lòng chọn team cần sửa");
                 }
+                else if(_TeamServices.GetAll().FirstOrDefault(c => c.Ten == tb_ten.Text && c.Id !=  _idteam) != null)
+                {
+
+                }
+                else if (rdb_hd.Checked == false && rdb_khd.Checked == false)
+                {
+                    MessageBox.Show("Vui lòng chọn trạng thái");
+                }
+
                 else
                 {
                     TeamView TeamView = new TeamView()

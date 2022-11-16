@@ -26,8 +26,10 @@ namespace _3.PL.Views
             _giaiDauServices = new GiaiDauServices();
             lstGiaiDau = new List<GiaiDauView>();
             loadData();
-            tb_ma.Enabled = false ; 
+            tb_ma.Enabled = false ;
+
         }
+
         private void loadData()
         {
 
@@ -66,11 +68,7 @@ namespace _3.PL.Views
                if(_giaiDauServices.GetAll().Any(c=>c.Ten==tb_ten.Text))
                 {
                     MessageBox.Show("Giải đấu bị trùng");
-                }    
-               else if(rdb_hd.Checked==false &&  rdb_khd.Checked==false)
-                {
-                    MessageBox.Show("Vui lòng chọn trạng thái");
-                }                
+                }                 
                 else
                 {
                     GiaiDauView giaiDauView = new GiaiDauView()
@@ -78,7 +76,7 @@ namespace _3.PL.Views
                         Id = Guid.Empty,
                         Ma = tb_ma.Text,
                         Ten = tb_ten.Text,
-                        TrangThai = rdb_hd.Checked ? 0:1,
+                        TrangThai = rdb_hd.Checked ? 0 : 1,
                     };
                     MessageBox.Show(_giaiDauServices.Add(giaiDauView));
                     ClearForm();
@@ -123,6 +121,10 @@ namespace _3.PL.Views
                 {
                     MessageBox.Show("Vui lòng chọn giải đấu cần sửa");
                 }
+                if (_giaiDauServices.GetAll().FirstOrDefault(c => c.Ten == tb_ten.Text && c.Id!= _idgd )!=null  )
+                {
+                    MessageBox.Show("Giải đấu bị trùng");
+                }
                 else
                 {
                     GiaiDauView giaiDauView = new GiaiDauView()
@@ -151,6 +153,7 @@ namespace _3.PL.Views
             tb_ten.Text = dtg_show.CurrentRow.Cells[2].Value.ToString();
             rdb_hd.Checked = dtg_show.CurrentRow.Cells[3].Value.ToString() == "Hoạt động";
             rdb_khd.Checked = dtg_show.CurrentRow.Cells[3].Value.ToString() == "Không hoạt động";
+
         }
 
         private void bt_xoaform_Click(object sender, EventArgs e)

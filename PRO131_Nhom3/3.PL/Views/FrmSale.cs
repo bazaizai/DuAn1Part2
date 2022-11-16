@@ -98,6 +98,10 @@ namespace _3.PL.Views
                 {
                     MessageBox.Show("Vui lòng chọn mã sale cần sửa");
                 }
+                else if(_saleServices.GetAll().FirstOrDefault(c=>c.Ten == tb_ten.Text && c.Id !=_slv.Id) !=null)
+                {
+                    MessageBox.Show("Tên sale được trùng");
+                }
                 else if (rdb_hd.Checked == false && rdb_khd.Checked == false)
                 {
                     MessageBox.Show("Vui lòng chọn trạng thái");
@@ -108,7 +112,7 @@ namespace _3.PL.Views
                 }    
                 else if (dtp_end.Value < dtp_start.Value)
                 {
-                    MessageBox.Show("Ngày kết thúc sale không được bé hơn ngày bắt đầu");
+                    MessageBox.Show("Thời gian kết thúc sale không được bé hơn thời gian bắt đầu");
                 }
                 else if (ValidateInput.CheckIntInput(tb_mucgiam.Text) == false || Convert.ToDecimal(tb_mucgiam.Text) < 0)
                 {
