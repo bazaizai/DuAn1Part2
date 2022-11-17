@@ -1,4 +1,5 @@
-﻿using _2.BUS.IServices;
+﻿using _1.DAL.DomainClass;
+using _2.BUS.IServices;
 using _2.BUS.Services;
 using _2.BUS.ViewModels;
 using System;
@@ -59,10 +60,21 @@ namespace _3.PL.Views
             DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm không", "thông báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                _iChucVu.Add(GetData());
-                MessageBox.Show("thêm thành công");
+                if (_iChucVu.GetAll().Any(c => c.Ten == tbt_ten.Text))
+                {
+                    MessageBox.Show("Đã có chức vụ");
+                }
+                else
+                {
+                    _iChucVu.Add(GetData());
+                    MessageBox.Show("thêm thành công");
+                    LoadData();
+                }
             }
-            LoadData();
+            else
+            {
+                MessageBox.Show("bạn đã hủy thêm");
+            }
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
@@ -77,10 +89,25 @@ namespace _3.PL.Views
             DialogResult dialogResult = MessageBox.Show("Bạn có muốn sửa không", "thông báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                _iChucVu.Update(cvv);
-                MessageBox.Show("sửa thành công");
+                if (_cvv == null)
+                {
+                    MessageBox.Show("chọn chức vụ");
+                }
+                else if (_iChucVu.GetAll().FirstOrDefault(c => c.Ten == tbt_ten.Text && c.Id != _cvv.Id) != null)
+                {
+                    MessageBox.Show("Chức vụ bị trùng");
+                }
+                else
+                {
+                    _iChucVu.Update(cvv);
+                    MessageBox.Show("sửa thành công");
+                    LoadData();
+                }
             }
-            LoadData();
+            else
+            {
+                MessageBox.Show("bạn đã hủy sửa");
+            }
         }
 
         private void dtg_show_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -101,10 +128,17 @@ namespace _3.PL.Views
                 {
                     MessageBox.Show("chọn chức vụ");
                 }
-                _iChucVu.Delete(_cvv);
-                MessageBox.Show("xóa thành công");
+                else
+                {
+                    _iChucVu.Delete(_cvv);
+                    MessageBox.Show("xóa thành công");
+                    LoadData();
+                }
             }
-            LoadData();
+            else
+            {
+                MessageBox.Show("bạn đã hủy sửa");
+            }
         }
 
         private void btn_clear_Click(object sender, EventArgs e)

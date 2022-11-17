@@ -1,6 +1,4 @@
-﻿using _2.BUS.IServices;
-using _2.BUS.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,18 +10,21 @@ using System.Windows.Forms;
 
 namespace _3.PL.Views
 {
-    public partial class FrmLogin : Form
+    public partial class FrmGiaoCa : Form
     {
-        private INhanVienServices _iNhanVien;
-        public FrmLogin()
+        public FrmGiaoCa()
         {
             InitializeComponent();
-            _iNhanVien = new NhanVienServices();
         }
 
-        private void btn_login_Click(object sender, EventArgs e)
+        private void rjButton3_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void FrmGiaoCa_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

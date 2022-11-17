@@ -63,10 +63,17 @@ namespace _3.PL.Views
                 {
                     MessageBox.Show("Đã có màu sắc");
                 }
-                _iMauSac.Add(GetData());
-                MessageBox.Show("thêm thành công");
+                else
+                {
+                    _iMauSac.Add(GetData());
+                    MessageBox.Show("thêm thành công");
+                    LoadData();
+                }
             }
-            LoadData();
+            else
+            {
+                MessageBox.Show("Bạn đã hủy thêm");
+            }
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
@@ -81,10 +88,25 @@ namespace _3.PL.Views
             DialogResult dialogResult = MessageBox.Show("Bạn có muốn sửa không", "thông báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                _iMauSac.Update(cvv);
-                MessageBox.Show("sửa thành công");
+                if (_msv == null)
+                {
+                    MessageBox.Show("chọn màu sắc");
+                }
+                else if (_iMauSac.GetAll().FirstOrDefault(c => c.Ten == tbt_ten.Text && c.Id != _msv.Id) != null)
+                {
+                    MessageBox.Show("Màu sắc bị trùng");
+                }
+                else
+                {
+                    _iMauSac.Update(cvv);
+                    MessageBox.Show("sửa thành công");
+                    LoadData();
+                }
             }
-            LoadData();
+            else
+            {
+                MessageBox.Show("Bạn đã hủy thêm");
+            }
         }
 
         private void btn_clear_Click(object sender, DataGridViewCellEventArgs e)
@@ -105,10 +127,17 @@ namespace _3.PL.Views
                 {
                     MessageBox.Show("chọn màu sắc");
                 }
-                _iMauSac.Delete(_msv);
-                MessageBox.Show("xóa thành công");
+                else
+                {
+                    _iMauSac.Delete(_msv);
+                    MessageBox.Show("xóa thành công");
+                    LoadData();
+                }
             }
-            LoadData();
+            else
+            {
+                MessageBox.Show("Bạn đã hủy xóa");
+            }
         }
 
         private void btn_clear_Click(object sender, EventArgs e)

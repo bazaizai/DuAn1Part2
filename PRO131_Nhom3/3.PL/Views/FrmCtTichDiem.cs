@@ -60,10 +60,25 @@ namespace _3.PL.Views
             DialogResult dialogResult = MessageBox.Show("Bạn có muốn sửa không", "thông báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                _iCtTichDiem.Update(cvv);
-                MessageBox.Show("sửa thành công");
+                if (_cttd == null)
+                {
+                    MessageBox.Show("vui lòng chọn");
+                }
+                else if (_iCtTichDiem.GetAll().FirstOrDefault(c => c.HeSoTich == Convert.ToInt32(tb_HeSoTich.Text) && c.Id != _cttd.Id) != null)
+                {
+                    MessageBox.Show("Đã có hệ số");
+                }
+                else
+                {
+                    _iCtTichDiem.Update(cvv);
+                    MessageBox.Show("sửa thành công");
+                    LoadData();
+                }
             }
-            LoadData();
+            else
+            {
+                MessageBox.Show("bạn đã hủy sửa");
+            }
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -75,10 +90,17 @@ namespace _3.PL.Views
                 {
                     MessageBox.Show("vui lòng chọn");
                 }
-                _iCtTichDiem.Delete(_cttd);
-                MessageBox.Show("xóa thành công");
+                else
+                {
+                    _iCtTichDiem.Delete(_cttd);
+                    MessageBox.Show("xóa thành công");
+                    LoadData();
+                }
             }
-            LoadData();
+            else
+            {
+                MessageBox.Show("bạn đã hủy xóa");
+            }
         }
 
         private void btn_clear_Click(object sender, EventArgs e)
@@ -93,10 +115,21 @@ namespace _3.PL.Views
             DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm không", "thông báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                _iCtTichDiem.Add(GetData());
-                MessageBox.Show("thêm thành công");
+                if (tb_HeSoTich.Text.Length <= 0)
+                {
+                    MessageBox.Show("Hệ số phải lớn hơn 0");
+                }
+                else
+                {
+                    _iCtTichDiem.Add(GetData());
+                    MessageBox.Show("thêm thành công");
+                    LoadData();
+                }
             }
-            LoadData();
+            else
+            {
+                MessageBox.Show("bạn đã hủy thêm");
+            }
         }
 
         private void dtg_show_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -2,6 +2,7 @@
 using _2.BUS.IServices;
 using _2.BUS.Services;
 using _2.BUS.ViewModels;
+using _3.PL.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -103,26 +104,68 @@ namespace _3.PL.Views
             };
             return cvv;
         }
-        public static bool IsEmail(string email)
-        {
-            if (string.IsNullOrEmpty(email))
-                return false;
 
-            return Regex.IsMatch(email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-        }
         private void btn_them_Click(object sender, EventArgs e)
         {
             DialogResult dialog = MessageBox.Show("Bạn có muốn thêm không!", "Thông báo", MessageBoxButtons.YesNo);
             if (dialog == DialogResult.Yes)
             {
-                //if ()
-                //{
-                //    MessageBox.Show("Sai định dạng email");
-                //}
-                _iNhanVien.Add(GetData());
-                MessageBox.Show("thêm thành công");
+                if (tb_cccd.Text.Length < 12)
+                {
+                    MessageBox.Show("Nhập đúng căn cước công dân");
+                }
+                else if (_iNhanVien.GetAll().Any(c => c.Cccd == tb_cccd.Text))
+                {
+                    MessageBox.Show("Căn cước đã bị trùng");
+                }
+                else if (ValidateInput.IsValidVietNamPhoneNumber(tb_sdt.Text) == false)
+                {
+                    MessageBox.Show("Nhập đúng số điện thoại");
+                }
+                else if (_iNhanVien.GetAll().Any(c => c.Sdt == tb_sdt.Text))
+                {
+                    MessageBox.Show("Số điện thoại đã bị trùng");
+                }
+                else if (ValidateInput.IsEmail(tb_email.Text) == false)
+                {
+                    MessageBox.Show("Nhập đúng email");
+                }
+                else if (_iNhanVien.GetAll().Any(c => c.Email == tb_email.Text))
+                {
+                    MessageBox.Show("Email đã bị trùng");
+                }
+                else if (cbb_chucvu.Text == "")
+                {
+                    MessageBox.Show("Chọn chức vụ");
+                }
+                else if (tb_matkhau.Text == "")
+                {
+                    MessageBox.Show("Không được để trống mật khẩu");
+                }
+                else if (tb_ten.Text == "" || tb_ho.Text == "")
+                {
+                    MessageBox.Show("Không được để trống họ và tên");
+                }
+                else if (cbb_gioitinh.Text == "")
+                {
+                    MessageBox.Show("Chọn giới tính");
+                }
+                else if (DateTime.Now.Year - dtp_ngaysinh.Value.Year < 18)
+                {
+                    MessageBox.Show("Ngày sinh không đủ");
+                }
+                else
+                {
+                    _iNhanVien.Add(GetData());
+                    MessageBox.Show("thêm thành công");
+                    loadData();
+                }
             }
-            loadData();
+            else
+            {
+                MessageBox.Show("bạn đã hủy thêm");
+            }
+
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
@@ -148,10 +191,46 @@ namespace _3.PL.Views
             DialogResult dialog = MessageBox.Show("Bạn có muốn sửa không!", "Thông báo", MessageBoxButtons.YesNo);
             if (dialog == DialogResult.Yes)
             {
-                _iNhanVien.Update(cvv);
-                MessageBox.Show("sửa thành công");
+                if (_nvv == null)
+                {
+                    MessageBox.Show("Chọn nhân viên cần sửa");
+                }
+                else if (_iNhanVien.GetAll().FirstOrDefault(c => c.TaiKhoan == tb_taikhoan.Text && c.Id != _nvv.Id) != null)
+                {
+                    MessageBox.Show("Tài khoản bị trùng");
+                }
+                else if (DateTime.Now.Year - dtp_ngaysinh.Value.Year < 18)
+                {
+                    MessageBox.Show("Ngày sinh không đủ");
+                }
+                else if (_iNhanVien.GetAll().FirstOrDefault(c => c.Cccd == tb_cccd.Text && c.Id != _nvv.Id) != null)
+                {
+                    MessageBox.Show("Căn cước bị trùng");
+                }
+                else if (_iNhanVien.GetAll().FirstOrDefault(c => c.Email == tb_email.Text && c.Id != _nvv.Id) != null)
+                {
+                    MessageBox.Show("Email bị trùng");
+                }
+                else if (_iNhanVien.GetAll().FirstOrDefault(c => c.Sdt == tb_sdt.Text && c.Id != _nvv.Id) != null)
+                {
+                    MessageBox.Show("Số điện thoại bị trùng");
+                }
+                else if (tb_matkhau.Text == "")
+                {
+                    MessageBox.Show("Không được để trống mật khẩu");
+                }
+                else
+                {
+                    _iNhanVien.Update(cvv);
+                    MessageBox.Show("sửa thành công");
+                    loadData();
+                }
             }
-            loadData();
+            else
+            {
+                MessageBox.Show("bạn đã hủy sửa");
+            }
+
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -163,10 +242,17 @@ namespace _3.PL.Views
                 {
                     MessageBox.Show("vui lòng chọn nhân viên");
                 }
-                _iNhanVien.Delete(_nvv);
-                MessageBox.Show("xóa thành công");
+                else
+                {
+                    _iNhanVien.Delete(_nvv);
+                    MessageBox.Show("xóa thành công");
+                    loadData();
+                }
             }
-            loadData();
+            else
+            {
+                MessageBox.Show("bạn đã hủy xóa");
+            }
         }
 
         private void btn_clear_Click(object sender, EventArgs e)
@@ -196,7 +282,7 @@ namespace _3.PL.Views
             tb_ho.Text = _nvv.Ho;
             tb_tendem.Text = _nvv.TenDem;
             tb_ten.Text = _nvv.Ten;
-            cbb_gioitinh.SelectedValue = dtgv_show.CurrentRow.Cells[4].Value.ToString();
+            cbb_gioitinh.Text = dtgv_show.CurrentRow.Cells[4].Value.ToString();
             dtp_ngaysinh.Value = Convert.ToDateTime(dtgv_show.CurrentRow.Cells[5].Value.ToString());
             tb_diachi.Text = dtgv_show.CurrentRow.Cells[6].Value.ToString();
             tb_sdt.Text = dtgv_show.CurrentRow.Cells[7].Value.ToString();
