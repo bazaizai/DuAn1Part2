@@ -186,7 +186,7 @@
             // 
             this.tb_sodiem.Location = new System.Drawing.Point(353, 142);
             this.tb_sodiem.Name = "tb_sodiem";
-            this.tb_sodiem.Size = new System.Drawing.Size(382, 37);
+            this.tb_sodiem.Size = new System.Drawing.Size(390, 37);
             this.tb_sodiem.TabIndex = 12;
             // 
             // label7
