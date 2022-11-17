@@ -16,8 +16,7 @@ namespace _3.PL.Views
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmGiaiDau());
-
+            Application.Run(new FrmChiTietSale());
 
         }
     }

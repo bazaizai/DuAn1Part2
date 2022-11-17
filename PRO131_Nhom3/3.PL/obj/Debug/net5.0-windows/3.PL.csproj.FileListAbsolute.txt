@@ -230,3 +230,4 @@ C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-wi
 C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.frmQLChiTietSp.resources
 C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmQLKieuSP.resources
 C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmSanPham.resources
+C:\Users\phuon\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\bin\Debug\net5.0-windows\3.PL.dll.config
