@@ -67,6 +67,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.tb_sodiem);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.rdb_khd);
@@ -89,6 +90,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1025, 441);
@@ -98,6 +100,7 @@
             // 
             // tb_sodiem
             // 
+            this.tb_sodiem.BackColor = System.Drawing.SystemColors.Window;
             this.tb_sodiem.Location = new System.Drawing.Point(650, 289);
             this.tb_sodiem.Name = "tb_sodiem";
             this.tb_sodiem.Size = new System.Drawing.Size(330, 37);
@@ -143,6 +146,7 @@
             // 
             // tb_sdt
             // 
+            this.tb_sdt.BackColor = System.Drawing.SystemColors.Window;
             this.tb_sdt.Location = new System.Drawing.Point(650, 64);
             this.tb_sdt.Name = "tb_sdt";
             this.tb_sdt.Size = new System.Drawing.Size(330, 37);
@@ -150,6 +154,7 @@
             // 
             // tb_diachi
             // 
+            this.tb_diachi.BackColor = System.Drawing.SystemColors.Window;
             this.tb_diachi.Location = new System.Drawing.Point(650, 140);
             this.tb_diachi.Name = "tb_diachi";
             this.tb_diachi.Size = new System.Drawing.Size(330, 37);
@@ -157,6 +162,7 @@
             // 
             // tb_email
             // 
+            this.tb_email.BackColor = System.Drawing.SystemColors.Window;
             this.tb_email.Location = new System.Drawing.Point(650, 216);
             this.tb_email.Name = "tb_email";
             this.tb_email.Size = new System.Drawing.Size(330, 37);
@@ -164,6 +170,7 @@
             // 
             // tb_ho
             // 
+            this.tb_ho.BackColor = System.Drawing.SystemColors.Window;
             this.tb_ho.Location = new System.Drawing.Point(165, 289);
             this.tb_ho.Name = "tb_ho";
             this.tb_ho.Size = new System.Drawing.Size(266, 37);
@@ -171,6 +178,7 @@
             // 
             // tb_ten
             // 
+            this.tb_ten.BackColor = System.Drawing.SystemColors.Window;
             this.tb_ten.Location = new System.Drawing.Point(165, 139);
             this.tb_ten.Name = "tb_ten";
             this.tb_ten.Size = new System.Drawing.Size(266, 37);
@@ -178,6 +186,7 @@
             // 
             // tb_tendem
             // 
+            this.tb_tendem.BackColor = System.Drawing.SystemColors.Window;
             this.tb_tendem.Location = new System.Drawing.Point(165, 214);
             this.tb_tendem.Name = "tb_tendem";
             this.tb_tendem.Size = new System.Drawing.Size(266, 37);
@@ -185,6 +194,7 @@
             // 
             // tb_ma
             // 
+            this.tb_ma.BackColor = System.Drawing.SystemColors.Window;
             this.tb_ma.Location = new System.Drawing.Point(165, 64);
             this.tb_ma.Name = "tb_ma";
             this.tb_ma.Size = new System.Drawing.Size(266, 37);
@@ -295,6 +305,7 @@
             // 
             // tb_timkiem
             // 
+            this.tb_timkiem.BackColor = System.Drawing.SystemColors.Menu;
             this.tb_timkiem.Location = new System.Drawing.Point(338, 41);
             this.tb_timkiem.Name = "tb_timkiem";
             this.tb_timkiem.Size = new System.Drawing.Size(671, 37);
@@ -373,12 +384,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1442, 814);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmKhachHang";
             this.Text = "FrmKhachHang";
+            this.Load += new System.EventHandler(this.FrmKhachHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
