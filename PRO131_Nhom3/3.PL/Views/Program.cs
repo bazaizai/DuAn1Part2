@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< HEAD:PRO131_Nhom3/3.PL/Views/Program.cs
+=======
+>>>>>>> Cien
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,12 +20,13 @@ namespace _3.PL.Views
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
+            Application.Run(new FrmUuDaiTichDiem());
 
 
         }
     }
 }
+<<<<<<< HEAD
 =======
 using _3.PL.Views;
 using System;
@@ -50,3 +54,6 @@ namespace _3.PL
     }
 }
 >>>>>>> Cien:PRO131_Nhom3/3.PL/Program.cs
+=======
+
+>>>>>>> Cien

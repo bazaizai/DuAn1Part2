@@ -57,7 +57,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(12, 449);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1418, 343);
+            this.groupBox2.Size = new System.Drawing.Size(1078, 343);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hiển thị";
@@ -87,7 +87,7 @@
             this.dtg_show.RowHeadersWidth = 62;
             this.dtg_show.RowTemplate.Height = 33;
             this.dtg_show.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtg_show.Size = new System.Drawing.Size(1383, 228);
+            this.dtg_show.Size = new System.Drawing.Size(1033, 228);
             this.dtg_show.TabIndex = 0;
             this.dtg_show.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_show_CellClick);
             // 
@@ -98,9 +98,9 @@
             this.groupBox3.Controls.Add(this.btn_sua);
             this.groupBox3.Controls.Add(this.btn_them);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.Location = new System.Drawing.Point(1038, 12);
+            this.groupBox3.Location = new System.Drawing.Point(704, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(386, 441);
+            this.groupBox3.Size = new System.Drawing.Size(386, 450);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chức năng";
@@ -155,7 +155,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1009, 441);
+            this.groupBox1.Size = new System.Drawing.Size(671, 441);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
@@ -163,7 +163,7 @@
             // rdb_khd
             // 
             this.rdb_khd.AutoSize = true;
-            this.rdb_khd.Location = new System.Drawing.Point(542, 263);
+            this.rdb_khd.Location = new System.Drawing.Point(376, 251);
             this.rdb_khd.Name = "rdb_khd";
             this.rdb_khd.Size = new System.Drawing.Size(212, 34);
             this.rdb_khd.TabIndex = 18;
@@ -174,7 +174,7 @@
             // rdb_hd
             // 
             this.rdb_hd.AutoSize = true;
-            this.rdb_hd.Location = new System.Drawing.Point(353, 263);
+            this.rdb_hd.Location = new System.Drawing.Point(187, 251);
             this.rdb_hd.Name = "rdb_hd";
             this.rdb_hd.Size = new System.Drawing.Size(144, 34);
             this.rdb_hd.TabIndex = 17;
@@ -184,15 +184,15 @@
             // 
             // tb_sodiem
             // 
-            this.tb_sodiem.Location = new System.Drawing.Point(353, 142);
+            this.tb_sodiem.Location = new System.Drawing.Point(187, 130);
             this.tb_sodiem.Name = "tb_sodiem";
-            this.tb_sodiem.Size = new System.Drawing.Size(382, 37);
+            this.tb_sodiem.Size = new System.Drawing.Size(390, 37);
             this.tb_sodiem.TabIndex = 12;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(209, 263);
+            this.label7.Location = new System.Drawing.Point(43, 255);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 30);
             this.label7.TabIndex = 8;
@@ -201,7 +201,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(209, 139);
+            this.label4.Location = new System.Drawing.Point(43, 131);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 30);
             this.label4.TabIndex = 3;
@@ -211,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1540, 795);
+            this.ClientSize = new System.Drawing.Size(1128, 795);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);

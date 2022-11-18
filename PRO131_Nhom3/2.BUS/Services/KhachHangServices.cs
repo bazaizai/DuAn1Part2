@@ -28,6 +28,7 @@ namespace _2.BUS.Services
                 var x = new KhachHang()
                 {
                     Id = obj.Id,
+                    IdtichDiem = obj.IdtichDiem,
                     Ma = obj.Ma,
                     Ten = obj.Ten,
                     TenDem = obj.TenDem,
@@ -53,7 +54,9 @@ namespace _2.BUS.Services
             {
                 var x = new KhachHang()
                 {
-                    Id = obj.Id
+                    Id = obj.Id,
+                    IdtichDiem = obj.IdtichDiem
+                    
                 };
                 if (_iKhachHangRepos.Delete(x)) return "Thành Công";
                 return "Không Thành Công";
@@ -81,7 +84,8 @@ namespace _2.BUS.Services
                            DiaChi = a.DiaChi,
                            Email = a.Email,
                            SoDiem = b.SoDiem,
-                           TrangThai = a.TrangThai
+                           TrangThai = a.TrangThai,
+                           FullName = String.Concat(a.Ho + " " + a.TenDem + " " + a.Ten)
                        }).ToList();
             return lst;
         }
@@ -111,6 +115,7 @@ namespace _2.BUS.Services
                        select new KhachHangView()
                        {
                            Id = a.Id,
+                           IdtichDiem = a.IdtichDiem,
                            Ma = a.Ma,
                            Ten = a.Ten,
                            TenDem = a.TenDem,
@@ -131,6 +136,7 @@ namespace _2.BUS.Services
                 var x = new KhachHang()
                 {
                     Id = obj.Id,
+                    IdtichDiem = obj.IdtichDiem,
                     Ma = obj.Ma,
                     Ten = obj.Ten,
                     TenDem = obj.TenDem,
