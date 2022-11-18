@@ -104,7 +104,7 @@
             this.tb_sodiem.Location = new System.Drawing.Point(650, 289);
             this.tb_sodiem.Name = "tb_sodiem";
             this.tb_sodiem.Size = new System.Drawing.Size(330, 37);
-            this.tb_sodiem.TabIndex = 20;
+            this.tb_sodiem.TabIndex = 8;
             // 
             // label11
             // 
@@ -121,7 +121,7 @@
             this.rdb_khd.Location = new System.Drawing.Point(797, 362);
             this.rdb_khd.Name = "rdb_khd";
             this.rdb_khd.Size = new System.Drawing.Size(212, 34);
-            this.rdb_khd.TabIndex = 18;
+            this.rdb_khd.TabIndex = 9;
             this.rdb_khd.TabStop = true;
             this.rdb_khd.Text = "Không hoạt động";
             this.rdb_khd.UseVisualStyleBackColor = true;
@@ -132,7 +132,7 @@
             this.rdb_hd.Location = new System.Drawing.Point(647, 362);
             this.rdb_hd.Name = "rdb_hd";
             this.rdb_hd.Size = new System.Drawing.Size(144, 34);
-            this.rdb_hd.TabIndex = 17;
+            this.rdb_hd.TabIndex = 8;
             this.rdb_hd.TabStop = true;
             this.rdb_hd.Text = "Hoạt động";
             this.rdb_hd.UseVisualStyleBackColor = true;
@@ -142,7 +142,7 @@
             this.dtp_ngaysinh.Location = new System.Drawing.Point(165, 364);
             this.dtp_ngaysinh.Name = "dtp_ngaysinh";
             this.dtp_ngaysinh.Size = new System.Drawing.Size(271, 37);
-            this.dtp_ngaysinh.TabIndex = 16;
+            this.dtp_ngaysinh.TabIndex = 4;
             // 
             // tb_sdt
             // 
@@ -150,7 +150,7 @@
             this.tb_sdt.Location = new System.Drawing.Point(650, 64);
             this.tb_sdt.Name = "tb_sdt";
             this.tb_sdt.Size = new System.Drawing.Size(330, 37);
-            this.tb_sdt.TabIndex = 15;
+            this.tb_sdt.TabIndex = 5;
             // 
             // tb_diachi
             // 
@@ -158,7 +158,7 @@
             this.tb_diachi.Location = new System.Drawing.Point(650, 140);
             this.tb_diachi.Name = "tb_diachi";
             this.tb_diachi.Size = new System.Drawing.Size(330, 37);
-            this.tb_diachi.TabIndex = 14;
+            this.tb_diachi.TabIndex = 6;
             // 
             // tb_email
             // 
@@ -166,7 +166,7 @@
             this.tb_email.Location = new System.Drawing.Point(650, 216);
             this.tb_email.Name = "tb_email";
             this.tb_email.Size = new System.Drawing.Size(330, 37);
-            this.tb_email.TabIndex = 13;
+            this.tb_email.TabIndex = 7;
             // 
             // tb_ho
             // 
@@ -174,7 +174,7 @@
             this.tb_ho.Location = new System.Drawing.Point(165, 289);
             this.tb_ho.Name = "tb_ho";
             this.tb_ho.Size = new System.Drawing.Size(266, 37);
-            this.tb_ho.TabIndex = 12;
+            this.tb_ho.TabIndex = 3;
             // 
             // tb_ten
             // 
@@ -182,7 +182,7 @@
             this.tb_ten.Location = new System.Drawing.Point(165, 139);
             this.tb_ten.Name = "tb_ten";
             this.tb_ten.Size = new System.Drawing.Size(266, 37);
-            this.tb_ten.TabIndex = 11;
+            this.tb_ten.TabIndex = 1;
             // 
             // tb_tendem
             // 
@@ -190,7 +190,7 @@
             this.tb_tendem.Location = new System.Drawing.Point(165, 214);
             this.tb_tendem.Name = "tb_tendem";
             this.tb_tendem.Size = new System.Drawing.Size(266, 37);
-            this.tb_tendem.TabIndex = 10;
+            this.tb_tendem.TabIndex = 2;
             // 
             // tb_ma
             // 
@@ -198,7 +198,7 @@
             this.tb_ma.Location = new System.Drawing.Point(165, 64);
             this.tb_ma.Name = "tb_ma";
             this.tb_ma.Size = new System.Drawing.Size(266, 37);
-            this.tb_ma.TabIndex = 9;
+            this.tb_ma.TabIndex = 0;
             // 
             // label7
             // 
@@ -287,6 +287,7 @@
             this.groupBox2.Controls.Add(this.tb_timkiem);
             this.groupBox2.Controls.Add(this.dtg_show);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox2.Location = new System.Drawing.Point(12, 459);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1418, 343);
@@ -297,6 +298,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label6.Location = new System.Drawing.Point(187, 44);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 30);
@@ -305,24 +307,27 @@
             // 
             // tb_timkiem
             // 
-            this.tb_timkiem.BackColor = System.Drawing.SystemColors.Menu;
+            this.tb_timkiem.BackColor = System.Drawing.SystemColors.Window;
             this.tb_timkiem.Location = new System.Drawing.Point(338, 41);
             this.tb_timkiem.Name = "tb_timkiem";
             this.tb_timkiem.Size = new System.Drawing.Size(671, 37);
-            this.tb_timkiem.TabIndex = 19;
+            this.tb_timkiem.TabIndex = 14;
             this.tb_timkiem.TextChanged += new System.EventHandler(this.tb_timkiem_TextChanged);
             // 
             // dtg_show
             // 
             this.dtg_show.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtg_show.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dtg_show.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtg_show.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_show.Location = new System.Drawing.Point(6, 98);
+            this.dtg_show.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dtg_show.Location = new System.Drawing.Point(27, 95);
             this.dtg_show.Name = "dtg_show";
             this.dtg_show.RowHeadersWidth = 62;
             this.dtg_show.RowTemplate.Height = 33;
             this.dtg_show.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtg_show.Size = new System.Drawing.Size(1383, 228);
-            this.dtg_show.TabIndex = 0;
+            this.dtg_show.Size = new System.Drawing.Size(1362, 228);
+            this.dtg_show.TabIndex = 15;
             this.dtg_show.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_show_CellClick);
             this.dtg_show.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dtg_show_MouseClick);
             // 
@@ -333,6 +338,7 @@
             this.groupBox3.Controls.Add(this.btn_sua);
             this.groupBox3.Controls.Add(this.btn_them);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox3.Location = new System.Drawing.Point(1057, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(373, 441);
@@ -342,40 +348,44 @@
             // 
             // btn_clear
             // 
+            this.btn_clear.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_clear.Location = new System.Drawing.Point(129, 323);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(175, 48);
-            this.btn_clear.TabIndex = 3;
+            this.btn_clear.TabIndex = 13;
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = true;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // btn_xoa
             // 
+            this.btn_xoa.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_xoa.Location = new System.Drawing.Point(129, 244);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(175, 48);
-            this.btn_xoa.TabIndex = 2;
+            this.btn_xoa.TabIndex = 12;
             this.btn_xoa.Text = "Xóa";
             this.btn_xoa.UseVisualStyleBackColor = true;
             this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // btn_sua
             // 
+            this.btn_sua.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_sua.Location = new System.Drawing.Point(129, 165);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(175, 48);
-            this.btn_sua.TabIndex = 1;
+            this.btn_sua.TabIndex = 11;
             this.btn_sua.Text = "Sửa";
             this.btn_sua.UseVisualStyleBackColor = true;
             this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btn_them
             // 
+            this.btn_them.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_them.Location = new System.Drawing.Point(129, 86);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(175, 48);
-            this.btn_them.TabIndex = 0;
+            this.btn_them.TabIndex = 10;
             this.btn_them.Text = "Thêm";
             this.btn_them.UseVisualStyleBackColor = true;
             this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
@@ -390,6 +400,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmKhachHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmKhachHang";
             this.Load += new System.EventHandler(this.FrmKhachHang_Load);
             this.groupBox1.ResumeLayout(false);

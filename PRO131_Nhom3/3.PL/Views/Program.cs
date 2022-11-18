@@ -16,7 +16,7 @@ namespace _3.PL.Views
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmKhachHang());
+            Application.Run(new FrmUuDaiTichDiem());
 
 
         }
