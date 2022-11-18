@@ -1,4 +1,5 @@
-﻿using _2.BUS.IServices;
+﻿using _1.DAL.DomainClass;
+using _2.BUS.IServices;
 using _2.BUS.Services;
 using _2.BUS.ViewModels;
 using System;
@@ -32,7 +33,7 @@ namespace _3.PL.Views
             dtg_Show.ColumnCount = 4;
             dtg_Show.Columns[0].Name = "Id ";
             dtg_Show.Columns[0].Visible = false;
-            dtg_Show.Columns[1].Name = "ma";
+            dtg_Show.Columns[1].Name = "Mã";
             dtg_Show.Columns[2].Name = "Tên ";
             dtg_Show.Columns[3].Name = "Trang Thai";
             var lstHinhThucMh = _IHinhThucMhServices.GetAll();
@@ -86,17 +87,20 @@ namespace _3.PL.Views
         {
             if (tb_Ten.Text == "")
             {
-                MessageBox.Show("Hãy nhập tên");
+                MessageBox.Show("Hãy nhập tên hình thức mua hàng");
             }
-           
+            else if (_IHinhThucMhServices.GetAll().FirstOrDefault(x => x.Ten == tb_Ten.Text) != null)
+            {
+                MessageBox.Show("Hình thức mua hàng đã tồn tại, vui lòng nhập hình thức mua hàng khác");
+            }
             else if (radioButton1.Checked == false && radioButton2.Checked == false)
             {
-                MessageBox.Show("Hãy chọn trạng thái");
+                MessageBox.Show("Hãy chọn trạng thái ");
             }
             else
             {
-                DialogResult dlg = MessageBox.Show("Bạn có muốn thêm", "Chú ý", MessageBoxButtons.YesNo);
-                if (dlg == DialogResult.Yes)
+                DialogResult dg = MessageBox.Show("Bạn muốn thêm hình thức mua hàng này", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dg == DialogResult.Yes)
                 {
                     HinhThucMhViews a = new HinhThucMhViews()
                     {
@@ -115,13 +119,17 @@ namespace _3.PL.Views
         {
             if (_HinhThucMh == null)
             {
-                MessageBox.Show("Bạn chưa chọn");
+                MessageBox.Show("Vui lòng chọn chất liệu cần sửa");
             }
             else
             {
                 if (tb_Ten.Text == "")
                 {
-                    MessageBox.Show("Hãy nhập tên ");
+                    MessageBox.Show("Hãy nhập tên hình thức mua hàng ");
+                }
+                else if (_IHinhThucMhServices.GetAll().FirstOrDefault(x => x.Ten == tb_Ten.Text && x.Id != _HinhThucMh.Id) != null)
+                {
+                    MessageBox.Show("Hình thức mua hàng đã tồn tại, vui lòng nhập hình thức mua hàng khác");
                 }
                 else if (radioButton1.Checked == false && radioButton2.Checked == false)
                 {
@@ -129,8 +137,8 @@ namespace _3.PL.Views
                 }
                 else
                 {
-                    DialogResult dlg = MessageBox.Show("Bạn có muốn sửa ", "Chú ý", MessageBoxButtons.YesNo);
-                    if (dlg == DialogResult.Yes)
+                    DialogResult dg = MessageBox.Show("Bạn muốn sửa hình thức mua hàng này", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dg == DialogResult.Yes)
                     {
                         _HinhThucMh.Ma = tb_Ma.Text;
                         _HinhThucMh.Ten = tb_Ten.Text;
@@ -147,12 +155,12 @@ namespace _3.PL.Views
         {
             if (_HinhThucMh == null)
             {
-                MessageBox.Show("Bạn chưa chọn");
+                MessageBox.Show("Vui lòng chọn hình thức mua hàng cần xóa");
             }
             else
             {
-                DialogResult dlg = MessageBox.Show("Bạn có muốn xóa", "Chú ý", MessageBoxButtons.YesNo);
-                if (dlg == DialogResult.Yes)
+                DialogResult dg = MessageBox.Show("Bạn muốn xóa hình thức mua hàng này", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dg == DialogResult.Yes)
                 {
                     _IHinhThucMhServices.Delete(_HinhThucMh);
                     MessageBox.Show("Xóa thành công");

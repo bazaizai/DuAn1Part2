@@ -113,9 +113,15 @@ namespace _3.PL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap Sale_pic {
             get {
                 object obj = ResourceManager.GetObject("Sale_pic", resourceCulture);
+=======
+        internal static System.Drawing.Bitmap PngItem_1114675 {
+            get {
+                object obj = ResourceManager.GetObject("PngItem_1114675", resourceCulture);
+>>>>>>> TAnh
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
