@@ -42,7 +42,6 @@ namespace _2.BUS.Services
         public string Delete(ChatLieuViews obj)
         {
             if (obj == null) return "Delete Không thành công";
-
             var x = _IChatLieuRepos.GetAll().FirstOrDefault(p => p.Id == obj.Id);
             if (_IChatLieuRepos.Delete(x)) return "Delete thành công";
             return "Delete Không thành công";

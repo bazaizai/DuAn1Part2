@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,6 +20,7 @@ namespace _3.PL.Views
         private IChatLieuServices _IChatLieuServices;
         private List<ChatLieuViews> _LstChatLieu;
         public ChatLieuViews? _ChatLieu;
+
         public FrmChatLieu()
         {
             InitializeComponent();
@@ -33,9 +35,9 @@ namespace _3.PL.Views
             dtg_Show.ColumnCount = 4;
             dtg_Show.Columns[0].Name = "Id ";
             dtg_Show.Columns[0].Visible = false;
-            dtg_Show.Columns[1].Name = "ma";
+            dtg_Show.Columns[1].Name = "Mã";
             dtg_Show.Columns[2].Name = "Tên ";
-            dtg_Show.Columns[3].Name = "Trang Thai";
+            dtg_Show.Columns[3].Name = "Trạng Thái";
             var lstChatLieu = _IChatLieuServices.GetAll();
             if (tb_TimKiem.Text != "")
             {
@@ -83,22 +85,24 @@ namespace _3.PL.Views
                 radioButton2.Checked = r.Cells[3].Value.ToString() == "Không hoạt động";
             }
         }
-
         private void btn_Them_Click(object sender, EventArgs e)
         {
             if (tb_Ten.Text == "")
             {
-                MessageBox.Show("Hãy nhập tên");
+                MessageBox.Show("Hãy nhập tên chất liệu");
             }
-            
+            else if (_IChatLieuServices.GetAll().FirstOrDefault(x => x.Ten == tb_Ten.Text) != null)
+            {
+                MessageBox.Show("Chất liệu đã tồn tại, vui lòng nhập chất liệu khác");
+            }
             else if (radioButton1.Checked == false && radioButton2.Checked == false)
             {
-                MessageBox.Show("Hãy chọn trạng thái");
+                MessageBox.Show("Hãy chọn trạng thái của chất liệu");
             }
             else
             {
-                DialogResult dlg = MessageBox.Show("Bạn có muốn thêm", "Chú ý", MessageBoxButtons.YesNo);
-                if (dlg == DialogResult.Yes)
+                DialogResult dg = MessageBox.Show("Bạn muốn thêm chất liệu này", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dg == DialogResult.Yes)
                 {
                     ChatLieuViews a = new ChatLieuViews()
                     {
@@ -112,27 +116,32 @@ namespace _3.PL.Views
                 }
             }
         }
-
+       
         private void btn_Sua_Click(object sender, EventArgs e)
         {
             if (_ChatLieu == null)
             {
-                MessageBox.Show("Bạn chưa chọn");
+                MessageBox.Show("Vui lòng chọn chất liệu cần sửa");
             }
             else
             {
                 if (tb_Ten.Text == "")
                 {
-                    MessageBox.Show("Hãy nhập tên ");
+                    MessageBox.Show("Hãy nhập tên chất liệu");
+                }
+                else if (_IChatLieuServices.GetAll().FirstOrDefault(x => x.Ten == tb_Ten.Text && x.Id != _ChatLieu.Id) != null)
+                {
+                    MessageBox.Show("Chất liệu đã tồn tại, vui lòng nhập chất liệu khác");
                 }
                 else if (radioButton1.Checked == false && radioButton2.Checked == false)
                 {
-                    MessageBox.Show("Hãy chọn trạng thái");
+                    MessageBox.Show("Hãy chọn trạng thái chất liệu");
                 }
+              
                 else
                 {
-                    DialogResult dlg = MessageBox.Show("Bạn có muốn sửa ", "Chú ý", MessageBoxButtons.YesNo);
-                    if (dlg == DialogResult.Yes)
+                    DialogResult dg = MessageBox.Show("Bạn muốn sửa chất liệu này", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dg == DialogResult.Yes)
                     {
                         _ChatLieu.Ma = tb_Ma.Text;
                         _ChatLieu.Ten = tb_Ten.Text;
@@ -149,12 +158,12 @@ namespace _3.PL.Views
         {
             if (_ChatLieu == null)
             {
-                MessageBox.Show("Bạn chưa chọn");
+                MessageBox.Show("Vui lòng chọn chất liệu cần xóa");
             }
             else
             {
-                DialogResult dlg = MessageBox.Show("Bạn có muốn xóa", "Chú ý", MessageBoxButtons.YesNo);
-                if (dlg == DialogResult.Yes)
+                DialogResult dg = MessageBox.Show("Bạn muốn xóa chất liệu này", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dg == DialogResult.Yes)
                 {
                     _IChatLieuServices.Delete(_ChatLieu);
                     MessageBox.Show("Xóa thành công");

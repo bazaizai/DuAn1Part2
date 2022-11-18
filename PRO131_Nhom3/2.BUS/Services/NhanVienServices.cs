@@ -47,7 +47,7 @@ namespace _2.BUS.Services
                 TaiKhoan = obj.TaiKhoan,
                 TrangThai = obj.TrangThai
             };
-            _iNhanVienRepos.Add(nv);
+            if (_iNhanVienRepos.Add(nv)) return "thêm thành công";
             return "thêm thành công";
         }
 
@@ -72,8 +72,8 @@ namespace _2.BUS.Services
                 TaiKhoan = obj.TaiKhoan,
                 TrangThai = obj.TrangThai
             };
-            _iNhanVienRepos.Delete(nv);
-            return "xóa thành công";
+            if (_iNhanVienRepos.Delete(nv)) return "xóa thành công";
+            return "xóa thất bại";
         }
 
         public List<NhanVienView> GetAll()
@@ -127,8 +127,8 @@ namespace _2.BUS.Services
                 TaiKhoan = obj.TaiKhoan,
                 TrangThai = obj.TrangThai
             };
-            _iNhanVienRepos.Update(nv);
-            return "sửa thành công";
+            if (_iNhanVienRepos.Update(nv)) return "sửa thành công";
+            return "sửa thất bại";
         }
     }
 }

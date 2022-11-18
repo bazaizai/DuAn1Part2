@@ -102,6 +102,7 @@
             // 
             this.dtg_show.AllowUserToAddRows = false;
             this.dtg_show.AllowUserToDeleteRows = false;
+            this.dtg_show.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_show.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_show.Location = new System.Drawing.Point(58, 253);
             this.dtg_show.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -143,14 +144,14 @@
             this.bt_update.Name = "bt_update";
             this.bt_update.Size = new System.Drawing.Size(82, 22);
             this.bt_update.TabIndex = 34;
-            this.bt_update.Text = "Cập nhật";
+            this.bt_update.Text = "Sửa";
             this.bt_update.UseVisualStyleBackColor = true;
             this.bt_update.Click += new System.EventHandler(this.bt_update_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(89, 180);
+            this.label3.Location = new System.Drawing.Point(94, 180);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 15);
             this.label3.TabIndex = 33;

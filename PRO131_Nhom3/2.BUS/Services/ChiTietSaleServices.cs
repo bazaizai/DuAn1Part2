@@ -44,6 +44,21 @@ namespace _2.BUS.Services
             return "Xóa thất bại";
         }
 
+        public string Delete(ChiTietSaleView chiTietSale)
+        {
+            if (chiTietSale == null) return "Xóa thất bại";
+           ChiTietSale sale = new ChiTietSale
+            {
+                Id = chiTietSale.Id,
+                IdSale = chiTietSale.IdSale,
+                IdChiTietSp = chiTietSale.IdChiTietSp,
+                MoTa = chiTietSale.MoTa,
+                TrangThai = chiTietSale.TrangThai,
+            };
+           _chiTietSaleRepos.Delete(sale);
+            return "Xóa thành công";
+        }
+
         public List<ChiTietSaleView> GetAll()
         {
             lstctSale = (from a in _chiTietSaleRepos.GetAll()
