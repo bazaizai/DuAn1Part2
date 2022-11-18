@@ -15,14 +15,14 @@ namespace _2.BUS.Services
     {
         ILichSuTichDiemRepos _iLichSuTichDiemRepos;
         ITichDiemRepos _iTichDiemRepos;
-        //ICtTichDiemRepos _iCtTichDiemRepos;
-        //IHoaDonRepos _iHoaDonRepos;
+        ICtTichDiemRepos _iCtTichDiemRepos;
+        IHoaDonRepos _iHoaDonRepos;
         public LichSuTichDiemServices()
         {
             _iLichSuTichDiemRepos = new LichSuTichDiemRepos();
             _iTichDiemRepos = new TichDiemRepos();
-            //_iCtTichDiemRepos = new CtTichDiemRepos();
-            //_iHoaDonRepos = new HoaDonRepos();
+            _iCtTichDiemRepos = new CtTichDiemRepos();
+            _iHoaDonRepos = new HoaDonRepos();
         }
         public string Add(LichSuTichDiemView obj)
         {
@@ -65,12 +65,12 @@ namespace _2.BUS.Services
         public List<LichSuTichDiemView> GetAll()
         {
             var lst = (from lstd in _iLichSuTichDiemRepos.GetAll()
-                       //join td in _iTichDiemRepos.GetAll() on lstd.IdTichDiem equals td.Id
+                       join td in _iTichDiemRepos.GetAll() on lstd.IdTichDiem equals td.Id
                        //join c in (from cttd in _iCtTichDiemRepos.GetAll()
-                       //           join hd in _iHoaDonRepos.GetAll() on cttd.IdHoaDon equals hd.Id
-                       //           select new CtTinhDiemView()
+                       //           join hd in _iHoaDonRepos.GetAll() on cttd.Id equals hd.Id
+                       //           select new HoaDonViews()
                        //           {
-                       //               Id = cttd.Id,
+                       //               Id = hd.Id,
                        //               IdHoaDon = cttd.IdHoaDon,
                        //               MaHD = hd.Ma,
                        //               TrangThai = cttd.TrangThai,

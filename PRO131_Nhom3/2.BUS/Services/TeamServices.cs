@@ -82,5 +82,20 @@ namespace _2.BUS.Services
         {
             return GetAll().FirstOrDefault(x=>x.Ten == name).Id;
         }
+
+        public string Delete(TeamView team)
+        {
+            if (team == null) return "Xóa thất bại";
+           Team team1 = new Team()
+            {
+               Id = team.Id,
+               IdGd = team.IdGd,
+               Ma = team.Ma,
+               Ten = team.Ten,
+               TrangThai = team.TrangThai,
+           };
+            _teamRepos.Delete(team1);
+            return "Xóa thành công";
+        }
     }
 }

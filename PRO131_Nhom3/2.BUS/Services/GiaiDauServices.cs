@@ -40,6 +40,20 @@ namespace _2.BUS.Services
             if (_giaiDauRepos.Delete(x)) return "Xóa thành công";
             return "Xóa thất bại";
         }
+     
+        public string Delete(GiaiDauView giaiDau)
+        {
+            if (giaiDau == null) return "Xóa thất bại";
+            GiaiDau giaiDau1 = new GiaiDau()
+            {
+                Id = giaiDau.Id,
+                Ma = giaiDau.Ma,
+                Ten = giaiDau.Ten,
+                TrangThai = giaiDau.TrangThai,
+            };
+            _giaiDauRepos.Delete(giaiDau1);
+            return "Xóa thành công";
+        }
 
         public List<GiaiDauView> GetAll()
         {

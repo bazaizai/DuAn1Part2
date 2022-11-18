@@ -35,7 +35,7 @@ namespace _3.PL.Views
             _IChatLieuServices = new ChatLieuServices();
             _ISizeServices = new KichCoServices();
             _IanhServices = new AnhServices();
-            LoadItem();
+            //LoadItem();
             count = 1;
         }
 
