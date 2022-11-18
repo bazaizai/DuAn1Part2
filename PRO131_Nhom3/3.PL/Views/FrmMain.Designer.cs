@@ -75,7 +75,7 @@
             // pnlMenu
             // 
             this.pnlMenu.AutoScroll = true;
-            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
+            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(165)))), ((int)(((byte)(195)))));
             this.pnlMenu.Controls.Add(this.btnBanHang);
             this.pnlMenu.Controls.Add(this.pnlbtn9);
             this.pnlMenu.Controls.Add(this.btnQLHoaDon);
@@ -92,11 +92,12 @@
             // 
             // btnBanHang
             // 
+            this.btnBanHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.btnBanHang.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBanHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBanHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBanHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnBanHang.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnBanHang.ForeColor = System.Drawing.Color.White;
             this.btnBanHang.IconChar = FontAwesome.Sharp.IconChar.Sellcast;
             this.btnBanHang.IconColor = System.Drawing.Color.Gainsboro;
             this.btnBanHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -109,7 +110,7 @@
             this.btnBanHang.Text = "Bán Hàng";
             this.btnBanHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBanHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBanHang.UseVisualStyleBackColor = true;
+            this.btnBanHang.UseVisualStyleBackColor = false;
             this.btnBanHang.Click += new System.EventHandler(this.btnBanHang_Click);
             // 
             // pnlbtn9
@@ -126,12 +127,13 @@
             // 
             // iconButton10
             // 
-            this.iconButton10.BackColor = System.Drawing.Color.RosyBrown;
+            this.iconButton10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.iconButton10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton10.FlatAppearance.BorderSize = 0;
+            this.iconButton10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.iconButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.iconButton10.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButton10.ForeColor = System.Drawing.Color.White;
             this.iconButton10.IconChar = FontAwesome.Sharp.IconChar.Palfed;
             this.iconButton10.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButton10.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -147,12 +149,13 @@
             // 
             // iconButton11
             // 
-            this.iconButton11.BackColor = System.Drawing.Color.RosyBrown;
+            this.iconButton11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.iconButton11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton11.FlatAppearance.BorderSize = 0;
+            this.iconButton11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.iconButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.iconButton11.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButton11.ForeColor = System.Drawing.Color.White;
             this.iconButton11.IconChar = FontAwesome.Sharp.IconChar.Palfed;
             this.iconButton11.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButton11.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -168,12 +171,13 @@
             // 
             // iconButton12
             // 
-            this.iconButton12.BackColor = System.Drawing.Color.RosyBrown;
+            this.iconButton12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.iconButton12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton12.FlatAppearance.BorderSize = 0;
+            this.iconButton12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.iconButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.iconButton12.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButton12.ForeColor = System.Drawing.Color.White;
             this.iconButton12.IconChar = FontAwesome.Sharp.IconChar.Palfed;
             this.iconButton12.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButton12.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -189,11 +193,12 @@
             // 
             // btnQLHoaDon
             // 
+            this.btnQLHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.btnQLHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQLHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQLHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnQLHoaDon.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnQLHoaDon.ForeColor = System.Drawing.Color.White;
             this.btnQLHoaDon.IconChar = FontAwesome.Sharp.IconChar.Palfed;
             this.btnQLHoaDon.IconColor = System.Drawing.Color.Gainsboro;
             this.btnQLHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -206,7 +211,7 @@
             this.btnQLHoaDon.Text = "QL Hóa Đơn";
             this.btnQLHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQLHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQLHoaDon.UseVisualStyleBackColor = true;
+            this.btnQLHoaDon.UseVisualStyleBackColor = false;
             // 
             // pnlbtn5
             // 
@@ -221,12 +226,13 @@
             // 
             // btnChucvu
             // 
-            this.btnChucvu.BackColor = System.Drawing.Color.RosyBrown;
+            this.btnChucvu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnChucvu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChucvu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnChucvu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChucvu.FlatAppearance.BorderSize = 0;
+            this.btnChucvu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnChucvu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnChucvu.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnChucvu.ForeColor = System.Drawing.Color.White;
             this.btnChucvu.IconChar = FontAwesome.Sharp.IconChar.Palfed;
             this.btnChucvu.IconColor = System.Drawing.Color.Gainsboro;
             this.btnChucvu.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -239,15 +245,17 @@
             this.btnChucvu.TabIndex = 1;
             this.btnChucvu.Text = "Chức Vụ";
             this.btnChucvu.UseVisualStyleBackColor = false;
+            this.btnChucvu.Click += new System.EventHandler(this.btnChucvu_Click);
             // 
             // btnNhanvien
             // 
-            this.btnNhanvien.BackColor = System.Drawing.Color.RosyBrown;
+            this.btnNhanvien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNhanvien.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNhanvien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhanvien.FlatAppearance.BorderSize = 0;
+            this.btnNhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnNhanvien.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnNhanvien.ForeColor = System.Drawing.Color.White;
             this.btnNhanvien.IconChar = FontAwesome.Sharp.IconChar.Palfed;
             this.btnNhanvien.IconColor = System.Drawing.Color.Gainsboro;
             this.btnNhanvien.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -260,14 +268,16 @@
             this.btnNhanvien.TabIndex = 0;
             this.btnNhanvien.Text = "Nhân Viên";
             this.btnNhanvien.UseVisualStyleBackColor = false;
+            this.btnNhanvien.Click += new System.EventHandler(this.btnNhanvien_Click);
             // 
             // btnQLNhanVien
             // 
+            this.btnQLNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.btnQLNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQLNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQLNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnQLNhanVien.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnQLNhanVien.ForeColor = System.Drawing.Color.White;
             this.btnQLNhanVien.IconChar = FontAwesome.Sharp.IconChar.Palfed;
             this.btnQLNhanVien.IconColor = System.Drawing.Color.Gainsboro;
             this.btnQLNhanVien.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -280,7 +290,7 @@
             this.btnQLNhanVien.Text = "QL Nhân Viên";
             this.btnQLNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQLNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQLNhanVien.UseVisualStyleBackColor = true;
+            this.btnQLNhanVien.UseVisualStyleBackColor = false;
             this.btnQLNhanVien.Click += new System.EventHandler(this.iconButton5_Click);
             // 
             // pnlbtn1
@@ -302,12 +312,13 @@
             // 
             // btnKieusp
             // 
-            this.btnKieusp.BackColor = System.Drawing.Color.RosyBrown;
+            this.btnKieusp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnKieusp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKieusp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnKieusp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKieusp.FlatAppearance.BorderSize = 0;
+            this.btnKieusp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnKieusp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnKieusp.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnKieusp.ForeColor = System.Drawing.Color.White;
             this.btnKieusp.IconChar = FontAwesome.Sharp.IconChar.Palfed;
             this.btnKieusp.IconColor = System.Drawing.Color.Gainsboro;
             this.btnKieusp.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -324,12 +335,13 @@
             // 
             // BtnGiaiDau
             // 
-            this.BtnGiaiDau.BackColor = System.Drawing.Color.RosyBrown;
+            this.BtnGiaiDau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnGiaiDau.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnGiaiDau.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnGiaiDau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGiaiDau.FlatAppearance.BorderSize = 0;
+            this.BtnGiaiDau.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnGiaiDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnGiaiDau.ForeColor = System.Drawing.Color.Gainsboro;
+            this.BtnGiaiDau.ForeColor = System.Drawing.Color.White;
             this.BtnGiaiDau.IconChar = FontAwesome.Sharp.IconChar.Palfed;
             this.BtnGiaiDau.IconColor = System.Drawing.Color.Gainsboro;
             this.BtnGiaiDau.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -342,15 +354,17 @@
             this.BtnGiaiDau.TabIndex = 6;
             this.BtnGiaiDau.Text = "Giải Đấu";
             this.BtnGiaiDau.UseVisualStyleBackColor = false;
+            this.BtnGiaiDau.Click += new System.EventHandler(this.BtnGiaiDau_Click);
             // 
             // btnTeam
             // 
-            this.btnTeam.BackColor = System.Drawing.Color.RosyBrown;
+            this.btnTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnTeam.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTeam.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTeam.FlatAppearance.BorderSize = 0;
+            this.btnTeam.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTeam.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnTeam.ForeColor = System.Drawing.Color.White;
             this.btnTeam.IconChar = FontAwesome.Sharp.IconChar.Palfed;
             this.btnTeam.IconColor = System.Drawing.Color.Gainsboro;
             this.btnTeam.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -363,15 +377,17 @@
             this.btnTeam.TabIndex = 5;
             this.btnTeam.Text = "Team";
             this.btnTeam.UseVisualStyleBackColor = false;
+            this.btnTeam.Click += new System.EventHandler(this.btnTeam_Click);
             // 
             // btnKichThuoc
             // 
-            this.btnKichThuoc.BackColor = System.Drawing.Color.RosyBrown;
+            this.btnKichThuoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnKichThuoc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKichThuoc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnKichThuoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKichThuoc.FlatAppearance.BorderSize = 0;
+            this.btnKichThuoc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnKichThuoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnKichThuoc.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnKichThuoc.ForeColor = System.Drawing.Color.White;
             this.btnKichThuoc.IconChar = FontAwesome.Sharp.IconChar.Palfed;
             this.btnKichThuoc.IconColor = System.Drawing.Color.Gainsboro;
             this.btnKichThuoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -384,15 +400,17 @@
             this.btnKichThuoc.TabIndex = 4;
             this.btnKichThuoc.Text = "Kích Thước";
             this.btnKichThuoc.UseVisualStyleBackColor = false;
+            this.btnKichThuoc.Click += new System.EventHandler(this.btnKichThuoc_Click);
             // 
             // btnChatLieu
             // 
-            this.btnChatLieu.BackColor = System.Drawing.Color.RosyBrown;
+            this.btnChatLieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnChatLieu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChatLieu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnChatLieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChatLieu.FlatAppearance.BorderSize = 0;
+            this.btnChatLieu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnChatLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnChatLieu.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnChatLieu.ForeColor = System.Drawing.Color.White;
             this.btnChatLieu.IconChar = FontAwesome.Sharp.IconChar.Palfed;
             this.btnChatLieu.IconColor = System.Drawing.Color.Gainsboro;
             this.btnChatLieu.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -405,15 +423,17 @@
             this.btnChatLieu.TabIndex = 3;
             this.btnChatLieu.Text = "Chất Liệu";
             this.btnChatLieu.UseVisualStyleBackColor = false;
+            this.btnChatLieu.Click += new System.EventHandler(this.btnChatLieu_Click);
             // 
             // btnMauSac
             // 
-            this.btnMauSac.BackColor = System.Drawing.Color.RosyBrown;
+            this.btnMauSac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnMauSac.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMauSac.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMauSac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMauSac.FlatAppearance.BorderSize = 0;
+            this.btnMauSac.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMauSac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnMauSac.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnMauSac.ForeColor = System.Drawing.Color.White;
             this.btnMauSac.IconChar = FontAwesome.Sharp.IconChar.Palfed;
             this.btnMauSac.IconColor = System.Drawing.Color.Gainsboro;
             this.btnMauSac.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -426,15 +446,17 @@
             this.btnMauSac.TabIndex = 2;
             this.btnMauSac.Text = "Màu Sắc";
             this.btnMauSac.UseVisualStyleBackColor = false;
+            this.btnMauSac.Click += new System.EventHandler(this.btnMauSac_Click);
             // 
             // btnSP
             // 
-            this.btnSP.BackColor = System.Drawing.Color.RosyBrown;
+            this.btnSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSP.FlatAppearance.BorderSize = 0;
+            this.btnSP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSP.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSP.ForeColor = System.Drawing.Color.White;
             this.btnSP.IconChar = FontAwesome.Sharp.IconChar.Palfed;
             this.btnSP.IconColor = System.Drawing.Color.Gainsboro;
             this.btnSP.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -447,15 +469,17 @@
             this.btnSP.TabIndex = 1;
             this.btnSP.Text = "Sản Phẩm";
             this.btnSP.UseVisualStyleBackColor = false;
+            this.btnSP.Click += new System.EventHandler(this.btnSP_Click);
             // 
             // btnCTSP
             // 
-            this.btnCTSP.BackColor = System.Drawing.Color.RosyBrown;
+            this.btnCTSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCTSP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCTSP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCTSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCTSP.FlatAppearance.BorderSize = 0;
+            this.btnCTSP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCTSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCTSP.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCTSP.ForeColor = System.Drawing.Color.White;
             this.btnCTSP.IconChar = FontAwesome.Sharp.IconChar.Palfed;
             this.btnCTSP.IconColor = System.Drawing.Color.Gainsboro;
             this.btnCTSP.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -472,11 +496,12 @@
             // 
             // QLSP
             // 
+            this.QLSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.QLSP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.QLSP.Dock = System.Windows.Forms.DockStyle.Top;
             this.QLSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.QLSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.QLSP.ForeColor = System.Drawing.Color.Gainsboro;
+            this.QLSP.ForeColor = System.Drawing.Color.Transparent;
             this.QLSP.IconChar = FontAwesome.Sharp.IconChar.Palfed;
             this.QLSP.IconColor = System.Drawing.Color.Gainsboro;
             this.QLSP.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -489,7 +514,7 @@
             this.QLSP.Text = "QL Sản Phẩm";
             this.QLSP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QLSP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.QLSP.UseVisualStyleBackColor = true;
+            this.QLSP.UseVisualStyleBackColor = false;
             this.QLSP.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // pictureBox1
@@ -610,13 +635,15 @@
             this.pnlBody.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.pnlBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.pnlBody.CausesValidation = false;
             this.pnlBody.Controls.Add(this.rjCircularPictureBox1);
             this.pnlBody.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pnlBody.Location = new System.Drawing.Point(265, 37);
             this.pnlBody.Name = "pnlBody";
             this.pnlBody.Size = new System.Drawing.Size(1167, 816);
             this.pnlBody.TabIndex = 2;
+            this.pnlBody.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBody_Paint);
             // 
             // rjCircularPictureBox1
             // 
