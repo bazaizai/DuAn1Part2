@@ -11,7 +11,7 @@ namespace _2.BUS.IServices
     {
         string Add(GiaiDauView giaiDau);
         string Update(GiaiDauView giaiDau);
-        string Delete(Guid id);
+        string Delete(GiaiDauView giaiDau);
         Guid GetIdByName(string name);
         List<GiaiDauView> GetAll();
     }

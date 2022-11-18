@@ -20,6 +20,7 @@ namespace _3.PL.Views
         private ISaleServices _saleServices;
         private List<SaleView> lstSale;
         private Guid idSale;
+        private SaleView _slv;
         public FrmSale()
         {
             InitializeComponent();
@@ -32,11 +33,11 @@ namespace _3.PL.Views
         }
         private void loadlb()
         {
-            if(cbb_loaiKm.Text== "Giảm giá theo %")
+            if(cbb_loaiKm.Text== "%")
             {
                 lb_mucgiam.Text = "% giảm";
             }
-            if (cbb_loaiKm.Text == "Giảm giá theo tiền mặt")
+            if (cbb_loaiKm.Text == "Tiền mặt")
             {
                 lb_mucgiam.Text = "Số tiền giảm";
             } 
@@ -71,8 +72,8 @@ namespace _3.PL.Views
         }
         private void loadcbb()
         {
-            cbb_loaiKm.Items.Add("Giảm giá theo %");
-            cbb_loaiKm.Items.Add("Giảm giá theo tiền mặt");
+            cbb_loaiKm.Items.Add("%");
+            cbb_loaiKm.Items.Add("Tiền mặt");
         }
         private void ClearForm()
         {
@@ -97,6 +98,10 @@ namespace _3.PL.Views
                 {
                     MessageBox.Show("Vui lòng chọn mã sale cần sửa");
                 }
+                else if(_saleServices.GetAll().FirstOrDefault(c=>c.Ten == tb_ten.Text && c.Id !=_slv.Id) !=null)
+                {
+                    MessageBox.Show("Tên sale được trùng");
+                }
                 else if (rdb_hd.Checked == false && rdb_khd.Checked == false)
                 {
                     MessageBox.Show("Vui lòng chọn trạng thái");
@@ -107,7 +112,7 @@ namespace _3.PL.Views
                 }    
                 else if (dtp_end.Value < dtp_start.Value)
                 {
-                    MessageBox.Show("Ngày kết thúc sale không được bé hơn ngày bắt đầu");
+                    MessageBox.Show("Thời gian kết thúc sale không được bé hơn thời gian bắt đầu");
                 }
                 else if (ValidateInput.CheckIntInput(tb_mucgiam.Text) == false || Convert.ToDecimal(tb_mucgiam.Text) < 0)
                 {
@@ -203,13 +208,13 @@ namespace _3.PL.Views
             DialogResult result = MessageBox.Show("Bạn có muốn xóa ?", "Cảnh báo", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                if (idSale == Guid.Empty)
+                if (_slv ==null)
                 {
                     MessageBox.Show("Vui lòng chọn sale cần xóa");
                 }
                 else
                 {
-                    MessageBox.Show(_saleServices.Delete(idSale));
+                    MessageBox.Show(_saleServices.Delete(_slv));
                     ClearForm();
                     loadData();
                 }
@@ -232,6 +237,7 @@ namespace _3.PL.Views
 
         private void dtg_show_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            _slv = _saleServices.GetAll().FirstOrDefault(c => c.Id == Guid.Parse(dtg_show.CurrentRow.Cells[0].Value.ToString()));
             idSale = (Guid)(dtg_show.CurrentRow.Cells[0].Value);
             tb_ma.Text = dtg_show.CurrentRow.Cells[1].Value.ToString();
             tb_ten.Text = dtg_show.CurrentRow.Cells[2].Value.ToString();

@@ -11,7 +11,7 @@ namespace _2.BUS.IServices
     {
         string Add(SaleView sale);
         string Update(SaleView sale);
-        string Delete(Guid id);
+        string Delete(SaleView sale);
         List<SaleView> GetAll();
         Guid GetIdByName(string name);
     }
