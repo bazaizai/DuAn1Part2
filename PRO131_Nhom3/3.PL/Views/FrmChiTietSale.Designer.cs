@@ -75,7 +75,7 @@
             this.dtp_end.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtp_end.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_end.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_end.Location = new System.Drawing.Point(252, 377);
             this.dtp_end.Name = "dtp_end";
             this.dtp_end.Size = new System.Drawing.Size(238, 23);
@@ -86,12 +86,12 @@
             this.dtp_start.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtp_start.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_start.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_start.Location = new System.Drawing.Point(252, 325);
             this.dtp_start.Name = "dtp_start";
             this.dtp_start.Size = new System.Drawing.Size(238, 23);
             this.dtp_start.TabIndex = 93;
-            this.dtp_start.Value = new System.DateTime(2022, 11, 10, 0, 0, 0, 0);
+            this.dtp_start.Value = new System.DateTime(2022, 11, 18, 0, 0, 0, 0);
             // 
             // label9
             // 
@@ -512,6 +512,7 @@
             this.cbb_locTrangthai.Name = "cbb_locTrangthai";
             this.cbb_locTrangthai.Size = new System.Drawing.Size(163, 23);
             this.cbb_locTrangthai.TabIndex = 4;
+            this.cbb_locTrangthai.SelectedIndexChanged += new System.EventHandler(this.cbb_locTrangthai_SelectedIndexChanged);
             // 
             // bt_timkm
             // 
@@ -532,6 +533,7 @@
             this.cbb_locKM.Name = "cbb_locKM";
             this.cbb_locKM.Size = new System.Drawing.Size(112, 23);
             this.cbb_locKM.TabIndex = 2;
+            this.cbb_locKM.SelectedIndexChanged += new System.EventHandler(this.cbb_locKM_SelectedIndexChanged);
             // 
             // tb_timkiemkm
             // 

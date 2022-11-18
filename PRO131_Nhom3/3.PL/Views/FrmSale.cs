@@ -33,11 +33,11 @@ namespace _3.PL.Views
         }
         private void loadlb()
         {
-            if(cbb_loaiKm.Text== "Giảm giá theo %")
+            if(cbb_loaiKm.Text== "%")
             {
                 lb_mucgiam.Text = "% giảm";
             }
-            if (cbb_loaiKm.Text == "Giảm giá theo tiền mặt")
+            if (cbb_loaiKm.Text == "Tiền mặt")
             {
                 lb_mucgiam.Text = "Số tiền giảm";
             } 
@@ -72,8 +72,8 @@ namespace _3.PL.Views
         }
         private void loadcbb()
         {
-            cbb_loaiKm.Items.Add("Giảm giá theo %");
-            cbb_loaiKm.Items.Add("Giảm giá theo tiền mặt");
+            cbb_loaiKm.Items.Add("%");
+            cbb_loaiKm.Items.Add("Tiền mặt");
         }
         private void ClearForm()
         {

@@ -39,23 +39,25 @@ namespace _3.PL.Views
             loadlb();
             loadKM();
             loadCTSP();
+         
+            ngaygio();
         }
         private void loadlb()
         {
 
-            if (cbb_loaiKM.Texts == "Giảm giá theo %")
+            if (cbb_loaiKM.Texts == "%")
             {
                 lb_mucgiam.Text = "% giảm";
             }
-            if (cbb_loaiKM.Texts == "Giảm giá theo tiền mặt")
+            if (cbb_loaiKM.Texts == "Tiền mặt")
             {
                 lb_mucgiam.Text = "Số tiền giảm";
             }
         }
         private void loadcbb()
         {
-            cbb_loaiKM.Items.Add("Giảm giá theo %");
-            cbb_loaiKM.Items.Add("Giảm giá theo tiền mặt");
+            cbb_loaiKM.Items.Add("%");
+            cbb_loaiKM.Items.Add("Tiền mặt");
             cbb_trangthai.Items.Add("Đang áp dụng");
             cbb_trangthai.Items.Add("Ngừng áp dụng");
             dtp_end.Value = DateTime.Now;
@@ -66,6 +68,8 @@ namespace _3.PL.Views
             cbb_locTrangthai.Items.Add("Tất cả");
             cbb_locTrangthai.Items.Add("Đang áp dụng");
             cbb_locTrangthai.Items.Add("Ngừng áp dụng");
+            cbb_locKM.SelectedIndex = 0;
+            cbb_locTrangthai.SelectedIndex = 0;
         }
 
         private void loadKM()
@@ -85,7 +89,7 @@ namespace _3.PL.Views
             lstSale = _SaleServices.GetAll();
             if (tb_timkiemkm.Text != "")
             {
-                lstSale = lstSale.Where(c => c.Ten.Contains(tb_timkiemkm.Text)).ToList();
+                lstSale = lstSale.Where(c => c.Ten.ToLower().Contains(tb_timkiemkm.Text.ToLower())).ToList();
             }
             foreach (var item in lstSale)
             {
@@ -137,6 +141,11 @@ namespace _3.PL.Views
 
 
         }
+        private void ngaygio()
+        {
+            dtp_start.CustomFormat = " HH:mm:ss  dd/MM/yyyy";
+            dtp_end.CustomFormat = " HH:mm:ss  dd/MM/yyyy";
+        }
         private void bt_them_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có muốn thêm ?", "Cảnh báo", MessageBoxButtons.YesNo);
@@ -163,7 +172,7 @@ namespace _3.PL.Views
                 {
                     MessageBox.Show("Không được giảm quá 100%");
                 }
-                else if (DateTime.Now < dtp_start.Value)
+                else if (DateTime.Now.Day < dtp_start.Value.Day)
                 {
                     MessageBox.Show("Ngày bắt đầu không được bé hơn ngày hiện tại");
                 }
@@ -297,6 +306,108 @@ namespace _3.PL.Views
             else
             {
                 MessageBox.Show("Bạn đã hủy sửa");
+            }
+        }
+
+        private void cbb_locKM_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbb_locKM.Text == "Tất cả")
+            {
+                loadKM();
+            }
+            else if (cbb_locKM.Text == "%")
+            {
+                dtg_show.Rows.Clear();
+                dtg_show.ColumnCount = 9;
+                dtg_show.Columns[0].Name = "ID";
+                dtg_show.Columns[0].Visible = false;
+                dtg_show.Columns[1].Name = "Mã";
+                dtg_show.Columns[2].Name = "Tên";
+                dtg_show.Columns[3].Name = "Ngày bắt đầu";
+                dtg_show.Columns[4].Name = "Ngày kết thúc";
+                dtg_show.Columns[5].Name = "Loại hình KM";
+                dtg_show.Columns[6].Name = "Mức giảm";
+                dtg_show.Columns[7].Name = "Mô tả";
+                dtg_show.Columns[8].Name = "Trạng thái";
+                lstSale = _SaleServices.GetAll().Where(c => c.LoaiHinhKm.Contains("%")).ToList();
+                foreach (var item in lstSale)
+                {
+                    dtg_show.Rows.Add(item.Id, item.Ma, item.Ten, item.NgayBatDau, item.NgayKetThuc, item.LoaiHinhKm,
+                        item.MucGiam, item.MoTa, item.TrangThai == 0 ? "Đang áp dụng" : "Ngừng áp dụng");
+                }
+            }
+            else
+            {
+                dtg_show.Rows.Clear();
+                dtg_show.ColumnCount = 9;
+                dtg_show.Columns[0].Name = "ID";
+                dtg_show.Columns[0].Visible = false;
+                dtg_show.Columns[1].Name = "Mã";
+                dtg_show.Columns[2].Name = "Tên";
+                dtg_show.Columns[3].Name = "Ngày bắt đầu";
+                dtg_show.Columns[4].Name = "Ngày kết thúc";
+                dtg_show.Columns[5].Name = "Loại hình KM";
+                dtg_show.Columns[6].Name = "Mức giảm";
+                dtg_show.Columns[7].Name = "Mô tả";
+                dtg_show.Columns[8].Name = "Trạng thái";
+                lstSale = _SaleServices.GetAll().Where(c => c.LoaiHinhKm.Contains("Tiền mặt")).ToList();
+                foreach (var item in lstSale)
+                {
+                    dtg_show.Rows.Add(item.Id, item.Ma, item.Ten, item.NgayBatDau, item.NgayKetThuc, item.LoaiHinhKm,
+                        item.MucGiam, item.MoTa, item.TrangThai == 0 ? "Đang áp dụng" : "Ngừng áp dụng");
+                }
+            }
+        }
+
+        private void cbb_locTrangthai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            if (cbb_locTrangthai.Text == "Tất cả")
+            {
+                loadKM();
+            }
+            else if (cbb_locTrangthai.Text == "Đang áp dụng")
+            {
+                dtg_show.Rows.Clear();
+                dtg_show.ColumnCount = 9;
+                dtg_show.Columns[0].Name = "ID";
+                dtg_show.Columns[0].Visible = false;
+                dtg_show.Columns[1].Name = "Mã";
+                dtg_show.Columns[2].Name = "Tên";
+                dtg_show.Columns[3].Name = "Ngày bắt đầu";
+                dtg_show.Columns[4].Name = "Ngày kết thúc";
+                dtg_show.Columns[5].Name = "Loại hình KM";
+                dtg_show.Columns[6].Name = "Mức giảm";
+                dtg_show.Columns[7].Name = "Mô tả";
+                dtg_show.Columns[8].Name = "Trạng thái";
+                lstSale = _SaleServices.GetAll().Where(c => c.TrangThai == 0).ToList();
+                foreach (var item in lstSale)
+                {
+                    dtg_show.Rows.Add(item.Id, item.Ma, item.Ten, item.NgayBatDau, item.NgayKetThuc, item.LoaiHinhKm,
+                        item.MucGiam, item.MoTa, item.TrangThai == 0 ? "Đang áp dụng" : "Ngừng áp dụng");
+                }
+            }
+            else
+            {
+
+                dtg_show.Rows.Clear();
+                dtg_show.ColumnCount = 9;
+                dtg_show.Columns[0].Name = "ID";
+                dtg_show.Columns[0].Visible = false;
+                dtg_show.Columns[1].Name = "Mã";
+                dtg_show.Columns[2].Name = "Tên";
+                dtg_show.Columns[3].Name = "Ngày bắt đầu";
+                dtg_show.Columns[4].Name = "Ngày kết thúc";
+                dtg_show.Columns[5].Name = "Loại hình KM";
+                dtg_show.Columns[6].Name = "Mức giảm";
+                dtg_show.Columns[7].Name = "Mô tả";
+                dtg_show.Columns[8].Name = "Trạng thái";
+                lstSale = _SaleServices.GetAll().Where(c => c.TrangThai == 1).ToList();
+                foreach (var item in lstSale)
+                {
+                    dtg_show.Rows.Add(item.Id, item.Ma, item.Ten, item.NgayBatDau, item.NgayKetThuc, item.LoaiHinhKm,
+                        item.MucGiam, item.MoTa, item.TrangThai == 0 ? "Đang áp dụng" : "Ngừng áp dụng");
+                }
             }
         }
     }
