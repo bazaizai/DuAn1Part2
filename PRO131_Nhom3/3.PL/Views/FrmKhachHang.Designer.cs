@@ -199,6 +199,7 @@
             this.tb_ma.Name = "tb_ma";
             this.tb_ma.Size = new System.Drawing.Size(266, 37);
             this.tb_ma.TabIndex = 0;
+            this.tb_ma.TextChanged += new System.EventHandler(this.tb_ma_TextChanged);
             // 
             // label7
             // 

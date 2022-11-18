@@ -84,11 +84,11 @@ namespace _3.PL.Views
             DialogResult result = MessageBox.Show("Bạn có muốn thêm không?", "Cảnh báo!", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                if (tb_ma.Text == "")
-                {
-                    MessageBox.Show("Không được để trống mã!");
-                }
-                else if (_iKhachHangServices.GetAll().Any(c => c.Ma == tb_ma.Text))
+                //if (tb_ma.Text == "")
+                //{
+                //    MessageBox.Show("Không được để trống mã!");
+                //}
+                if (_iKhachHangServices.GetAll().Any(c => c.Ma == tb_ma.Text))
                 {
                     MessageBox.Show("Mã bị trùng");
                 }
@@ -347,6 +347,9 @@ namespace _3.PL.Views
             //this.Size = new Size(w, h);
         }
 
-
+        private void tb_ma_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
