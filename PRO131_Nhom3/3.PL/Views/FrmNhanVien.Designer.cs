@@ -80,6 +80,7 @@
             // 
             // cbb_chucvu
             // 
+            this.cbb_chucvu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_chucvu.FormattingEnabled = true;
             this.cbb_chucvu.Location = new System.Drawing.Point(95, 61);
             this.cbb_chucvu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -89,6 +90,7 @@
             // 
             // cbb_gioitinh
             // 
+            this.cbb_gioitinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_gioitinh.FormattingEnabled = true;
             this.cbb_gioitinh.Location = new System.Drawing.Point(95, 169);
             this.cbb_gioitinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
