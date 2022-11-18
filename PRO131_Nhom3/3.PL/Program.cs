@@ -18,12 +18,8 @@ namespace _3.PL
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmKhachHang());
-<<<<<<< HEAD:PRO131_Nhom3/3.PL/Views/Program.cs
+            Application.Run(new FrmMain());
 
-
-=======
->>>>>>> Develop:PRO131_Nhom3/3.PL/Program.cs
         }
     }
 }
