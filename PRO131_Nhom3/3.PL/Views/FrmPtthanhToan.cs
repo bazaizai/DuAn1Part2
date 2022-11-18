@@ -34,7 +34,7 @@ namespace _3.PL.Views
             dtg_Show.ColumnCount = 4;
             dtg_Show.Columns[0].Name = "Id ";
             dtg_Show.Columns[0].Visible = false;
-            dtg_Show.Columns[1].Name = "ma";
+            dtg_Show.Columns[1].Name = "Mã";
             dtg_Show.Columns[2].Name = "Tên ";
             dtg_Show.Columns[3].Name = "Trang Thai";
             var lstPtthanhToan = _IPtthanhToanServices.GetAll();
@@ -88,17 +88,20 @@ namespace _3.PL.Views
         {
             if (tb_Ten.Text == "")
             {
-                MessageBox.Show("Hãy nhập tên");
+                MessageBox.Show("Hãy nhập tên phương thức thanh toán");
             }
-           
+            else if (_IPtthanhToanServices.GetAll().FirstOrDefault(x => x.Ten == tb_Ten.Text) != null)
+            {
+                MessageBox.Show("Phương thức thanh toán đã tồn tại, vui lòng nhập phương thức thanh toán khác");
+            }
             else if (radioButton1.Checked == false && radioButton2.Checked == false)
             {
-                MessageBox.Show("Hãy chọn trạng thái");
+                MessageBox.Show("Hãy chọn trạng thái của phương thức thanh toán");
             }
             else
             {
-                DialogResult dlg = MessageBox.Show("Bạn có muốn thêm", "Chú ý", MessageBoxButtons.YesNo);
-                if (dlg == DialogResult.Yes)
+                DialogResult dg = MessageBox.Show("Bạn muốn thêm phương thức thanh toán này", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dg == DialogResult.Yes)
                 {
                     PtthanhToanViews a = new PtthanhToanViews()
                     {
@@ -117,13 +120,17 @@ namespace _3.PL.Views
         {
             if (_PtthanhToan == null)
             {
-                MessageBox.Show("Bạn chưa chọn");
+                MessageBox.Show("Vui lòng chọn phương thức thanh toán cần sửa");
             }
             else
             {
                 if (tb_Ten.Text == "")
                 {
-                    MessageBox.Show("Hãy nhập tên ");
+                    MessageBox.Show("Hãy nhập tên phương thức thanh toán");
+                }
+                else if (_IPtthanhToanServices.GetAll().FirstOrDefault(x => x.Ten == tb_Ten.Text && x.Id != _PtthanhToan.Id) != null)
+                {
+                    MessageBox.Show("phương thức thanh toán đã tồn tại, vui lòng nhập phương thức thanh toán khác");
                 }
                 else if (radioButton1.Checked == false && radioButton2.Checked == false)
                 {
@@ -131,8 +138,8 @@ namespace _3.PL.Views
                 }
                 else
                 {
-                    DialogResult dlg = MessageBox.Show("Bạn có muốn sửa ", "Chú ý", MessageBoxButtons.YesNo);
-                    if (dlg == DialogResult.Yes)
+                    DialogResult dg = MessageBox.Show("Bạn muốn sửa phương thức thanh toán này", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dg == DialogResult.Yes)
                     {
                         _PtthanhToan.Ma = tb_Ma.Text;
                         _PtthanhToan.Ten = tb_Ten.Text;
@@ -149,12 +156,12 @@ namespace _3.PL.Views
         {
             if (_PtthanhToan == null)
             {
-                MessageBox.Show("Bạn chưa chọn");
+                MessageBox.Show("Vui lòng chọn phương thức thanh toán cần xóa");
             }
             else
             {
-                DialogResult dlg = MessageBox.Show("Bạn có muốn xóa", "Chú ý", MessageBoxButtons.YesNo);
-                if (dlg == DialogResult.Yes)
+                DialogResult dg = MessageBox.Show("Bạn muốn xóa phương thức thanh toán này", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dg == DialogResult.Yes)
                 {
                     _IPtthanhToanServices.Delete(_PtthanhToan);
                     MessageBox.Show("Xóa thành công");

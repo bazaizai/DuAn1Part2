@@ -1,4 +1,5 @@
-﻿using _2.BUS.IServices;
+﻿using _1.DAL.DomainClass;
+using _2.BUS.IServices;
 using _2.BUS.Services;
 using _2.BUS.ViewModels;
 using System;
@@ -32,7 +33,7 @@ namespace _3.PL.Views
             dtg_Show.ColumnCount = 4;
             dtg_Show.Columns[0].Name = "Id ";
             dtg_Show.Columns[0].Visible = false;
-            dtg_Show.Columns[1].Name = "ma";
+            dtg_Show.Columns[1].Name = " Mã";
             dtg_Show.Columns[2].Name = "Tên ";
             dtg_Show.Columns[3].Name = "Trang Thai";
             var lstSanPham = _ISanPhamServices.GetAll();
@@ -76,17 +77,20 @@ namespace _3.PL.Views
         {
             if (tb_Ten.Text == "")
             {
-                MessageBox.Show("Hãy nhập tên");
+                MessageBox.Show("Hãy nhập tên sản phẩm");
             }
-          
+            else if (_ISanPhamServices.GetAll().FirstOrDefault(x => x.Ten == tb_Ten.Text) != null)
+            {
+                MessageBox.Show("Sản phẩm đã tồn tại, vui lòng nhập sản phẩm khác");
+            }
             else if (radioButton1.Checked == false && radioButton2.Checked == false)
             {
-                MessageBox.Show("Hãy chọn trạng thái");
+                MessageBox.Show("Hãy chọn trạng thái của sản phẩm");
             }
             else
             {
-                DialogResult dlg = MessageBox.Show("Bạn có muốn thêm", "Chú ý", MessageBoxButtons.YesNo);
-                if (dlg == DialogResult.Yes)
+                DialogResult dg = MessageBox.Show("Bạn muốn thêm sản phẩm này", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dg == DialogResult.Yes)
                 {
                     SanPhamViews a = new SanPhamViews()
                     {
@@ -105,22 +109,27 @@ namespace _3.PL.Views
         {
             if (_SanPham == null)
             {
-                MessageBox.Show("Bạn chưa chọn");
+                MessageBox.Show("Vui lòng chọn sản phẩm cần sửa");
             }
             else
             {
                 if (tb_Ten.Text == "")
                 {
-                    MessageBox.Show("Hãy nhập tên ");
+                    MessageBox.Show("Hãy nhập tên sản phẩm ");
+                }
+                else if (_ISanPhamServices.GetAll().FirstOrDefault(x => x.Ten == tb_Ten.Text && x.Id != _SanPham.Id) != null)
+                {
+                    MessageBox.Show("Sản phẩm đã tồn tại, vui lòng nhập sản phẩm khác");
                 }
                 else if (radioButton1.Checked == false && radioButton2.Checked == false)
                 {
-                    MessageBox.Show("Hãy chọn trạng thái");
+                    MessageBox.Show("Hãy chọn trạng thái sản phẩm");
                 }
+
                 else
                 {
-                    DialogResult dlg = MessageBox.Show("Bạn có muốn sửa ", "Chú ý", MessageBoxButtons.YesNo);
-                    if (dlg == DialogResult.Yes)
+                    DialogResult dg = MessageBox.Show("Bạn muốn sửa sản phẩm này", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dg == DialogResult.Yes)
                     {
                         _SanPham.Ma = tb_Ma.Text;
                         _SanPham.Ten = tb_Ten.Text;
@@ -137,12 +146,12 @@ namespace _3.PL.Views
         {
             if (_SanPham == null)
             {
-                MessageBox.Show("Bạn chưa chọn");
+                MessageBox.Show("Vui lòng chọn sản phẩm cần xóa");
             }
             else
             {
-                DialogResult dlg = MessageBox.Show("Bạn có muốn xóa", "Chú ý", MessageBoxButtons.YesNo);
-                if (dlg == DialogResult.Yes)
+                DialogResult dg = MessageBox.Show("Bạn muốn xóa sản phẩm này", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dg == DialogResult.Yes)
                 {
                     _ISanPhamServices.Delete(_SanPham);
                     MessageBox.Show("Xóa thành công");
