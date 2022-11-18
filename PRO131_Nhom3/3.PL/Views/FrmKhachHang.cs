@@ -28,20 +28,22 @@ namespace _3.PL.Views
         public void LoadData()
         {
             int stt = 1;
-            dtg_show.ColumnCount = 12;
+            dtg_show.ColumnCount = 13;
             dtg_show.Columns[0].Name = "Id";
             dtg_show.Columns[0].Visible = false;
-            dtg_show.Columns[1].Name = "STT";
-            dtg_show.Columns[2].Name = "Mã";
-            dtg_show.Columns[3].Name = "Tên";
-            dtg_show.Columns[4].Name = "Tên đệm";
-            dtg_show.Columns[5].Name = "Họ";
-            dtg_show.Columns[6].Name = "Ngày Sinh";
-            dtg_show.Columns[7].Name = "SDT";
-            dtg_show.Columns[8].Name = "Địa chỉ";
-            dtg_show.Columns[9].Name = "Email";
-            dtg_show.Columns[10].Name = "Số điểm";
-            dtg_show.Columns[11].Name = "Trạng thái";
+            dtg_show.Columns[1].Name = "Idtichdiem";
+            dtg_show.Columns[1].Visible = false;
+            dtg_show.Columns[2].Name = "STT";
+            dtg_show.Columns[3].Name = "Mã";
+            dtg_show.Columns[4].Name = "Tên";
+            dtg_show.Columns[5].Name = "Tên đệm";
+            dtg_show.Columns[6].Name = "Họ";
+            dtg_show.Columns[7].Name = "Ngày Sinh";
+            dtg_show.Columns[8].Name = "SDT";
+            dtg_show.Columns[9].Name = "Địa chỉ";
+            dtg_show.Columns[10].Name = "Email";
+            dtg_show.Columns[11].Name = "Số điểm";
+            dtg_show.Columns[12].Name = "Trạng thái";
 
 
             dtg_show.Rows.Clear();
@@ -52,7 +54,7 @@ namespace _3.PL.Views
             }
             foreach (var item in lst)
             {
-                dtg_show.Rows.Add(item.Id, stt++, item.Ma, item.Ten, item.TenDem, item.Ho, item.NgaySinh.ToString(), item.Sdt, item.DiaChi, item.Email, item.SoDiem, item.TrangThai == 1 ? "Hoạt động" : "Không hoạt động");
+                dtg_show.Rows.Add(item.Id, item.IdtichDiem, stt++, item.Ma, item.Ten, item.TenDem, item.Ho, item.NgaySinh.ToString(), item.Sdt, item.DiaChi, item.Email, item.SoDiem, item.TrangThai == 1 ? "Hoạt động" : "Không hoạt động");
             }
         }
 
@@ -130,6 +132,7 @@ namespace _3.PL.Views
                 tb_email.Text = _khachHangView.Email;
                 tb_sdt.Text = _khachHangView.Sdt;
                 dtp_ngaysinh.Value = _khachHangView.NgaySinh.Value;
+                cbb_sodiem.Text = Convert.ToString(_khachHangView.SoDiem);
                 rdb_hd.Checked = _khachHangView.TrangThai == 1;
                 rdb_khd.Checked = _khachHangView.TrangThai == 0;
             }
