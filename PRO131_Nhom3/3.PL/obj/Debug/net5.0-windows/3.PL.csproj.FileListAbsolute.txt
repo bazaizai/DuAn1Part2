@@ -5,7 +5,6 @@ C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\Cust
 C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmChatLieu.resources
 C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmChiTietSale.resources
 C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmChucVu.resources
-C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmDangNhap.resources
 C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmGiaiDau.resources
 C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmGiaoCa.resources
 C:\Users\Asus\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmHinhThucMh.resources
@@ -209,7 +208,6 @@ C:\Users\anhtr\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-wi
 C:\Users\anhtr\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmChatLieu.resources
 C:\Users\anhtr\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmChiTietSale.resources
 C:\Users\anhtr\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmChucVu.resources
-C:\Users\anhtr\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmDangNhap.resources
 C:\Users\anhtr\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmGiaiDau.resources
 C:\Users\anhtr\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmGiaoCa.resources
 C:\Users\anhtr\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmHinhThucMh.resources
