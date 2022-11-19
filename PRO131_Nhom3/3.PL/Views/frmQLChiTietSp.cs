@@ -75,6 +75,10 @@ namespace _3.PL.Views
             {
                 cbbTeam1.Items.Add(item.Ten);
             }
+            cbbTrangThai1.Items.Clear();
+            cbbTrangThai1.Items.Add("Đang bán");
+            cbbTrangThai1.Items.Add("Dừng bán");
+
         }
         private void FakeData()
         {
