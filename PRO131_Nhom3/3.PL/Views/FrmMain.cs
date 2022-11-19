@@ -50,7 +50,7 @@ namespace _3.PL.Views
                 DisableButton();
                 //Button
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(31, 31, 31);
+                currentBtn.BackColor = Color.FromArgb(48, 143, 157);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -70,7 +70,7 @@ namespace _3.PL.Views
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(31, 31, 31);
+                currentBtn.BackColor = Color.FromArgb(48, 143, 157);
                 currentBtn.ForeColor = Color.Gainsboro;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.Gainsboro;
@@ -191,12 +191,12 @@ namespace _3.PL.Views
         private void iconButton2_Click(object sender, EventArgs e)
         {
             lblHome.Text = btnCTSP.Text;
-            //OpenChildForm(new frmQLChiTietSp());
+            OpenChildForm(new frmQLChiTietSp());
             HideSubMenu();
         }
         private void btnSP_Click(object sender, EventArgs e)
         {
-            lblHome.Text = btnSP.Text;
+            //lblHome.Text = btnSP.Text;
             //OpenChildForm(new frm());
             HideSubMenu();
         }
@@ -270,28 +270,28 @@ namespace _3.PL.Views
 
         private void btnMauSac_Click(object sender, EventArgs e)
         {
-            lblHome.Text = btnMauSac.Text;
+            //lblHome.Text = btnMauSac.Text;
             OpenChildForm(new FrmMauSac());
             HideSubMenu();
         }
 
         private void btnChatLieu_Click(object sender, EventArgs e)
         {
-            lblHome.Text = btnChatLieu.Text;
+            //lblHome.Text = btnChatLieu.Text;
             //OpenChildForm(new frmchat());
             HideSubMenu();
         }
 
         private void btnKichThuoc_Click(object sender, EventArgs e)
         {
-            lblHome.Text = btnKichThuoc.Text;
+            //lblHome.Text = btnKichThuoc.Text;
             //OpenChildForm(new ());
             HideSubMenu();
         }
 
         private void btnTeam_Click(object sender, EventArgs e)
         {
-            lblHome.Text = btnTeam.Text;
+            //lblHome.Text = btnTeam.Text;
             OpenChildForm(new FrmTeam());
             HideSubMenu();
         }

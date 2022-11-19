@@ -5,6 +5,9 @@
     <Compile Update="Components\Hats.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Components\SearchHats.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="CustomControlls\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -41,9 +44,6 @@
     <Compile Update="Views\FrmChucVu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\FrmDangNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Views\FrmGiaiDau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +78,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\frmQLBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmQLChiTietSp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\FrmQLKieuSP.cs">

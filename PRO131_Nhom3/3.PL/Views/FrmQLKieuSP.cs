@@ -1,6 +1,8 @@
 ﻿using _2.BUS.IServices;
 using _2.BUS.Services;
 using _2.BUS.ViewModels;
+using _3.PL.Utilities;
+using CustomAlertBoxDemo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +15,7 @@ using System.Windows.Forms;
 
 namespace _3.PL.Views
 {
-    public partial class FrmQLKieuSP : Form
+public partial class FrmQLKieuSP : Form
     {
         private IKieuSpServices _IkieuSpServices;
         private Guid _selectId;
