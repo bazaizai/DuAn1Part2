@@ -15,6 +15,8 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net.WebSockets;
+using System.Text.RegularExpressions;
+using System.Text;
 using System.Windows.Documents;
 using System.Windows.Forms;
 
@@ -72,7 +74,7 @@ namespace _3.PL.Views
         {
             if (txtSearch.Texts.Trim() == "")
             {
-                pnlBodysearch.Height = 33;
+                pnlBodysearch.Height = txtsearchKH.Height;
             }
         }
         private void LoadData()
@@ -291,7 +293,7 @@ namespace _3.PL.Views
             if (dgview.Columns[e.ColumnIndex].Name == "XoaSP")
             {
                 var hdct = GetHDct(Guid.Parse(Cell(0)));
-                _IChiTietHDServices.Delete(hdct);
+                MessageBox.Show(_IChiTietHDServices.Delete(hdct));
             }
             LoadView(TabHoaDon.SelectedTab.Name);
             LoadGia();
@@ -310,8 +312,9 @@ namespace _3.PL.Views
 
         private void rjCircularPictureBox3_Click(object sender, EventArgs e)
         {
-            FrmKhachHang frmkh = new FrmKhachHang();
             //FrmKhachHang frmkh = new FrmKhachHang(txtsearchKH.Texts);
+            FrmKhachHang frmkh = new FrmKhachHang();
+
             frmkh.ShowDialog();
             if (txtsearchKH.Texts == "")
             {
@@ -329,90 +332,99 @@ namespace _3.PL.Views
 
         private void TabHoaDon_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtTienThua.Texts = "";
+            txthtThanhToan.Texts = ""; 
             LoadGia();
             LoadTienThua();
         }
         private void LoadGia()
         {
-            //if (TabHoaDon.SelectedIndex != -1)
-            //{
-            //    dgview.Rows.Clear();
-            //    dgview.Parent = TabHoaDon.TabPages[TabHoaDon.SelectedIndex];
-            //    Guid id = _HoaDonServices.GetAll().FirstOrDefault(c => c.MaHD == TabHoaDon.SelectedTab.Name).Id;
-            //    var list = _IChiTietHDServices.GetAll().Where(c => c.IdHoaDon == id);
-            //    int stt = 1;
-            //    decimal tongtien = 0;
-            //    foreach (var x in list)
-            //    {
-            //        dgview.Rows.Add(x.IdChiTietSp, stt++, x.TenSP, "+", x.SoLuong, "-",
-            //           double.Parse(x.DonGia.ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ",
-            //           double.Parse((x.SoLuong * x.DonGia).ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ", "X");
-            //        tongtien += Convert.ToDecimal(Convert.ToDecimal(x.SoLuong) * x.DonGia);
-            //    }
-            //    txtTongTien.Texts = double.Parse(tongtien.ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ";
-            //    txtMaHD.Texts = TabHoaDon.SelectedTab.Name;
-            //    if (CbbGiamGia.SelectedIndex == 0)
-            //    {
-            //        if (txtGiamGia.Texts.Trim() != "")
-            //        {
-            //            if (Convert.ToDecimal(txtGiamGia.Texts) >= 100)
-            //            {
-            //                txtGiamGia.Texts = 100.ToString();
-            //                txtTongTienPTra.Texts = 0.ToString();
-            //            }
-            //            else
-            //            {
-            //                txtTongTienPTra.Texts = double.Parse((tongtien *(100 - decimal.Parse(txtGiamGia.Texts)) / 100).ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ";
-            //            }
-            //        }else
-            //        {
-            //            txtTongTienPTra.Texts = txtTongTien.Texts;
-            //        }
-            //    }else
-            //    {
-            //        if (txtGiamGia.Texts.Trim() != "")
-            //        {
-            //            if (Convert.ToDecimal(txtGiamGia.Texts) >= tongtien)
-            //            {
-            //                txtTongTienPTra.Texts = 0.ToString();
-            //            }
-            //            else
-            //            {
-            //                txtTongTienPTra.Texts = double.Parse((tongtien - Convert.ToDecimal(txtGiamGia.Texts)).ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ";
-            //            }
-            //        }
-            //        else
-            //        {
-            //            txtTongTienPTra.Texts = txtTongTien.Texts;
-            //        }
-            //    }
-            //    if (_IChiTietHDServices.GetAll().Where(x=>x.MaHD == TabHoaDon.SelectedTab.Name).ToList().Count > 0 && txthtThanhToan.Texts.Trim() != "" && txtTongTienPTra.Texts != "")
-            //    {
-            //        if (Convert.ToDecimal(txthtThanhToan.Texts) == ValidateInput.RegexDecimal(txtTongTienPTra.Texts))
-            //        {
-            //            txtTienThua.Texts = 0 + "đ";
-            //        }
-            //        else
-            //        {
-            //            txtTienThua.Texts = double.Parse((Convert.ToDecimal(txthtThanhToan.Texts) - ValidateInput.RegexDecimal(txtTongTienPTra.Texts)).ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ";
-            //        }
-            //    }
-            //    if (txthtThanhToan.Texts == "")
-            //    {
-            //        txtTienThua.Texts = 0.ToString();
-            //    }
-            //}
-            //if (TabHoaDon.SelectedTab == null || !_IChiTietHDServices.GetAll().Where(x => x.MaHD == TabHoaDon.SelectedTab.Name).ToList().Any())
-            //{
-            //    txtTongTien.Texts = "";
-            //    txtTongTienPTra.Texts = "";
-            //}
+            if (TabHoaDon.SelectedTab != null)
+            {
+                dgview.Rows.Clear();
+                dgview.Parent = TabHoaDon.TabPages[TabHoaDon.SelectedIndex];
+                Guid id = _HoaDonServices.GetAll().FirstOrDefault(c => c.MaHD == TabHoaDon.SelectedTab.Name).Id;
+                var list = _IChiTietHDServices.GetAll().Where(c => c.IdHoaDon == id);
+                int stt = 1;
+                decimal tongtien = 0;
+                foreach (var x in list)
+                {
+                    dgview.Rows.Add(x.IdChiTietSp, stt++, x.TenSP, "+", x.SoLuong, "-",
+                       double.Parse(x.DonGia.ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ",
+                       double.Parse((x.SoLuong * x.DonGia).ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ", "X");
+                    tongtien += Convert.ToDecimal(Convert.ToDecimal(x.SoLuong) * x.DonGia);
+                }
+                txtTongTien.Texts = double.Parse(tongtien.ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ";
+                txtMaHD.Texts = TabHoaDon.SelectedTab.Name;
+                if (CbbGiamGia.SelectedIndex == 0)
+                {
+                    if (txtGiamGia.Texts.Trim() != "")
+                    {
+                        if (Convert.ToDecimal(txtGiamGia.Texts) >= 100)
+                        {
+                            txtGiamGia.Texts = 100.ToString();
+                            txtTongTienPTra.Texts = 0.ToString();
+                        }
+                        else
+                        {
+                            txtTongTienPTra.Texts = double.Parse((tongtien *(100 - decimal.Parse(txtGiamGia.Texts)) / 100).ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ";
+                        }
+                    }else
+                    {
+                        txtTongTienPTra.Texts = txtTongTien.Texts;
+                    }
+                }else
+                {
+                    if (txtGiamGia.Texts.Trim() != "")
+                    {
+                        if (Convert.ToDecimal(txtGiamGia.Texts) >= tongtien)
+                        {
+                            txtTongTienPTra.Texts = 0.ToString();
+                        }
+                        else
+                        {
+                            txtTongTienPTra.Texts = double.Parse((tongtien - Convert.ToDecimal(txtGiamGia.Texts)).ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ";
+                        }
+                    }
+                    else
+                    {
+                        txtTongTienPTra.Texts = txtTongTien.Texts;
+                    }
+                }
+                if (_IChiTietHDServices.GetAll().Where(x=>x.MaHD == TabHoaDon.SelectedTab.Name).ToList().Count > 0 && txthtThanhToan.Texts.Trim() != "" && txtTongTienPTra.Texts != "")
+                {
+                    if (Convert.ToDecimal(txthtThanhToan.Texts) == ValidateInput.RegexDecimal(txtTongTienPTra.Texts))
+                    {
+                        txtTienThua.Texts = 0 + "đ";
+                    }
+                    else
+                    {
+                        txtTienThua.Texts = double.Parse((Convert.ToDecimal(txthtThanhToan.Texts) - ValidateInput.RegexDecimal(txtTongTienPTra.Texts)).ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ";
+                    }
+                }
+                if (txthtThanhToan.Texts == "")
+                {
+                    txtTienThua.Texts = 0.ToString();
+                }
+            }
+
+            if (TabHoaDon.SelectedTab == null || !_IChiTietHDServices.GetAll().Where(x => x.MaHD == TabHoaDon.SelectedTab.Name).ToList().Any())
+            {
+                txtTongTien.Texts = "";
+                txtTongTienPTra.Texts = "";
+            }
 
         }
 
         private void Clearform()
         {
-
+            txthtThanhToan.Texts = "";
+            txtGiamGia.Texts = 0.ToString();
+            cbbHinhThucMuaHang.SelectedIndex = -1;
+            cbbPtThanhToan.SelectedIndex = -1;
+            txtTienThua.Texts = "";
+            txtChuyenKhoan.Visible = false;
+            txtTienThua.Visible = false;
         }
 
         private void FakeData()
@@ -618,13 +630,35 @@ namespace _3.PL.Views
         {
             LoadGia();
         }
-
+        public static string RemoveUnicode(string text)
+        {
+            string[] arr1 = new string[] { "á", "à", "ả", "ã", "ạ", "â", "ấ", "ầ", "ẩ", "ẫ", "ậ", "ă", "ắ", "ằ", "ẳ", "ẵ", "ặ",
+    "đ",
+    "é","è","ẻ","ẽ","ẹ","ê","ế","ề","ể","ễ","ệ",
+    "í","ì","ỉ","ĩ","ị",
+    "ó","ò","ỏ","õ","ọ","ô","ố","ồ","ổ","ỗ","ộ","ơ","ớ","ờ","ở","ỡ","ợ",
+    "ú","ù","ủ","ũ","ụ","ư","ứ","ừ","ử","ữ","ự",
+    "ý","ỳ","ỷ","ỹ","ỵ",};
+            string[] arr2 = new string[] { "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+    "d",
+    "e","e","e","e","e","e","e","e","e","e","e",
+    "i","i","i","i","i",
+    "o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o",
+    "u","u","u","u","u","u","u","u","u","u","u",
+    "y","y","y","y","y",};
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                text = text.Replace(arr1[i], arr2[i]);
+                text = text.Replace(arr1[i].ToUpper(), arr2[i].ToUpper());
+            }
+            return text;
+        }
         private ChiTietSpViews GetCtsp(Guid id) => _IChiTietSpServices.GetById(id);
         private void LoadItemSearch(string name)
         {
             flpSP.Controls.Clear();
             SearchHats[] Hat = new SearchHats[_IanhServices.GetAll().GroupBy(x => x.IdChiTietSp).Select(sp => sp.First()).ToList().Count];
-            List<AnhViews> ListAnh = _IanhServices.GetAll().GroupBy(x => x.IdChiTietSp).Select(sp => sp.First()).Where(x => x.TrangThaiSP == 0 && GetCtsp(x.IdChiTietSp.GetValueOrDefault()).TenSP.ToLower().Contains(name.ToLower())).ToList();
+            List<AnhViews> ListAnh = _IanhServices.GetAll().GroupBy(x => x.IdChiTietSp).Select(sp => sp.First()).Where(x => x.TrangThaiSP == 0 && RemoveUnicode(GetCtsp(x.IdChiTietSp.GetValueOrDefault()).TenSP).ToLower().Contains(RemoveUnicode(name).ToLower())).ToList();
             if (ListAnh.Any())
             {
                 for (int i = 0; i < ListAnh.Count; i++)
@@ -678,6 +712,7 @@ namespace _3.PL.Views
 
                                 this.Alert("Vui lòng tạo hóa đơn", Form_Alert.enmType.Warning);
                             }
+                            txtSearch.Texts = "";
                         };
                     }
                     else
@@ -688,19 +723,26 @@ namespace _3.PL.Views
                     }
 
                 }
+                pnlBodysearch.Height = btnThemSP.Height + txtSearch.Height + flpSP.Height;
+                pnlKhongTimThay.Visible = false;
+                btnThemSP.Visible = true;
+                flpSP.Visible = true;
+                AnSearch();
 
             }
             else
             {
-                pnlBodysearch.Height = 90;
+                pnlBodysearch.Height = pnlKhongTimThay.Height + btnThemSP.Height + txtSearch.Height;
                 btnThemSP.Visible = true;
+                flpSP.Visible = false;
                 pnlKhongTimThay.Visible = true;
             }
+                AnSearch();
         }
 
         private void txtSearch__TextChanged(object sender, EventArgs e)
         {
-
+            LoadItemSearch(txtSearch.Texts);
         }
 
     }

@@ -318,15 +318,15 @@ namespace _3.PL.Views
         {
             _SelectID = Guid.Parse(Cell(0));
             TabAll.SelectedTab = TabThongTin;
-            cbbSP1.Text = Cell(2);
-            cbbChatLieu1.Text = Cell(3);
-            cbbTeam1.Text = Cell(4);
-            cbbms1.Text = Cell(5);
-            cbbsize1.Text = Cell(6);
+            cbbSP1.Texts = Cell(2);
+            cbbChatLieu1.Texts = Cell(3);
+            cbbTeam1.Texts = Cell(4);
+            cbbms1.Texts = Cell(5);
+            cbbsize1.Texts = Cell(6);
             txtGiaBan1.Texts = Cell(7);
             txtGiaNhap1.Texts = Cell(8);
             txtSLton.Texts = Cell(9);
-            cbbTrangThai1.Text = Cell(10);
+            cbbTrangThai1.Texts = Cell(10);
             txtBaoHanh1.Texts = _IChiTietSpServices.GetById(_SelectID).BaoHanh;
             txtMoTa1.Text = _IChiTietSpServices.GetById(_SelectID).MoTa;
             if (_IChiTietSpServices.GetById(_SelectID).TrangThaiKhuyenMai == 0) rdoApDung1.Checked = true;

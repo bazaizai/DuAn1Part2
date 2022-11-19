@@ -42,7 +42,7 @@
             this.SoLuong.AutoSize = true;
             this.SoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SoLuong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.SoLuong.Location = new System.Drawing.Point(119, 60);
+            this.SoLuong.Location = new System.Drawing.Point(132, 59);
             this.SoLuong.Name = "SoLuong";
             this.SoLuong.Size = new System.Drawing.Size(60, 16);
             this.SoLuong.TabIndex = 24;
@@ -54,7 +54,7 @@
             this.IdSPCT.AutoSize = true;
             this.IdSPCT.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.IdSPCT.ForeColor = System.Drawing.Color.Silver;
-            this.IdSPCT.Location = new System.Drawing.Point(21, 89);
+            this.IdSPCT.Location = new System.Drawing.Point(132, 89);
             this.IdSPCT.Name = "IdSPCT";
             this.IdSPCT.Size = new System.Drawing.Size(64, 12);
             this.IdSPCT.TabIndex = 23;
@@ -63,11 +63,11 @@
             // 
             // Gia
             // 
-            this.Gia.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Gia.AutoSize = true;
+            this.Gia.Dock = System.Windows.Forms.DockStyle.Right;
             this.Gia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Gia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.Gia.Location = new System.Drawing.Point(197, 7);
+            this.Gia.Location = new System.Drawing.Point(434, 0);
             this.Gia.Name = "Gia";
             this.Gia.Size = new System.Drawing.Size(128, 22);
             this.Gia.TabIndex = 21;
@@ -79,7 +79,7 @@
             this.TenSP.AutoSize = true;
             this.TenSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TenSP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.TenSP.Location = new System.Drawing.Point(117, 26);
+            this.TenSP.Location = new System.Drawing.Point(107, 21);
             this.TenSP.Name = "TenSP";
             this.TenSP.Size = new System.Drawing.Size(99, 25);
             this.TenSP.TabIndex = 20;
@@ -94,7 +94,7 @@
             this.Anh.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             this.Anh.BorderSize = 2;
             this.Anh.GradientAngle = 50F;
-            this.Anh.Location = new System.Drawing.Point(8, 0);
+            this.Anh.Location = new System.Drawing.Point(0, 3);
             this.Anh.Margin = new System.Windows.Forms.Padding(0);
             this.Anh.Name = "Anh";
             this.Anh.Size = new System.Drawing.Size(89, 89);
@@ -105,13 +105,14 @@
             // SearchHats
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.BackColor = System.Drawing.Color.Gray;
             this.Controls.Add(this.SoLuong);
             this.Controls.Add(this.IdSPCT);
             this.Controls.Add(this.Gia);
             this.Controls.Add(this.TenSP);
             this.Controls.Add(this.Anh);
             this.Name = "SearchHats";
-            this.Size = new System.Drawing.Size(341, 96);
+            this.Size = new System.Drawing.Size(562, 96);
             this.Click += new System.EventHandler(this.SearchHats_Click);
             ((System.ComponentModel.ISupportInitialize)(this.Anh)).EndInit();
             this.ResumeLayout(false);
