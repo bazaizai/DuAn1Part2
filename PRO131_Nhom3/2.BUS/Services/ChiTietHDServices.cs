@@ -44,13 +44,20 @@ namespace _2.BUS.Services
 
         public string Delete(ChiTietHDView obj)
         {
+            //if (obj == null) return "Không thành công";
+            //HoaDonChiTiet temp = new HoaDonChiTiet()
+            //{
+            //    Id = obj.Id,
+            //    TrangThai = obj.TrangThai,
+            //};
+            //if (chiTietHoaDonRepos.Delete(temp)) return "Thành công";
+            //return "Không thành công";
             if (obj == null) return "Không thành công";
             HoaDonChiTiet temp = new HoaDonChiTiet()
             {
-                Id = obj.Id,
-                TrangThai = obj.TrangThai,
+                Id = obj.Id
             };
-            if (chiTietHoaDonRepos.Update(temp)) return "Thành công";
+            if (chiTietHoaDonRepos.Delete(temp)) return "Thành công";
             return "Không thành công";
         }
 
