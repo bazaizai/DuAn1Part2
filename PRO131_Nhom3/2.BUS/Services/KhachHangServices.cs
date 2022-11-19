@@ -29,7 +29,7 @@ namespace _2.BUS.Services
                 {
                     Id = obj.Id,
                     IdtichDiem = obj.IdtichDiem,
-                    Ma = MaTT(),
+                    Ma = obj.Ma,
                     Ten = obj.Ten,
                     TenDem = obj.TenDem,
                     Ho = obj.Ho,
@@ -155,13 +155,13 @@ namespace _2.BUS.Services
                 return e.Message.ToString();
             }
         }
-        private string MaTT()
-        {
-            if (_iKhachHangRepos.GetAll().Count > 0)
-            {
-                return "KH" + Convert.ToString(_iKhachHangRepos.GetAll().Max(c => Convert.ToInt32(c.Ma.Substring(3, c.Ma.Length - 3)) + 1));
-            }
-            else return "KH1";
-        }
+        //private string MaTT()
+        //{
+        //    if (_iKhachHangRepos.GetAll().Count > 0)
+        //    {
+        //        return "KH" + Convert.ToString(_iKhachHangRepos.GetAll().Max(c => Convert.ToInt32(c.Ma.Substring(2, c.Ma.Length - 2)) + 1));
+        //    }
+        //    else return "KH1";
+        //}
     }
 }
