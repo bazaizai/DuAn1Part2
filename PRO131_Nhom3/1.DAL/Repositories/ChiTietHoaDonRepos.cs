@@ -36,6 +36,7 @@ namespace _1.DAL.Repositories
             try
             {
                 if (obj == null) return false;
+                var temp = context.HoaDonChiTiets.FirstOrDefault(c => c.Id == obj.Id);
                 context.HoaDonChiTiets.Remove(obj);
                 context.SaveChanges();
                 return true;
