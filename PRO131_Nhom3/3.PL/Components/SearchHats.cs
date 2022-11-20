@@ -28,6 +28,7 @@ namespace _3.PL.Components
         public Image Icon { get => _Icon; set { _Icon = value; Anh.Image = value; } }
         public double Price { get => price; set { price = value; Gia.Text = "Giá: " + double.Parse(price.ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ"; } }
         public Guid IdSPCTSP { get => _Idspct; set { _Idspct = value; IdSPCT.Text = value.ToString(); } }
+
         private void SearchHats_Click(object sender, EventArgs e)
         {
             Onclick?.Invoke(this, e);

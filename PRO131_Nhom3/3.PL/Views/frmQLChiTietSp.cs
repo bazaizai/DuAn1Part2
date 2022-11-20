@@ -42,6 +42,8 @@ namespace _3.PL.Views
             _ISizeServices = new KichCoServices();
             _IAnhServices = new AnhServices();
             _SelectID = new Guid();
+            cbbTrangThai1.Items.Add("Đang bán");
+            cbbTrangThai1.Items.Add("Dừng bán");
             LoadCbb();
             LoadData();
             resest();
@@ -75,9 +77,8 @@ namespace _3.PL.Views
             {
                 cbbTeam1.Items.Add(item.Ten);
             }
-            cbbTrangThai1.Items.Clear();
-            cbbTrangThai1.Items.Add("Đang bán");
-            cbbTrangThai1.Items.Add("Dừng bán");
+            //cbbTrangThai1.Items.Clear();
+
 
         }
         private void FakeData()
@@ -135,11 +136,11 @@ namespace _3.PL.Views
                 dtgView.Rows.Add(x.Id, stt++, x.TenSP, x.TenChatLieu, x.TenTeam, x.TenMauSac, x.Size, x.GiaBan, x.GiaNhap, x.SoLuongTon, x.TrangThai == 0 ? "Đang bán" : "Dừng Bán", x.IdMauSac, x.IdChatLieu, x.IdSize, x.IdTeam, x.IdSp);
             }
         }
-        private Guid IdSp() => _ISanPhamServices.GetAll().Find(x => x.Ten == cbbSP1.Text).Id;
-        private Guid IdMs() => _IMauSacServices.GetAll().Find(x => x.Ten == cbbms1.Text).Id;
-        private Guid IdCL() => _IChatLieuServices.GetAll().Find(x => x.Ten == cbbChatLieu1.Text).Id;
-        private Guid IdTeam() => _ITeamServices.GetIdByName(cbbTeam1.Text);
-        private Guid IdSize() => _ISizeServices.GetAll().Find(x => x.Size == cbbsize1.Text).Id;
+        private Guid IdSp() => _ISanPhamServices.GetAll().Find(x => x.Ten == cbbSP1.Texts).Id;
+        private Guid IdMs() => _IMauSacServices.GetAll().Find(x => x.Ten == cbbms1.Texts).Id;
+        private Guid IdCL() => _IChatLieuServices.GetAll().Find(x => x.Ten == cbbChatLieu1.Texts).Id;
+        private Guid IdTeam() => _ITeamServices.GetIdByName(cbbTeam1.Texts);
+        private Guid IdSize() => _ISizeServices.GetAll().Find(x => x.Size == cbbsize1.Texts).Id;
         private List<AnhViews> GetListAnh(Guid? Id) => _IAnhServices.GetAll().Where(x => x.IdChiTietSp == Id).ToList();
 
         private string Cell(int x) => dtgView.CurrentRow.Cells[x].Value.ToString();
@@ -184,7 +185,7 @@ namespace _3.PL.Views
         }
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            if (!Vldate.Null(cbbChatLieu1.Text) && !Vldate.Null(cbbms1.Text) && !Vldate.Null(cbbsize1.Text) && !Vldate.Null(cbbSP1.Text) && !Vldate.Null(cbbTeam1.Text) && !Vldate.Null(cbbTrangThai1.Text) && Vldate.KnullTXTGrb(grbtt, txtMoTa1) && anhtt.Image != null && Anhtt1.Image != null && (rdoApDung1.Checked || rdoKhongApDung1.Checked))
+            if (!Vldate.Null(cbbChatLieu1.Texts) && !Vldate.Null(cbbms1.Texts) && !Vldate.Null(cbbsize1.Texts) && !Vldate.Null(cbbSP1.Texts) && !Vldate.Null(cbbTeam1.Texts) && !Vldate.Null(cbbTrangThai1.Texts) && Vldate.KnullTXTGrb(grbtt, txtMoTa1) && anhtt.Image != null && Anhtt1.Image != null && (rdoApDung1.Checked || rdoKhongApDung1.Checked))
             {
                 if (!CheckTrungSP(IdSp(), IdMs(), IdSize(), IdTeam(), IdCL()) || (Obj().IdChatLieu == IdCL() && Obj().IdMauSac == IdMs() && Obj().IdTeam == IdTeam() && Obj().IdSp == IdSp() && Obj().IdSize == IdSize()))
                 {
@@ -192,7 +193,7 @@ namespace _3.PL.Views
                     {
                         if (Obj() != null)
                         {
-                            _IChiTietSpServices.Update(new ChiTietSpViews(_SelectID, IdSp(), IdMs(), IdSize(), IdTeam(), IdCL(), txtBaoHanh1.Texts, txtMoTa1.Texts, int.Parse(txtSLton.Texts), decimal.Parse(txtGiaNhap1.Texts), int.Parse(txtGiaBan1.Texts), cbbTrangThai1.Text == "Đang bán" ? 0 : 1, rdoApDung1.Checked ? 0 : 1));
+                            _IChiTietSpServices.Update(new ChiTietSpViews(_SelectID, IdSp(), IdMs(), IdSize(), IdTeam(), IdCL(), txtBaoHanh1.Texts, txtMoTa1.Texts, int.Parse(txtSLton.Texts), decimal.Parse(txtGiaNhap1.Texts), int.Parse(txtGiaBan1.Texts), cbbTrangThai1.Texts == "Đang bán" ? 0 : 1, rdoApDung1.Checked ? 0 : 1));
                             var Anh = new AnhViews()
                             {
                                 Id = GetListAnh(_SelectID)[0].Id,
@@ -241,7 +242,7 @@ namespace _3.PL.Views
 
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
-            if (!Vldate.Null(cbbChatLieu1.Text) && !Vldate.Null(cbbms1.Text) && !Vldate.Null(cbbsize1.Text) && !Vldate.Null(cbbSP1.Text) && !Vldate.Null(cbbTeam1.Text) && !Vldate.Null(cbbTrangThai1.Text) && Vldate.KnullTXTGrb(grbtt, txtMoTa1) && anhtt.Image != null && Anhtt1.Image != null && (rdoApDung1.Checked || rdoKhongApDung1.Checked))
+            if (!Vldate.Null(cbbChatLieu1.Texts) && !Vldate.Null(cbbms1.Texts) && !Vldate.Null(cbbsize1.Texts) && !Vldate.Null(cbbSP1.Texts) && !Vldate.Null(cbbTeam1.Texts) && !Vldate.Null(cbbTrangThai1.Texts) && Vldate.KnullTXTGrb(grbtt, txtMoTa1) && anhtt.Image != null && Anhtt1.Image != null && (rdoApDung1.Checked || rdoKhongApDung1.Checked))
             {
                 if (!CheckTrungSP(IdSp(), IdMs(), IdSize(), IdTeam(), IdCL()))
                 {
@@ -259,7 +260,7 @@ namespace _3.PL.Views
                             SoLuongTon = int.Parse(txtSLton.Texts),
                             GiaBan = decimal.Parse(txtGiaBan1.Texts),
                             GiaNhap = decimal.Parse(txtGiaNhap1.Texts),
-                            TrangThai = cbbTrangThai1.Text == "Bán" ? 0 : 1,
+                            TrangThai = cbbTrangThai1.Texts == "Đang bán" ? 0 : 1,
                             TrangThaiKhuyenMai = rdoApDung1.Checked ? 0 : 1
                         };
                         _IChiTietSpServices.Add(x);
@@ -335,7 +336,7 @@ namespace _3.PL.Views
             txtMoTa1.Text = _IChiTietSpServices.GetById(_SelectID).MoTa;
             if (_IChiTietSpServices.GetById(_SelectID).TrangThaiKhuyenMai == 0) rdoApDung1.Checked = true;
             if (_IChiTietSpServices.GetById(_SelectID).TrangThaiKhuyenMai == 1) rdoKhongApDung.Checked = true;
-            cbbTrangThai1.Text = _IChiTietSpServices.GetById(_SelectID).TrangThai == 0 ? "Đang bán" : "Dừng bán";
+            cbbTrangThai1.Texts = _IChiTietSpServices.GetById(_SelectID).TrangThai == 0 ? "Đang bán" : "Dừng bán";
         }
 
         private void anhtt_Click_1(object sender, EventArgs e)
@@ -369,6 +370,41 @@ namespace _3.PL.Views
                 }
             }
            
+        }
+
+        private void btnAddSP_Click(object sender, EventArgs e)
+        {
+            FrmSanPham frmSP = new FrmSanPham();
+            frmSP.ShowDialog();
+            LoadCbb();
+        }
+
+        private void btnAddMauSac_Click(object sender, EventArgs e)
+        {
+            //FrmMauSac frmMauSac = FrmMauSac();
+            //frmMauSac.ShowDialog();
+            //LoadCbb();
+        }
+
+        private void btnAddTeam_Click(object sender, EventArgs e)
+        {
+            FrmTeam frmTeam = new FrmTeam();
+            frmTeam.ShowDialog();
+            LoadCbb();
+        }
+
+        private void btnAddChatLieu_Click(object sender, EventArgs e)
+        {
+            FrmChatLieu frmChatLieu = new FrmChatLieu();
+            frmChatLieu.ShowDialog();
+            LoadCbb();
+        }
+
+        private void btnaddSize_Click(object sender, EventArgs e)
+        {
+            FrmKichCo FrmKichCo = new FrmKichCo();
+            FrmKichCo.ShowDialog();
+            LoadCbb();
         }
     }
 }

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -61,6 +61,12 @@
             this.txthtThanhToan = new CustomControls.RJControls.RJTextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pnlKhachHang = new System.Windows.Forms.Panel();
+            this.btnCloseKH = new CustomControls.RJControls.RJCircularPictureBox();
+            this.lblMucTichLuy = new System.Windows.Forms.Label();
+            this.lblDiaChi = new System.Windows.Forms.Label();
+            this.lblSoDT = new System.Windows.Forms.Label();
+            this.lblTen = new System.Windows.Forms.Label();
             this.rjCircularPictureBox3 = new CustomControls.RJControls.RJCircularPictureBox();
             this.rjCircularPictureBox2 = new CustomControls.RJControls.RJCircularPictureBox();
             this.rjCircularPictureBox1 = new CustomControls.RJControls.RJCircularPictureBox();
@@ -102,6 +108,8 @@
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.pnlKhachHang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCloseKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
@@ -183,8 +191,8 @@
             // rjButton1
             // 
             this.rjButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.rjButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
+            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
             this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjButton1.BorderRadius = 15;
             this.rjButton1.BorderSize = 0;
@@ -204,7 +212,7 @@
             // 
             this.txtTenNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.txtTenNV.BorderColor = System.Drawing.Color.White;
-            this.txtTenNV.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtTenNV.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
             this.txtTenNV.BorderRadius = 0;
             this.txtTenNV.BorderSize = 2;
             this.txtTenNV.Enabled = false;
@@ -228,7 +236,7 @@
             // 
             this.txtTienThua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.txtTienThua.BorderColor = System.Drawing.Color.White;
-            this.txtTienThua.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtTienThua.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
             this.txtTienThua.BorderRadius = 0;
             this.txtTienThua.BorderSize = 2;
             this.txtTienThua.Enabled = false;
@@ -242,7 +250,7 @@
             this.txtTienThua.PasswordChar = false;
             this.txtTienThua.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtTienThua.PlaceholderText = "";
-            this.txtTienThua.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtTienThua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtTienThua.Size = new System.Drawing.Size(280, 35);
             this.txtTienThua.TabIndex = 16;
             this.txtTienThua.Texts = "";
@@ -427,7 +435,7 @@
             // 
             this.txtTongTien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.txtTongTien.BorderColor = System.Drawing.Color.White;
-            this.txtTongTien.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtTongTien.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
             this.txtTongTien.BorderRadius = 0;
             this.txtTongTien.BorderSize = 2;
             this.txtTongTien.Enabled = false;
@@ -451,7 +459,7 @@
             // 
             this.txtGiamGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.txtGiamGia.BorderColor = System.Drawing.Color.White;
-            this.txtGiamGia.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtGiamGia.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
             this.txtGiamGia.BorderRadius = 0;
             this.txtGiamGia.BorderSize = 2;
             this.txtGiamGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -474,7 +482,7 @@
             // 
             this.txtTongTienPTra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.txtTongTienPTra.BorderColor = System.Drawing.Color.White;
-            this.txtTongTienPTra.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtTongTienPTra.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
             this.txtTongTienPTra.BorderRadius = 0;
             this.txtTongTienPTra.BorderSize = 2;
             this.txtTongTienPTra.Enabled = false;
@@ -498,7 +506,7 @@
             // 
             this.txtMaHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.txtMaHD.BorderColor = System.Drawing.Color.White;
-            this.txtMaHD.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtMaHD.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
             this.txtMaHD.BorderRadius = 0;
             this.txtMaHD.BorderSize = 2;
             this.txtMaHD.Enabled = false;
@@ -522,7 +530,7 @@
             // 
             this.txtChuyenKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.txtChuyenKhoan.BorderColor = System.Drawing.Color.White;
-            this.txtChuyenKhoan.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtChuyenKhoan.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
             this.txtChuyenKhoan.BorderRadius = 0;
             this.txtChuyenKhoan.BorderSize = 2;
             this.txtChuyenKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -546,7 +554,7 @@
             // 
             this.txthtThanhToan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.txthtThanhToan.BorderColor = System.Drawing.Color.White;
-            this.txthtThanhToan.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txthtThanhToan.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
             this.txthtThanhToan.BorderRadius = 0;
             this.txthtThanhToan.BorderSize = 2;
             this.txthtThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -580,7 +588,8 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
+            this.tabPage3.Controls.Add(this.pnlKhachHang);
             this.tabPage3.Controls.Add(this.rjCircularPictureBox3);
             this.tabPage3.Controls.Add(this.rjCircularPictureBox2);
             this.tabPage3.Controls.Add(this.rjCircularPictureBox1);
@@ -591,6 +600,80 @@
             this.tabPage3.Size = new System.Drawing.Size(454, 184);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Thông Tin";
+            // 
+            // pnlKhachHang
+            // 
+            this.pnlKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
+            this.pnlKhachHang.Controls.Add(this.btnCloseKH);
+            this.pnlKhachHang.Controls.Add(this.lblMucTichLuy);
+            this.pnlKhachHang.Controls.Add(this.lblDiaChi);
+            this.pnlKhachHang.Controls.Add(this.lblSoDT);
+            this.pnlKhachHang.Controls.Add(this.lblTen);
+            this.pnlKhachHang.Location = new System.Drawing.Point(43, 49);
+            this.pnlKhachHang.Name = "pnlKhachHang";
+            this.pnlKhachHang.Size = new System.Drawing.Size(340, 125);
+            this.pnlKhachHang.TabIndex = 5;
+            // 
+            // btnCloseKH
+            // 
+            this.btnCloseKH.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.btnCloseKH.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnCloseKH.BorderColor2 = System.Drawing.Color.HotPink;
+            this.btnCloseKH.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.btnCloseKH.BorderSize = 2;
+            this.btnCloseKH.GradientAngle = 50F;
+            this.btnCloseKH.Image = global::_3.PL.Properties.Resources.close11;
+            this.btnCloseKH.Location = new System.Drawing.Point(304, -1);
+            this.btnCloseKH.Name = "btnCloseKH";
+            this.btnCloseKH.Size = new System.Drawing.Size(36, 36);
+            this.btnCloseKH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCloseKH.TabIndex = 1;
+            this.btnCloseKH.TabStop = false;
+            this.btnCloseKH.Click += new System.EventHandler(this.btnCloseKH_Click);
+            // 
+            // lblMucTichLuy
+            // 
+            this.lblMucTichLuy.AutoSize = true;
+            this.lblMucTichLuy.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMucTichLuy.ForeColor = System.Drawing.Color.Black;
+            this.lblMucTichLuy.Location = new System.Drawing.Point(23, 90);
+            this.lblMucTichLuy.Name = "lblMucTichLuy";
+            this.lblMucTichLuy.Size = new System.Drawing.Size(107, 20);
+            this.lblMucTichLuy.TabIndex = 0;
+            this.lblMucTichLuy.Text = "lblMucTichLuy";
+            // 
+            // lblDiaChi
+            // 
+            this.lblDiaChi.AutoSize = true;
+            this.lblDiaChi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDiaChi.ForeColor = System.Drawing.Color.Black;
+            this.lblDiaChi.Location = new System.Drawing.Point(23, 65);
+            this.lblDiaChi.Name = "lblDiaChi";
+            this.lblDiaChi.Size = new System.Drawing.Size(71, 20);
+            this.lblDiaChi.TabIndex = 0;
+            this.lblDiaChi.Text = "lblDiaChi";
+            // 
+            // lblSoDT
+            // 
+            this.lblSoDT.AutoSize = true;
+            this.lblSoDT.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSoDT.ForeColor = System.Drawing.Color.Black;
+            this.lblSoDT.Location = new System.Drawing.Point(23, 40);
+            this.lblSoDT.Name = "lblSoDT";
+            this.lblSoDT.Size = new System.Drawing.Size(61, 20);
+            this.lblSoDT.TabIndex = 0;
+            this.lblSoDT.Text = "lblSoDT";
+            // 
+            // lblTen
+            // 
+            this.lblTen.AutoSize = true;
+            this.lblTen.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTen.ForeColor = System.Drawing.Color.Black;
+            this.lblTen.Location = new System.Drawing.Point(23, 15);
+            this.lblTen.Name = "lblTen";
+            this.lblTen.Size = new System.Drawing.Size(50, 20);
+            this.lblTen.TabIndex = 0;
+            this.lblTen.Text = "lblTen";
             // 
             // rjCircularPictureBox3
             // 
@@ -645,13 +728,13 @@
             // 
             // txtsearchKH
             // 
-            this.txtsearchKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(14)))), ((int)(((byte)(26)))));
+            this.txtsearchKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
             this.txtsearchKH.BorderColor = System.Drawing.Color.White;
             this.txtsearchKH.BorderFocusColor = System.Drawing.Color.Yellow;
             this.txtsearchKH.BorderRadius = 0;
             this.txtsearchKH.BorderSize = 2;
             this.txtsearchKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtsearchKH.ForeColor = System.Drawing.Color.Black;
+            this.txtsearchKH.ForeColor = System.Drawing.Color.Transparent;
             this.txtsearchKH.Location = new System.Drawing.Point(40, 9);
             this.txtsearchKH.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.txtsearchKH.Multiline = false;
@@ -678,7 +761,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
             this.panel2.Controls.Add(this.dgview);
             this.panel2.Controls.Add(this.btnAddTab);
             this.panel2.Controls.Add(this.TabHoaDon);
@@ -693,24 +776,24 @@
             this.dgview.AllowUserToAddRows = false;
             this.dgview.AllowUserToDeleteRows = false;
             this.dgview.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(48)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dgview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.dgview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgview.ColumnHeadersHeight = 50;
             this.dgview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -722,27 +805,27 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.XoaSP});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(14)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgview.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Aqua;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgview.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgview.EnableHeadersVisualStyles = false;
             this.dgview.Location = new System.Drawing.Point(130, 8);
             this.dgview.Name = "dgview";
             this.dgview.ReadOnly = true;
             this.dgview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(48)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgview.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgview.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgview.RowHeadersWidth = 51;
             this.dgview.RowTemplate.Height = 50;
             this.dgview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -953,19 +1036,20 @@
             // 
             // pnlBodysearch
             // 
+            this.pnlBodysearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
             this.pnlBodysearch.Controls.Add(this.btnThemSP);
             this.pnlBodysearch.Controls.Add(this.flpSP);
             this.pnlBodysearch.Controls.Add(this.pnlKhongTimThay);
             this.pnlBodysearch.Controls.Add(this.txtSearch);
             this.pnlBodysearch.Location = new System.Drawing.Point(2, 10);
             this.pnlBodysearch.Name = "pnlBodysearch";
-            this.pnlBodysearch.Size = new System.Drawing.Size(591, 371);
+            this.pnlBodysearch.Size = new System.Drawing.Size(389, 371);
             this.pnlBodysearch.TabIndex = 19;
             // 
             // btnThemSP
             // 
-            this.btnThemSP.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnThemSP.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnThemSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
+            this.btnThemSP.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
             this.btnThemSP.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnThemSP.BorderRadius = 0;
             this.btnThemSP.BorderSize = 0;
@@ -975,7 +1059,7 @@
             this.btnThemSP.ForeColor = System.Drawing.Color.White;
             this.btnThemSP.Location = new System.Drawing.Point(0, 315);
             this.btnThemSP.Name = "btnThemSP";
-            this.btnThemSP.Size = new System.Drawing.Size(591, 50);
+            this.btnThemSP.Size = new System.Drawing.Size(389, 50);
             this.btnThemSP.TabIndex = 16;
             this.btnThemSP.Text = "+ Thêm mới sản phẩm";
             this.btnThemSP.TextColor = System.Drawing.Color.White;
@@ -984,10 +1068,11 @@
             // flpSP
             // 
             this.flpSP.AutoScroll = true;
+            this.flpSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.flpSP.Dock = System.Windows.Forms.DockStyle.Top;
             this.flpSP.Location = new System.Drawing.Point(0, 90);
             this.flpSP.Name = "flpSP";
-            this.flpSP.Size = new System.Drawing.Size(591, 225);
+            this.flpSP.Size = new System.Drawing.Size(389, 225);
             this.flpSP.TabIndex = 15;
             this.flpSP.Visible = false;
             // 
@@ -997,7 +1082,7 @@
             this.pnlKhongTimThay.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlKhongTimThay.Location = new System.Drawing.Point(0, 33);
             this.pnlKhongTimThay.Name = "pnlKhongTimThay";
-            this.pnlKhongTimThay.Size = new System.Drawing.Size(591, 57);
+            this.pnlKhongTimThay.Size = new System.Drawing.Size(389, 57);
             this.pnlKhongTimThay.TabIndex = 14;
             // 
             // label9
@@ -1005,7 +1090,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(122, 13);
+            this.label9.Location = new System.Drawing.Point(21, 13);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(347, 29);
             this.label9.TabIndex = 0;
@@ -1013,9 +1098,9 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
             this.txtSearch.BorderColor = System.Drawing.Color.White;
-            this.txtSearch.BorderFocusColor = System.Drawing.Color.Yellow;
+            this.txtSearch.BorderFocusColor = System.Drawing.Color.MediumSlateBlue;
             this.txtSearch.BorderRadius = 15;
             this.txtSearch.BorderSize = 2;
             this.txtSearch.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1029,7 +1114,7 @@
             this.txtSearch.PasswordChar = false;
             this.txtSearch.PlaceholderColor = System.Drawing.Color.White;
             this.txtSearch.PlaceholderText = "Search Product";
-            this.txtSearch.Size = new System.Drawing.Size(591, 33);
+            this.txtSearch.Size = new System.Drawing.Size(389, 33);
             this.txtSearch.TabIndex = 13;
             this.txtSearch.Texts = "";
             this.txtSearch.UnderlinedStyle = false;
@@ -1038,7 +1123,7 @@
             // ListItem
             // 
             this.ListItem.AutoScroll = true;
-            this.ListItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.ListItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.ListItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListItem.Location = new System.Drawing.Point(0, 51);
             this.ListItem.Name = "ListItem";
@@ -1047,6 +1132,7 @@
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
@@ -1071,6 +1157,9 @@
             this.tabPage1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.pnlKhachHang.ResumeLayout(false);
+            this.pnlKhachHang.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCloseKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
@@ -1153,5 +1242,11 @@
         private CustomControls.RJControls.RJTextBox txtSearch;
         private System.Windows.Forms.FlowLayoutPanel ListItem;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel pnlKhachHang;
+        private System.Windows.Forms.Label lblMucTichLuy;
+        private System.Windows.Forms.Label lblDiaChi;
+        private System.Windows.Forms.Label lblSoDT;
+        private System.Windows.Forms.Label lblTen;
+        private CustomControls.RJControls.RJCircularPictureBox btnCloseKH;
     }
 }

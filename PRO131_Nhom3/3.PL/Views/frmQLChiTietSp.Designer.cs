@@ -69,6 +69,11 @@
             this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
             this.TabThongTin = new System.Windows.Forms.TabPage();
             this.grbtt = new System.Windows.Forms.GroupBox();
+            this.btnaddSize = new CustomControls.RJControls.RJCircularPictureBox();
+            this.btnAddChatLieu = new CustomControls.RJControls.RJCircularPictureBox();
+            this.btnAddTeam = new CustomControls.RJControls.RJCircularPictureBox();
+            this.btnAddMauSac = new CustomControls.RJControls.RJCircularPictureBox();
+            this.btnAddSP = new CustomControls.RJControls.RJCircularPictureBox();
             this.cbbChatLieu1 = new CustomControls.RJControls.RJComboBox();
             this.cbbTrangThai1 = new CustomControls.RJControls.RJComboBox();
             this.cbbsize1 = new CustomControls.RJControls.RJComboBox();
@@ -141,6 +146,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgView)).BeginInit();
             this.TabThongTin.SuspendLayout();
             this.grbtt.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnaddSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddChatLieu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddTeam)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddMauSac)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddSP)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -221,6 +231,7 @@
             this.panel1.Controls.Add(this.lblSoLuongSP);
             this.panel1.Controls.Add(this.lbltensp1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(180, 139);
@@ -230,7 +241,7 @@
             // 
             this.lblSoLuongSP.AutoSize = true;
             this.lblSoLuongSP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSoLuongSP.ForeColor = System.Drawing.Color.White;
+            this.lblSoLuongSP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblSoLuongSP.Location = new System.Drawing.Point(35, 48);
             this.lblSoLuongSP.Name = "lblSoLuongSP";
             this.lblSoLuongSP.Size = new System.Drawing.Size(0, 23);
@@ -239,8 +250,8 @@
             // lbltensp1
             // 
             this.lbltensp1.AutoSize = true;
-            this.lbltensp1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbltensp1.ForeColor = System.Drawing.Color.White;
+            this.lbltensp1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbltensp1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lbltensp1.Location = new System.Drawing.Point(6, 0);
             this.lbltensp1.Name = "lbltensp1";
             this.lbltensp1.Size = new System.Drawing.Size(0, 25);
@@ -254,6 +265,7 @@
             this.panel5.Controls.Add(this.lblmauSacSP);
             this.panel5.Controls.Add(this.lblsizesp);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel5.Location = new System.Drawing.Point(189, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(182, 139);
@@ -263,7 +275,7 @@
             // 
             this.lblTeamSP.AutoSize = true;
             this.lblTeamSP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTeamSP.ForeColor = System.Drawing.Color.White;
+            this.lblTeamSP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblTeamSP.Location = new System.Drawing.Point(13, 114);
             this.lblTeamSP.Name = "lblTeamSP";
             this.lblTeamSP.Size = new System.Drawing.Size(0, 20);
@@ -273,7 +285,7 @@
             // 
             this.lblChatLieuSP.AutoSize = true;
             this.lblChatLieuSP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblChatLieuSP.ForeColor = System.Drawing.Color.White;
+            this.lblChatLieuSP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblChatLieuSP.Location = new System.Drawing.Point(13, 81);
             this.lblChatLieuSP.Name = "lblChatLieuSP";
             this.lblChatLieuSP.Size = new System.Drawing.Size(0, 20);
@@ -283,7 +295,7 @@
             // 
             this.lblmauSacSP.AutoSize = true;
             this.lblmauSacSP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblmauSacSP.ForeColor = System.Drawing.Color.White;
+            this.lblmauSacSP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblmauSacSP.Location = new System.Drawing.Point(13, 48);
             this.lblmauSacSP.Name = "lblmauSacSP";
             this.lblmauSacSP.Size = new System.Drawing.Size(0, 20);
@@ -293,7 +305,7 @@
             // 
             this.lblsizesp.AutoSize = true;
             this.lblsizesp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblsizesp.ForeColor = System.Drawing.Color.White;
+            this.lblsizesp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblsizesp.Location = new System.Drawing.Point(13, 15);
             this.lblsizesp.Name = "lblsizesp";
             this.lblsizesp.Size = new System.Drawing.Size(0, 20);
@@ -537,10 +549,10 @@
             this.dtgView.AllowUserToDeleteRows = false;
             this.dtgView.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(195)))), ((int)(((byte)(188)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(100)))), ((int)(((byte)(98)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dtgView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
@@ -550,18 +562,18 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgView.ColumnHeadersHeight = 50;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(190)))), ((int)(((byte)(188)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(100)))), ((int)(((byte)(98)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgView.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtgView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -626,6 +638,11 @@
             // 
             this.grbtt.AutoSize = true;
             this.grbtt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
+            this.grbtt.Controls.Add(this.btnaddSize);
+            this.grbtt.Controls.Add(this.btnAddChatLieu);
+            this.grbtt.Controls.Add(this.btnAddTeam);
+            this.grbtt.Controls.Add(this.btnAddMauSac);
+            this.grbtt.Controls.Add(this.btnAddSP);
             this.grbtt.Controls.Add(this.cbbChatLieu1);
             this.grbtt.Controls.Add(this.cbbTrangThai1);
             this.grbtt.Controls.Add(this.cbbsize1);
@@ -662,6 +679,101 @@
             this.grbtt.TabStop = false;
             this.grbtt.Text = "Thông Tin";
             // 
+            // btnaddSize
+            // 
+            this.btnaddSize.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnaddSize.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.btnaddSize.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnaddSize.BorderColor2 = System.Drawing.Color.HotPink;
+            this.btnaddSize.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.btnaddSize.BorderSize = 2;
+            this.btnaddSize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnaddSize.GradientAngle = 50F;
+            this.btnaddSize.Image = global::_3.PL.Properties.Resources.add;
+            this.btnaddSize.Location = new System.Drawing.Point(516, 267);
+            this.btnaddSize.Name = "btnaddSize";
+            this.btnaddSize.Size = new System.Drawing.Size(32, 32);
+            this.btnaddSize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnaddSize.TabIndex = 21;
+            this.btnaddSize.TabStop = false;
+            this.btnaddSize.Click += new System.EventHandler(this.btnaddSize_Click);
+            // 
+            // btnAddChatLieu
+            // 
+            this.btnAddChatLieu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddChatLieu.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.btnAddChatLieu.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnAddChatLieu.BorderColor2 = System.Drawing.Color.HotPink;
+            this.btnAddChatLieu.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.btnAddChatLieu.BorderSize = 2;
+            this.btnAddChatLieu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddChatLieu.GradientAngle = 50F;
+            this.btnAddChatLieu.Image = global::_3.PL.Properties.Resources.add;
+            this.btnAddChatLieu.Location = new System.Drawing.Point(516, 225);
+            this.btnAddChatLieu.Name = "btnAddChatLieu";
+            this.btnAddChatLieu.Size = new System.Drawing.Size(32, 32);
+            this.btnAddChatLieu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAddChatLieu.TabIndex = 21;
+            this.btnAddChatLieu.TabStop = false;
+            this.btnAddChatLieu.Click += new System.EventHandler(this.btnAddChatLieu_Click);
+            // 
+            // btnAddTeam
+            // 
+            this.btnAddTeam.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddTeam.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.btnAddTeam.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnAddTeam.BorderColor2 = System.Drawing.Color.HotPink;
+            this.btnAddTeam.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.btnAddTeam.BorderSize = 2;
+            this.btnAddTeam.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddTeam.GradientAngle = 50F;
+            this.btnAddTeam.Image = global::_3.PL.Properties.Resources.add;
+            this.btnAddTeam.Location = new System.Drawing.Point(516, 183);
+            this.btnAddTeam.Name = "btnAddTeam";
+            this.btnAddTeam.Size = new System.Drawing.Size(32, 32);
+            this.btnAddTeam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAddTeam.TabIndex = 21;
+            this.btnAddTeam.TabStop = false;
+            this.btnAddTeam.Click += new System.EventHandler(this.btnAddTeam_Click);
+            // 
+            // btnAddMauSac
+            // 
+            this.btnAddMauSac.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddMauSac.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.btnAddMauSac.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnAddMauSac.BorderColor2 = System.Drawing.Color.HotPink;
+            this.btnAddMauSac.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.btnAddMauSac.BorderSize = 2;
+            this.btnAddMauSac.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddMauSac.GradientAngle = 50F;
+            this.btnAddMauSac.Image = global::_3.PL.Properties.Resources.add;
+            this.btnAddMauSac.Location = new System.Drawing.Point(516, 141);
+            this.btnAddMauSac.Name = "btnAddMauSac";
+            this.btnAddMauSac.Size = new System.Drawing.Size(32, 32);
+            this.btnAddMauSac.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAddMauSac.TabIndex = 21;
+            this.btnAddMauSac.TabStop = false;
+            this.btnAddMauSac.Click += new System.EventHandler(this.btnAddMauSac_Click);
+            // 
+            // btnAddSP
+            // 
+            this.btnAddSP.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddSP.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.btnAddSP.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnAddSP.BorderColor2 = System.Drawing.Color.HotPink;
+            this.btnAddSP.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.btnAddSP.BorderSize = 2;
+            this.btnAddSP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddSP.GradientAngle = 50F;
+            this.btnAddSP.Image = global::_3.PL.Properties.Resources.add;
+            this.btnAddSP.Location = new System.Drawing.Point(516, 100);
+            this.btnAddSP.Name = "btnAddSP";
+            this.btnAddSP.Size = new System.Drawing.Size(32, 32);
+            this.btnAddSP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAddSP.TabIndex = 21;
+            this.btnAddSP.TabStop = false;
+            this.btnAddSP.Click += new System.EventHandler(this.btnAddSP_Click);
+            // 
             // cbbChatLieu1
             // 
             this.cbbChatLieu1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -670,7 +782,7 @@
             this.cbbChatLieu1.BorderSize = 1;
             this.cbbChatLieu1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbbChatLieu1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbbChatLieu1.ForeColor = System.Drawing.Color.DimGray;
+            this.cbbChatLieu1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cbbChatLieu1.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.cbbChatLieu1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cbbChatLieu1.ListTextColor = System.Drawing.Color.DimGray;
@@ -690,7 +802,7 @@
             this.cbbTrangThai1.BorderSize = 1;
             this.cbbTrangThai1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbbTrangThai1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbbTrangThai1.ForeColor = System.Drawing.Color.DimGray;
+            this.cbbTrangThai1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cbbTrangThai1.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.cbbTrangThai1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cbbTrangThai1.ListTextColor = System.Drawing.Color.DimGray;
@@ -710,7 +822,7 @@
             this.cbbsize1.BorderSize = 1;
             this.cbbsize1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbbsize1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbbsize1.ForeColor = System.Drawing.Color.DimGray;
+            this.cbbsize1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cbbsize1.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.cbbsize1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cbbsize1.ListTextColor = System.Drawing.Color.DimGray;
@@ -730,7 +842,7 @@
             this.cbbTeam1.BorderSize = 1;
             this.cbbTeam1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbbTeam1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbbTeam1.ForeColor = System.Drawing.Color.DimGray;
+            this.cbbTeam1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cbbTeam1.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.cbbTeam1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cbbTeam1.ListTextColor = System.Drawing.Color.DimGray;
@@ -750,7 +862,7 @@
             this.cbbms1.BorderSize = 1;
             this.cbbms1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbbms1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbbms1.ForeColor = System.Drawing.Color.DimGray;
+            this.cbbms1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cbbms1.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.cbbms1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cbbms1.ListTextColor = System.Drawing.Color.DimGray;
@@ -770,7 +882,7 @@
             this.cbbSP1.BorderSize = 1;
             this.cbbSP1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbbSP1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbbSP1.ForeColor = System.Drawing.Color.DimGray;
+            this.cbbSP1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cbbSP1.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.cbbSP1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cbbSP1.ListTextColor = System.Drawing.Color.DimGray;
@@ -792,13 +904,13 @@
             this.btnThemMoi.BorderSize = 0;
             this.btnThemMoi.FlatAppearance.BorderSize = 0;
             this.btnThemMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemMoi.ForeColor = System.Drawing.Color.White;
+            this.btnThemMoi.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnThemMoi.Location = new System.Drawing.Point(358, 651);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(152, 40);
             this.btnThemMoi.TabIndex = 19;
             this.btnThemMoi.Text = "+ Thêm mới";
-            this.btnThemMoi.TextColor = System.Drawing.Color.White;
+            this.btnThemMoi.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnThemMoi.UseVisualStyleBackColor = false;
             this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
@@ -812,13 +924,13 @@
             this.btnCapNhat.BorderSize = 0;
             this.btnCapNhat.FlatAppearance.BorderSize = 0;
             this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapNhat.ForeColor = System.Drawing.Color.White;
+            this.btnCapNhat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCapNhat.Location = new System.Drawing.Point(94, 651);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(152, 40);
             this.btnCapNhat.TabIndex = 19;
             this.btnCapNhat.Text = "Cập nhật";
-            this.btnCapNhat.TextColor = System.Drawing.Color.White;
+            this.btnCapNhat.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCapNhat.UseVisualStyleBackColor = false;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
@@ -831,7 +943,7 @@
             this.txtGiaBan1.BorderRadius = 0;
             this.txtGiaBan1.BorderSize = 2;
             this.txtGiaBan1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtGiaBan1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtGiaBan1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtGiaBan1.Location = new System.Drawing.Point(214, 438);
             this.txtGiaBan1.Margin = new System.Windows.Forms.Padding(4);
             this.txtGiaBan1.Multiline = false;
@@ -850,7 +962,7 @@
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label14.Location = new System.Drawing.Point(82, 278);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(45, 25);
@@ -862,7 +974,7 @@
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label17.Location = new System.Drawing.Point(82, 594);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(98, 25);
@@ -875,6 +987,7 @@
             this.rdoKhongApDung1.AutoSize = true;
             this.rdoKhongApDung1.CheckedColor = System.Drawing.Color.MediumSlateBlue;
             this.rdoKhongApDung1.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rdoKhongApDung1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.rdoKhongApDung1.Location = new System.Drawing.Point(380, 554);
             this.rdoKhongApDung1.MinimumSize = new System.Drawing.Size(0, 21);
             this.rdoKhongApDung1.Name = "rdoKhongApDung1";
@@ -892,6 +1005,7 @@
             this.rdoApDung1.AutoSize = true;
             this.rdoApDung1.CheckedColor = System.Drawing.Color.MediumSlateBlue;
             this.rdoApDung1.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rdoApDung1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.rdoApDung1.Location = new System.Drawing.Point(220, 554);
             this.rdoApDung1.MinimumSize = new System.Drawing.Size(0, 21);
             this.rdoApDung1.Name = "rdoApDung1";
@@ -912,7 +1026,7 @@
             this.txtGiaNhap1.BorderRadius = 0;
             this.txtGiaNhap1.BorderSize = 2;
             this.txtGiaNhap1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtGiaNhap1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtGiaNhap1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtGiaNhap1.Location = new System.Drawing.Point(214, 395);
             this.txtGiaNhap1.Margin = new System.Windows.Forms.Padding(4);
             this.txtGiaNhap1.Multiline = false;
@@ -935,7 +1049,7 @@
             this.txtSLton.BorderRadius = 0;
             this.txtSLton.BorderSize = 2;
             this.txtSLton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSLton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSLton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSLton.Location = new System.Drawing.Point(214, 352);
             this.txtSLton.Margin = new System.Windows.Forms.Padding(4);
             this.txtSLton.Multiline = false;
@@ -958,7 +1072,7 @@
             this.txtBaoHanh1.BorderRadius = 0;
             this.txtBaoHanh1.BorderSize = 2;
             this.txtBaoHanh1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBaoHanh1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtBaoHanh1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtBaoHanh1.Location = new System.Drawing.Point(214, 309);
             this.txtBaoHanh1.Margin = new System.Windows.Forms.Padding(4);
             this.txtBaoHanh1.Multiline = false;
@@ -981,7 +1095,7 @@
             this.txtMoTa1.BorderRadius = 15;
             this.txtMoTa1.BorderSize = 2;
             this.txtMoTa1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMoTa1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtMoTa1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtMoTa1.Location = new System.Drawing.Point(94, 499);
             this.txtMoTa1.Margin = new System.Windows.Forms.Padding(4);
             this.txtMoTa1.Multiline = false;
@@ -1000,7 +1114,7 @@
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label19.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label19.Location = new System.Drawing.Point(82, 554);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(131, 25);
@@ -1012,7 +1126,7 @@
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label20.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label20.Location = new System.Drawing.Point(82, 450);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(75, 25);
@@ -1024,7 +1138,7 @@
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label21.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label21.Location = new System.Drawing.Point(82, 407);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(88, 25);
@@ -1036,7 +1150,7 @@
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label22.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label22.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label22.Location = new System.Drawing.Point(82, 364);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(128, 25);
@@ -1048,7 +1162,7 @@
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label23.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label23.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label23.Location = new System.Drawing.Point(82, 321);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(91, 25);
@@ -1060,7 +1174,7 @@
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label24.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label24.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label24.Location = new System.Drawing.Point(82, 235);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(89, 25);
@@ -1072,7 +1186,7 @@
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label25.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label25.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label25.Location = new System.Drawing.Point(82, 192);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(55, 25);
@@ -1084,7 +1198,7 @@
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label26.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label26.Location = new System.Drawing.Point(82, 149);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(81, 25);
@@ -1096,7 +1210,7 @@
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label27.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label27.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label27.Location = new System.Drawing.Point(82, 106);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(93, 25);
@@ -1475,6 +1589,7 @@
             this.Controls.Add(this.TabAll);
             this.Controls.Add(this.pnlSanPham);
             this.Name = "frmQLChiTietSp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "6";
             this.pnlSanPham.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -1504,6 +1619,11 @@
             this.TabThongTin.PerformLayout();
             this.grbtt.ResumeLayout(false);
             this.grbtt.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnaddSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddChatLieu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddTeam)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddMauSac)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddSP)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -1599,5 +1719,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private CustomControls.RJControls.RJCircularPictureBox btnaddSize;
+        private CustomControls.RJControls.RJCircularPictureBox btnAddChatLieu;
+        private CustomControls.RJControls.RJCircularPictureBox btnAddTeam;
+        private CustomControls.RJControls.RJCircularPictureBox btnAddMauSac;
+        private CustomControls.RJControls.RJCircularPictureBox btnAddSP;
     }
 }

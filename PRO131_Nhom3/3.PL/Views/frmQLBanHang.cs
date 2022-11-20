@@ -15,8 +15,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net.WebSockets;
-using System.Text.RegularExpressions;
-using System.Text;
 using System.Windows.Documents;
 using System.Windows.Forms;
 
@@ -55,6 +53,7 @@ namespace _3.PL.Views
             _IHinhThucMhServices = new HinhThucMhServices();
             _IChiTietHDServices = new ChiTietHDServices();
             CbbGiamGia.SelectedIndex = 0;
+            pnlKhachHang.Visible = false;
             //System.Windows.Documents.ListItem.Controls.Clear();
             ListItem.Controls.Clear();
             AnSearch();
@@ -248,15 +247,19 @@ namespace _3.PL.Views
             GetSdt = txtsearchKH.Texts;
             if (txtsearchKH.Texts == "")
             {
-
+                pnlKhachHang.Visible = false;
             }
             else if (GetKH(txtsearchKH.Texts) != null)
             {
-
+                pnlKhachHang.Visible = true;
+                lblTen.Text = "KH: " + String.Concat(GetKH(txtsearchKH.Texts).Ho, " ", GetKH(txtsearchKH.Texts).TenDem, " ", GetKH(txtsearchKH.Texts).Ten);
+                lblSoDT.Text ="SĐt: " +  GetKH(txtsearchKH.Texts).Sdt;
+                lblDiaChi.Text = "Địa chỉ: " + GetKH(txtsearchKH.Texts).DiaChi;
+                lblMucTichLuy.Text = "Điểm tích lũy: " + GetKH(txtsearchKH.Texts).SoDiem;
             }
             else if (GetKH(txtsearchKH.Texts) == null)
             {
-
+                pnlKhachHang.Visible = false;
             }
 
         }
@@ -293,7 +296,7 @@ namespace _3.PL.Views
             if (dgview.Columns[e.ColumnIndex].Name == "XoaSP")
             {
                 var hdct = GetHDct(Guid.Parse(Cell(0)));
-                MessageBox.Show(_IChiTietHDServices.Delete(hdct));
+                _IChiTietHDServices.Delete(hdct);
             }
             LoadView(TabHoaDon.SelectedTab.Name);
             LoadGia();
@@ -312,9 +315,7 @@ namespace _3.PL.Views
 
         private void rjCircularPictureBox3_Click(object sender, EventArgs e)
         {
-            //FrmKhachHang frmkh = new FrmKhachHang(txtsearchKH.Texts);
-            FrmKhachHang frmkh = new FrmKhachHang();
-
+            FrmKhachHang frmkh = new FrmKhachHang(txtsearchKH.Texts);
             frmkh.ShowDialog();
             if (txtsearchKH.Texts == "")
             {
@@ -399,7 +400,14 @@ namespace _3.PL.Views
                     }
                     else
                     {
-                        txtTienThua.Texts = double.Parse((Convert.ToDecimal(txthtThanhToan.Texts) - ValidateInput.RegexDecimal(txtTongTienPTra.Texts)).ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ";
+                        if ((Convert.ToDecimal(txthtThanhToan.Texts) - ValidateInput.RegexDecimal(txtTongTienPTra.Texts)) > 0)
+                        {
+                            txtTienThua.Texts = double.Parse((Convert.ToDecimal(txthtThanhToan.Texts) - ValidateInput.RegexDecimal(txtTongTienPTra.Texts)).ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ";
+                        }else
+                        {
+                            txtTienThua.Texts = "";
+                        }
+
                     }
                 }
                 if (txthtThanhToan.Texts == "")
@@ -492,7 +500,13 @@ namespace _3.PL.Views
                 if (txthtThanhToan.Texts.Trim() != "" && ValidateInput.CheckDecimalInput(txthtThanhToan.Texts.Trim()) && decimal.Parse(txthtThanhToan.Texts.Trim()) > _IChiTietHDServices.GetAll().Where(x => x.MaHD == TabHoaDon.SelectedTab.Name).Sum(x => x.SoLuong * x.DonGia))
                 {
                     decimal TienThua = decimal.Parse(txthtThanhToan.Texts.Trim()) - decimal.Parse(_IChiTietHDServices.GetAll().Where(x => x.MaHD == TabHoaDon.SelectedTab.Name).Sum(x => x.SoLuong * x.DonGia).ToString());
-                    txtTienThua.Texts = double.Parse(TienThua.ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ";
+                    if (TienThua < 0)
+                    {
+                        txtTienThua.Texts = "";
+                    }else
+                    {
+                        txtTienThua.Texts = double.Parse(TienThua.ToString()).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + "đ";
+                    }
                 }
                 else
                 {
@@ -630,35 +644,13 @@ namespace _3.PL.Views
         {
             LoadGia();
         }
-        public static string RemoveUnicode(string text)
-        {
-            string[] arr1 = new string[] { "á", "à", "ả", "ã", "ạ", "â", "ấ", "ầ", "ẩ", "ẫ", "ậ", "ă", "ắ", "ằ", "ẳ", "ẵ", "ặ",
-    "đ",
-    "é","è","ẻ","ẽ","ẹ","ê","ế","ề","ể","ễ","ệ",
-    "í","ì","ỉ","ĩ","ị",
-    "ó","ò","ỏ","õ","ọ","ô","ố","ồ","ổ","ỗ","ộ","ơ","ớ","ờ","ở","ỡ","ợ",
-    "ú","ù","ủ","ũ","ụ","ư","ứ","ừ","ử","ữ","ự",
-    "ý","ỳ","ỷ","ỹ","ỵ",};
-            string[] arr2 = new string[] { "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
-    "d",
-    "e","e","e","e","e","e","e","e","e","e","e",
-    "i","i","i","i","i",
-    "o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o",
-    "u","u","u","u","u","u","u","u","u","u","u",
-    "y","y","y","y","y",};
-            for (int i = 0; i < arr1.Length; i++)
-            {
-                text = text.Replace(arr1[i], arr2[i]);
-                text = text.Replace(arr1[i].ToUpper(), arr2[i].ToUpper());
-            }
-            return text;
-        }
+
         private ChiTietSpViews GetCtsp(Guid id) => _IChiTietSpServices.GetById(id);
         private void LoadItemSearch(string name)
         {
             flpSP.Controls.Clear();
             SearchHats[] Hat = new SearchHats[_IanhServices.GetAll().GroupBy(x => x.IdChiTietSp).Select(sp => sp.First()).ToList().Count];
-            List<AnhViews> ListAnh = _IanhServices.GetAll().GroupBy(x => x.IdChiTietSp).Select(sp => sp.First()).Where(x => x.TrangThaiSP == 0 && RemoveUnicode(GetCtsp(x.IdChiTietSp.GetValueOrDefault()).TenSP).ToLower().Contains(RemoveUnicode(name).ToLower())).ToList();
+            List<AnhViews> ListAnh = _IanhServices.GetAll().GroupBy(x => x.IdChiTietSp).Select(sp => sp.First()).Where(x => x.TrangThaiSP == 0 && RemoveUnicode(GetCtsp(x.IdChiTietSp.GetValueOrDefault()).TenSP.ToLower()).Contains(RemoveUnicode(name.ToLower()))).ToList();
             if (ListAnh.Any())
             {
                 for (int i = 0; i < ListAnh.Count; i++)
@@ -709,7 +701,6 @@ namespace _3.PL.Views
                             }
                             else
                             {
-
                                 this.Alert("Vui lòng tạo hóa đơn", Form_Alert.enmType.Warning);
                             }
                             txtSearch.Texts = "";
@@ -744,6 +735,34 @@ namespace _3.PL.Views
         {
             LoadItemSearch(txtSearch.Texts);
         }
+        public static string RemoveUnicode(string text)
+        {
+            string[] arr1 = new string[] { "á", "à", "ả", "ã", "ạ", "â", "ấ", "ầ", "ẩ", "ẫ", "ậ", "ă", "ắ", "ằ", "ẳ", "ẵ", "ặ",
+    "đ",
+    "é","è","ẻ","ẽ","ẹ","ê","ế","ề","ể","ễ","ệ",
+    "í","ì","ỉ","ĩ","ị",
+    "ó","ò","ỏ","õ","ọ","ô","ố","ồ","ổ","ỗ","ộ","ơ","ớ","ờ","ở","ỡ","ợ",
+    "ú","ù","ủ","ũ","ụ","ư","ứ","ừ","ử","ữ","ự",
+    "ý","ỳ","ỷ","ỹ","ỵ",};
+            string[] arr2 = new string[] { "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+    "d",
+    "e","e","e","e","e","e","e","e","e","e","e",
+    "i","i","i","i","i",
+    "o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o",
+    "u","u","u","u","u","u","u","u","u","u","u",
+    "y","y","y","y","y",};
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                text = text.Replace(arr1[i], arr2[i]);
+                text = text.Replace(arr1[i].ToUpper(), arr2[i].ToUpper());
+            }
+            return text;
+        }
 
+        private void btnCloseKH_Click(object sender, EventArgs e)
+        {
+            txtsearchKH.PlaceholderText = "";
+            txtsearchKH.Texts = "";
+        }
     }
 }
