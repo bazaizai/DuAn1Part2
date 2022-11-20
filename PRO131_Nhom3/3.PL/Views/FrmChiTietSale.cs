@@ -35,12 +35,29 @@ namespace _3.PL.Views
             _lstCtsle = new List<ChiTietSaleView>();
             lstSale = new List<SaleView>();
             tb_ma.Enabled = false;
-            loadcbb();
-            loadlb();
+            cbb_loaiKM.Items.Add("%");
+            cbb_loaiKM.Items.Add("Tiền mặt");
+            cbb_trangthai.Items.Add("Đang áp dụng");
+            cbb_trangthai.Items.Add("Ngừng áp dụng");
+            dtp_end.Value = DateTime.Now;
+            dtp_start.Value = DateTime.Now;
+            cbb_locKM.Items.Add("Tất cả");
+            cbb_locKM.Items.Add("%");
+            cbb_locKM.Items.Add("Tiền mặt");
+            cbb_locTrangthai.Items.Add("Tất cả");
+            cbb_locTrangthai.Items.Add("Đang áp dụng");
+            cbb_locTrangthai.Items.Add("Ngừng áp dụng");
+
+
+            cbb_locKM.SelectedIndex = 0;
+            cbb_locTrangthai.SelectedIndex = 0;
+
+
+
             loadKM();
             loadCTSP();
-         
-            ngaygio();
+            dtp_start.CustomFormat = " HH:mm:ss  dd/MM/yyyy";
+            dtp_end.CustomFormat = " HH:mm:ss  dd/MM/yyyy";
         }
         private void loadlb()
         {
@@ -54,23 +71,7 @@ namespace _3.PL.Views
                 lb_mucgiam.Text = "Số tiền giảm";
             }
         }
-        private void loadcbb()
-        {
-            cbb_loaiKM.Items.Add("%");
-            cbb_loaiKM.Items.Add("Tiền mặt");
-            cbb_trangthai.Items.Add("Đang áp dụng");
-            cbb_trangthai.Items.Add("Ngừng áp dụng");
-            dtp_end.Value = DateTime.Now;
-            dtp_start.Value = DateTime.Now;
-            cbb_locKM.Items.Add("Tất cả");
-            cbb_locKM.Items.Add("%");
-            cbb_locKM.Items.Add("Tiền mặt");
-            cbb_locTrangthai.Items.Add("Tất cả");
-            cbb_locTrangthai.Items.Add("Đang áp dụng");
-            cbb_locTrangthai.Items.Add("Ngừng áp dụng");
-            cbb_locKM.SelectedIndex = 0;
-            cbb_locTrangthai.SelectedIndex = 0;
-        }
+
 
         private void loadKM()
         {
@@ -141,11 +142,7 @@ namespace _3.PL.Views
 
 
         }
-        private void ngaygio()
-        {
-            dtp_start.CustomFormat = " HH:mm:ss  dd/MM/yyyy";
-            dtp_end.CustomFormat = " HH:mm:ss  dd/MM/yyyy";
-        }
+
         private void bt_them_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có muốn thêm ?", "Cảnh báo", MessageBoxButtons.YesNo);
@@ -361,7 +358,7 @@ namespace _3.PL.Views
 
         private void cbb_locTrangthai_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             if (cbb_locTrangthai.Text == "Tất cả")
             {
                 loadKM();
@@ -410,5 +407,7 @@ namespace _3.PL.Views
                 }
             }
         }
+
+    
     }
 }
