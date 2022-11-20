@@ -35,6 +35,7 @@ namespace _2.BUS.Services
                                              TrangThai = a.TrangThai,
                                              BaoHanh = sp.BaoHanh,
                                              GiaBan = sp.GiaBan,
+                                             TrangThaiSP = sp.TrangThai,
                                              IdChatLieu = sp.IdChatLieu,
                                              IdKichCo = sp.IdKichCo,
                                              IdMauSac=sp.IdMauSac,

@@ -32,9 +32,9 @@ namespace _2.BUS.Services
             _ITeamRepos = new TeamRepos();
             _IGiaiDauRepos = new GiaiDauRepos();
         }
-        public string Add(ChiTietSpViews Obj) => Obj != null && _IChiTietSpRespos.Add(new ChiTietSp(Obj.Id,Obj.IdSp, Obj.IdMauSac, Obj.IdSize, Obj.IdTeam, Obj.IdChatLieu, Obj.BaoHanh, Obj.MoTa, Obj.SoLuongTon, Obj.GiaNhap, Obj.GiaBan, Obj.TrangThaiKhuyenMai, Obj.TrangThai)) ? "Add succsess" : "Add not success";
+        public bool Add(ChiTietSpViews Obj) => Obj != null && _IChiTietSpRespos.Add(new ChiTietSp(Obj.Id,Obj.IdSp, Obj.IdMauSac, Obj.IdSize, Obj.IdTeam, Obj.IdChatLieu, Obj.BaoHanh, Obj.MoTa, Obj.SoLuongTon, Obj.GiaNhap, Obj.GiaBan, Obj.TrangThaiKhuyenMai, Obj.TrangThai));
 
-        public string Delete(ChiTietSpViews Obj)=> Obj != null && _IChiTietSpRespos.Delete(_IChiTietSpRespos.GetAll().Find(x => x.Id == Obj.Id)) ? "Delete success" : "Delete not succsess";
+        public bool Delete(ChiTietSpViews Obj)=> Obj != null && _IChiTietSpRespos.Delete(_IChiTietSpRespos.GetAll().Find(x => x.Id == Obj.Id));
 
 
         public List<ChiTietSpViews> GetAll() => (from spct in _IChiTietSpRespos.GetAll()
@@ -79,11 +79,11 @@ namespace _2.BUS.Services
 
         public ChiTietSpViews GetById(Guid Id) => GetAll().Find(x => x.Id == Id);
 
-        public string Update(ChiTietSpViews Obj)
+        public bool Update(ChiTietSpViews Obj)
         {
             //public ChiTietSpViews(Guid? idSp, Guid? idMauSac, Guid? idSize, Guid? idTeam, Guid? idChatLieu, string baoHanh, string moTa, int? soLuongTon, decimal? giaNhap, decimal? giaBan, int? trangThai, int? trangThaiKhuyenMai)
 
-            if (Obj == null) return "Update not success";
+            if (Obj == null) return false;
             var x = _IChiTietSpRespos.GetById(Obj.Id);
             x.IdSp = Obj.IdSp;
             x.IdMauSac = Obj.IdMauSac;
@@ -98,7 +98,7 @@ namespace _2.BUS.Services
             x.TrangThai = Obj.TrangThai;
             x.TrangThaiKhuyenMai = Obj.TrangThaiKhuyenMai;
             _IChiTietSpRespos.Update(x);
-            return "Update succsess";
+            return true;
         }
 
     }

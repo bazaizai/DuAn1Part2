@@ -19,7 +19,10 @@ namespace _3.PL
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmMain());
+<<<<<<< HEAD
 
+=======
+>>>>>>> Develop
         }
     }
 }

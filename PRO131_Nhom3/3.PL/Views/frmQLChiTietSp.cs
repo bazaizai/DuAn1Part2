@@ -1,6 +1,9 @@
 ﻿using _2.BUS.IServices;
 using _2.BUS.Services;
 using _2.BUS.ViewModels;
+using _3.PL.Properties;
+using _3.PL.Utilities;
+using CustomAlertBoxDemo;
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
@@ -39,26 +42,13 @@ namespace _3.PL.Views
             _ISizeServices = new KichCoServices();
             _IAnhServices = new AnhServices();
             _SelectID = new Guid();
+            cbbTrangThai1.Items.Add("Đang bán");
+            cbbTrangThai1.Items.Add("Dừng bán");
             LoadCbb();
             LoadData();
+            resest();
             x = 0;
-            AnChucNang();
         }
-        private void HideChucNang()
-        {
-            pnlChucNang.Visible = true;
-            btnExit.Visible = true;
-            btnExit1.Visible = true;
-            pnlSanPham.Visible = false;
-        }
-        private void AnChucNang()
-        {
-            pnlChucNang.Visible = false;
-            btnExit.Visible = false;
-            btnExit1.Visible = false;
-            pnlSanPham.Visible = true;
-        }
-
 
         private void LoadCbb()
         {
@@ -87,6 +77,9 @@ namespace _3.PL.Views
             {
                 cbbTeam1.Items.Add(item.Ten);
             }
+            //cbbTrangThai1.Items.Clear();
+
+
         }
         private void FakeData()
         {
@@ -138,42 +131,20 @@ namespace _3.PL.Views
             dtgView.Columns[8].Name = "Giá nhập";
             dtgView.Columns[9].Name = "Số lượng tồn";
             dtgView.Columns[10].Name = "Trạng Thái";
-
             foreach (var x in _lst)
             {
-                dtgView.Rows.Add(x.Id, stt++, x.TenSP, x.TenChatLieu, x.TenTeam, x.TenMauSac, x.Size, x.GiaBan, x.GiaNhap, x.SoLuongTon, x.TrangThai == 0 ? "Đang bán" : "Dừng Bán");
+                dtgView.Rows.Add(x.Id, stt++, x.TenSP, x.TenChatLieu, x.TenTeam, x.TenMauSac, x.Size, x.GiaBan, x.GiaNhap, x.SoLuongTon, x.TrangThai == 0 ? "Đang bán" : "Dừng Bán", x.IdMauSac, x.IdChatLieu, x.IdSize, x.IdTeam, x.IdSp);
             }
-            resest();
         }
-
-        private Guid IdSp() => _ISanPhamServices.GetAll().Find(x => x.Ten == cbbSP1.Text).Id;
-        private Guid IdMs() => _IMauSacServices.GetAll().Find(x => x.Ten == cbbms1.Text).Id;
-        private Guid IdCL() => _IChatLieuServices.GetAll().Find(x => x.Ten == cbbChatLieu1.Text).Id;
-        private Guid IdTeam() => _ITeamServices.GetIdByName(cbbTeam1.Text);
-        private Guid IdSize() => _ISizeServices.GetAll().Find(x => x.Size == cbbsize1.Text).Id;
+        private Guid IdSp() => _ISanPhamServices.GetAll().Find(x => x.Ten == cbbSP1.Texts).Id;
+        private Guid IdMs() => _IMauSacServices.GetAll().Find(x => x.Ten == cbbms1.Texts).Id;
+        private Guid IdCL() => _IChatLieuServices.GetAll().Find(x => x.Ten == cbbChatLieu1.Texts).Id;
+        private Guid IdTeam() => _ITeamServices.GetIdByName(cbbTeam1.Texts);
+        private Guid IdSize() => _ISizeServices.GetAll().Find(x => x.Size == cbbsize1.Texts).Id;
         private List<AnhViews> GetListAnh(Guid? Id) => _IAnhServices.GetAll().Where(x => x.IdChiTietSp == Id).ToList();
 
         private string Cell(int x) => dtgView.CurrentRow.Cells[x].Value.ToString();
 
-
-        private void dtgView_CellClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            _SelectID = Guid.Parse(Cell(0));
-            AnhExit.Image = Image.FromStream(new MemoryStream((byte[])GetListAnh(_SelectID)[0].DuongDan));
-            AnhExit1.Image = Image.FromStream(new MemoryStream((byte[])GetListAnh(_SelectID)[1].DuongDan));
-            anhtt.Image = Image.FromStream(new MemoryStream((byte[])GetListAnh(_SelectID)[0].DuongDan));
-            anhtt.SizeMode = PictureBoxSizeMode.StretchImage;
-            Anhtt1.Image = Image.FromStream(new MemoryStream((byte[])GetListAnh(_SelectID)[1].DuongDan));
-            Anhtt1.SizeMode = PictureBoxSizeMode.StretchImage;
-            anhthongtin.Image = Image.FromStream(new MemoryStream((byte[])GetListAnh(_SelectID)[0].DuongDan));
-            lblTenSP.Text = Cell(2);
-            lblGia.Text = "Giá: " + double.Parse(Cell(7)).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + " đ";
-            lblChatlieu.Text = Cell(3);
-            lblSize.Text = Cell(6);
-            lblSoluong.Text = Cell(9);
-            lblMauSac.Text = Cell(5);
-            lblteam.Text = Cell(4);
-        }
 
         private bool CheckTrungSP(Guid idsp, Guid idmausac, Guid Idsize, Guid idteam, Guid idClieu)
         {
@@ -187,19 +158,6 @@ namespace _3.PL.Views
             return false;
         }
 
-        private void TabAll_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            x++;
-            if (x % 2 != 0)
-            {
-                HideChucNang();
-            }
-            else
-            {
-                AnChucNang();
-                resest();
-            }
-        }
         private void resest()
         {
             txtBaoHanh1.Texts = "";
@@ -215,157 +173,238 @@ namespace _3.PL.Views
             cbbTrangThai1.SelectedIndex = -1;
             rdoApDung1.Checked = false;
             rdoKhongApDung1.Checked = false;
-            AnhExit.Image = null;
-            AnhExit1.Image = null;
             _SelectID = new Guid();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Image file:| *.jpg;*.jpeg;*.png;*.gif;*.tif;...";
+        private ChiTietSpViews Obj() => _IChiTietSpServices.GetById(_SelectID);
 
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                DialogResult result = MessageBox.Show("Bạn có muốn chọn ảnh không?",
-               "Thông báo", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    AnhExit.Image = Image.FromFile(ofd.FileName);
-                }
-            }
+        public void Alert(string msg, Form_Alert.enmType type)
+        {
+            Form_Alert frm = new Form_Alert();
+            frm.showAlert(msg, type);
         }
-        private void btnExit1_Click(object sender, EventArgs e)
+        private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Image file:| *.jpg;*.jpeg;*.png;*.gif;*.tif;...";
-
-            if (ofd.ShowDialog() == DialogResult.OK)
+            if (!Vldate.Null(cbbChatLieu1.Texts) && !Vldate.Null(cbbms1.Texts) && !Vldate.Null(cbbsize1.Texts) && !Vldate.Null(cbbSP1.Texts) && !Vldate.Null(cbbTeam1.Texts) && !Vldate.Null(cbbTrangThai1.Texts) && Vldate.KnullTXTGrb(grbtt, txtMoTa1) && anhtt.Image != null && Anhtt1.Image != null && (rdoApDung1.Checked || rdoKhongApDung1.Checked))
             {
-                DialogResult result = MessageBox.Show("Bạn có muốn chọn ảnh không?",
-               "Thông báo", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+                if (!CheckTrungSP(IdSp(), IdMs(), IdSize(), IdTeam(), IdCL()) || (Obj().IdChatLieu == IdCL() && Obj().IdMauSac == IdMs() && Obj().IdTeam == IdTeam() && Obj().IdSp == IdSp() && Obj().IdSize == IdSize()))
                 {
-                    AnhExit1.Image = Image.FromFile(ofd.FileName);
+                    try
+                    {
+                        if (Obj() != null)
+                        {
+                            _IChiTietSpServices.Update(new ChiTietSpViews(_SelectID, IdSp(), IdMs(), IdSize(), IdTeam(), IdCL(), txtBaoHanh1.Texts, txtMoTa1.Texts, int.Parse(txtSLton.Texts), decimal.Parse(txtGiaNhap1.Texts), int.Parse(txtGiaBan1.Texts), cbbTrangThai1.Texts == "Đang bán" ? 0 : 1, rdoApDung1.Checked ? 0 : 1));
+                            var Anh = new AnhViews()
+                            {
+                                Id = GetListAnh(_SelectID)[0].Id,
+                                TenAnh = String.Concat("1"),
+                                DuongDan = (byte[])new ImageConverter().ConvertTo(anhtt.Image, typeof(Byte[])),
+                                TrangThai = 0
+                            };
+                            _IAnhServices.Update(Anh);
+                            var Anh1 = new AnhViews()
+                            {
+                                Id = GetListAnh(_SelectID)[1].Id,
+                                TenAnh = String.Concat("1"),
+                                DuongDan = (byte[])new ImageConverter().ConvertTo(Anhtt1.Image, typeof(Byte[])),
+                                TrangThai = 0
+                            };
+                            _IAnhServices.Update(Anh1);
+
+                            this.Alert("Update succsess", Form_Alert.enmType.Success);
+                            LoadData();
+                            this.anhtt.Image = Resources.AddImg;
+                            this.Anhtt1.Image = Resources.AddImg;
+                            resest();
+                        }
+                        else
+                        {
+
+                            this.Alert("Vui lòng chọn sản phẩm", Form_Alert.enmType.Warning);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        this.Alert(ex.Message, Form_Alert.enmType.Error);
+                    }
+                }
+                else
+                {
+
+                    this.Alert("Sản phẩm này đã tồn tại", Form_Alert.enmType.Warning);
                 }
             }
+            else
+                this.Alert("Vui lòng nhập đủ trường *", Form_Alert.enmType.Warning);
+        }
+
+        private void btnThemMoi_Click(object sender, EventArgs e)
+        {
+            if (!Vldate.Null(cbbChatLieu1.Texts) && !Vldate.Null(cbbms1.Texts) && !Vldate.Null(cbbsize1.Texts) && !Vldate.Null(cbbSP1.Texts) && !Vldate.Null(cbbTeam1.Texts) && !Vldate.Null(cbbTrangThai1.Texts) && Vldate.KnullTXTGrb(grbtt, txtMoTa1) && anhtt.Image != null && Anhtt1.Image != null && (rdoApDung1.Checked || rdoKhongApDung1.Checked))
+            {
+                if (!CheckTrungSP(IdSp(), IdMs(), IdSize(), IdTeam(), IdCL()))
+                {
+                    try
+                    {
+                        var x = new ChiTietSpViews()
+                        {
+                            Id = Guid.NewGuid(),
+                            IdChatLieu = IdCL(),
+                            IdSp = IdSp(),
+                            IdMauSac = IdMs(),
+                            IdSize = IdSize(),
+                            IdTeam = IdTeam(),
+                            BaoHanh = txtBaoHanh1.Texts,
+                            SoLuongTon = int.Parse(txtSLton.Texts),
+                            GiaBan = decimal.Parse(txtGiaBan1.Texts),
+                            GiaNhap = decimal.Parse(txtGiaNhap1.Texts),
+                            TrangThai = cbbTrangThai1.Texts == "Đang bán" ? 0 : 1,
+                            TrangThaiKhuyenMai = rdoApDung1.Checked ? 0 : 1
+                        };
+                        _IChiTietSpServices.Add(x);
+
+                        var Anh = new AnhViews()
+                        {
+                            IdChiTietSp = x.Id,
+                            TenAnh = String.Concat("1"),
+                            DuongDan = (byte[])(new ImageConverter().ConvertTo(anhtt.Image, typeof(Byte[]))),
+                            TrangThai = 0
+                        };
+                        _IAnhServices.Add(Anh);
+                        var Anh1 = new AnhViews()
+                        {
+                            IdChiTietSp = x.Id,
+                            TenAnh = String.Concat("1"),
+                            DuongDan = (byte[])(new ImageConverter().ConvertTo(Anhtt1.Image, typeof(Byte[]))),
+                            TrangThai = 0
+                        };
+                        _IAnhServices.Add(Anh1);
+                        this.Alert("Thêm thành công", Form_Alert.enmType.Success);
+                        LoadData();
+                        this.anhtt.Image = Resources.AddImg;
+                        this.Anhtt1.Image = Resources.AddImg;
+                        resest();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else
+                    this.Alert("Sản phẩm này đã tồn tại", Form_Alert.enmType.Warning);
+            }
+            else
+                this.Alert("Vui lòng nhập đủ trường *", Form_Alert.enmType.Warning);
+        }
+
+
+        private void dtgView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            _SelectID = Guid.Parse(Cell(0));
+            anhthongtin.Image= anhtt.Image = Image.FromStream(new MemoryStream((byte[])GetListAnh(_SelectID)[0].DuongDan));
+            Anhtt1.Image = Image.FromStream(new MemoryStream((byte[])GetListAnh(_SelectID)[1].DuongDan));
+            anhtt.Image = Image.FromStream(new MemoryStream((byte[])GetListAnh(_SelectID)[0].DuongDan));
+            anhtt.SizeMode = PictureBoxSizeMode.StretchImage;
+            Anhtt1.Image = Image.FromStream(new MemoryStream((byte[])GetListAnh(_SelectID)[1].DuongDan));
+            Anhtt1.SizeMode = PictureBoxSizeMode.StretchImage;
+            
+            lbltensp1.Text = Cell(2);
+            lblGiaSP.Text = "Giá: " + double.Parse(Cell(7)).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + " đ";
+            lblChatLieuSP.Text ="Chất liệu: " + Cell(3);
+            lblsizesp.Text = "Size: "+ Cell(6);
+            lblSoLuongSP.Text = "Số lượng: "+ Cell(9);
+            lblmauSacSP.Text ="Màu: "+ Cell(5);
+            lblTeamSP.Text ="Team: "+ Cell(4);
         }
 
         private void dtgView_DoubleClick(object sender, EventArgs e)
         {
             _SelectID = Guid.Parse(Cell(0));
             TabAll.SelectedTab = TabThongTin;
-            cbbSP1.Text = Cell(2);
-            cbbChatLieu1.Text = Cell(3);
-            cbbTeam1.Text = Cell(4);
-            cbbms1.Text = Cell(5);
-            cbbsize1.Text = Cell(6);
+            cbbSP1.Texts = Cell(2);
+            cbbChatLieu1.Texts = Cell(3);
+            cbbTeam1.Texts = Cell(4);
+            cbbms1.Texts = Cell(5);
+            cbbsize1.Texts = Cell(6);
             txtGiaBan1.Texts = Cell(7);
             txtGiaNhap1.Texts = Cell(8);
             txtSLton.Texts = Cell(9);
-            cbbTrangThai1.Text = Cell(10);
+            cbbTrangThai1.Texts = Cell(10);
             txtBaoHanh1.Texts = _IChiTietSpServices.GetById(_SelectID).BaoHanh;
             txtMoTa1.Text = _IChiTietSpServices.GetById(_SelectID).MoTa;
             if (_IChiTietSpServices.GetById(_SelectID).TrangThaiKhuyenMai == 0) rdoApDung1.Checked = true;
             if (_IChiTietSpServices.GetById(_SelectID).TrangThaiKhuyenMai == 1) rdoKhongApDung.Checked = true;
-            cbbTrangThai1.Text = _IChiTietSpServices.GetById(_SelectID).TrangThai == 0 ? "Đang bán" : "Dừng bán";
+            cbbTrangThai1.Texts = _IChiTietSpServices.GetById(_SelectID).TrangThai == 0 ? "Đang bán" : "Dừng bán";
         }
 
-        private void BtnAdd_Click_1(object sender, EventArgs e)
+        private void anhtt_Click_1(object sender, EventArgs e)
         {
-            if (!CheckTrungSP(IdSp(), IdMs(), IdSize(), IdTeam(), IdCL()))
-            {
-                try
-                {
-                    var x = new ChiTietSpViews()
-                    {
-                        Id = Guid.NewGuid(),
-                        IdChatLieu = IdCL(),
-                        IdSp = IdSp(),
-                        IdMauSac = IdMs(),
-                        IdSize = IdSize(),
-                        IdTeam = IdTeam(),
-                        BaoHanh = txtBaoHanh1.Texts,
-                        SoLuongTon = int.Parse(txtSLton.Texts),
-                        GiaBan = decimal.Parse(txtGiaBan1.Texts),
-                        GiaNhap = decimal.Parse(txtGiaNhap1.Texts),
-                        TrangThai = cbbTrangThai1.Text == "Bán" ? 0 : 1,
-                        TrangThaiKhuyenMai = rdoApDung1.Checked ? 0 : 1
-                    };
-                    _IChiTietSpServices.Add(x);
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Image file:| *.jpg;*.jpeg;*.png;*.gif;*.tif;...";
 
-                    var Anh = new AnhViews()
-                    {
-                        IdChiTietSp = x.Id,
-                        TenAnh = String.Concat(cbbSP1.Text + cbbTeam1.Text + "Show"),
-                        DuongDan = (byte[])(new ImageConverter().ConvertTo(AnhExit.Image, typeof(Byte[]))),
-                        TrangThai = 0
-                    };
-                    _IAnhServices.Add(Anh);
-                    var Anh1 = new AnhViews()
-                    {
-                        IdChiTietSp = x.Id,
-                        TenAnh = String.Concat(cbbSP1.Text + cbbTeam1.Text),
-                        DuongDan = (byte[])(new ImageConverter().ConvertTo(AnhExit1.Image, typeof(Byte[]))),
-                        TrangThai = 0
-                    };
-                    MessageBox.Show(_IAnhServices.Add(Anh1));
-                    LoadData();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Sản phẩm này đã tồn tại");
+                DialogResult result = MessageBox.Show("Bạn có muốn chọn ảnh không?",
+               "Thông báo", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    anhtt.Image = Image.FromFile(ofd.FileName);
+                }
             }
         }
-        private ChiTietSpViews Obj() => _IChiTietSpServices.GetById(_SelectID);
-        private void btnSua_Click(object sender, EventArgs e)
+
+        private void Anhtt1_Click(object sender, EventArgs e)
         {
-            if (!CheckTrungSP(IdSp(), IdMs(), IdSize(), IdTeam(), IdCL()) || (Obj().IdChatLieu == IdCL() && Obj().IdMauSac == IdMs() && Obj().IdTeam == IdTeam() && Obj().IdSp == IdSp() && Obj().IdSize == IdSize()))
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Image file:| *.jpg;*.jpeg;*.png;*.gif;*.tif;...";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
-                try
+                DialogResult result = MessageBox.Show("Bạn có muốn chọn ảnh không?",
+               "Thông báo", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
-                    if (Obj() != null)
-                    {
-                        _IChiTietSpServices.Update(new ChiTietSpViews(_SelectID, IdSp(), IdMs(), IdSize(), IdTeam(), IdCL(), txtBaoHanh1.Texts, txtMoTa1.Texts, int.Parse(txtSLton.Texts), decimal.Parse(txtGiaNhap1.Texts), int.Parse(txtGiaBan1.Texts), cbbTrangThai1.Text == "Đang bán" ? 0 : 1, rdoApDung1.Checked ? 0 : 1));
-                        var Anh = new AnhViews()
-                        {
-                            Id = GetListAnh(_SelectID)[0].Id,
-                            TenAnh = String.Concat(cbbSP1.Text + cbbTeam1.Text + "Show"),
-                            DuongDan = (byte[])(new ImageConverter().ConvertTo(AnhExit.Image, typeof(Byte[]))),
-                            TrangThai = 0
-                        };
-                        _IAnhServices.Update(Anh);
-                        var Anh1 = new AnhViews()
-                        {
-                            Id = GetListAnh(_SelectID)[1].Id,
-                            TenAnh = String.Concat(cbbSP1.Text + cbbTeam1.Text),
-                            DuongDan = (byte[])(new ImageConverter().ConvertTo(AnhExit1.Image, typeof(Byte[]))),
-                            TrangThai = 0
-                        };
-                        _IAnhServices.Update(Anh1);
-                        MessageBox.Show("Update thành công");
-                        LoadData();
-                    }else
-                    {
-                        MessageBox.Show("Vui lòng chọn sản phẩm để update");
-                    }
-                   
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+                    Anhtt1.Image = Image.FromFile(ofd.FileName);
                 }
             }
-            else
-            {
-                MessageBox.Show("Sản phẩm này đã tồn tại");
-            }
+           
         }
 
+        private void btnAddSP_Click(object sender, EventArgs e)
+        {
+            FrmSanPham frmSP = new FrmSanPham();
+            frmSP.ShowDialog();
+            LoadCbb();
+        }
+
+        private void btnAddMauSac_Click(object sender, EventArgs e)
+        {
+            //FrmMauSac frmMauSac = FrmMauSac();
+            //frmMauSac.ShowDialog();
+            //LoadCbb();
+        }
+
+        private void btnAddTeam_Click(object sender, EventArgs e)
+        {
+            FrmTeam frmTeam = new FrmTeam();
+            frmTeam.ShowDialog();
+            LoadCbb();
+        }
+
+        private void btnAddChatLieu_Click(object sender, EventArgs e)
+        {
+            FrmChatLieu frmChatLieu = new FrmChatLieu();
+            frmChatLieu.ShowDialog();
+            LoadCbb();
+        }
+
+        private void btnaddSize_Click(object sender, EventArgs e)
+        {
+            FrmKichCo FrmKichCo = new FrmKichCo();
+            FrmKichCo.ShowDialog();
+            LoadCbb();
+        }
     }
 }
