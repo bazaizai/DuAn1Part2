@@ -129,7 +129,7 @@ namespace _3.PL.Views
         private void btnAddTab_Click(object sender, EventArgs e)
         {
             tabPage = new TabPage(MaTT());
-            tabPage.Name = MaTT();
+            txtMaHD.Texts = tabPage.Name = MaTT();
             TabHoaDon.TabPages.Add(tabPage);
             dgview.Parent = tabPage;
             LoadView(TabHoaDon.SelectedTab.Name);
@@ -430,9 +430,11 @@ namespace _3.PL.Views
             txtGiamGia.Texts = 0.ToString();
             cbbHinhThucMuaHang.SelectedIndex = -1;
             cbbPtThanhToan.SelectedIndex = -1;
+            txtMaHD.Texts = "";
             txtTienThua.Texts = "";
-            txtChuyenKhoan.Visible = false;
-            txtTienThua.Visible = false;
+            txtChuyenKhoan.Texts = "";
+            txtTienThua.Texts = "";
+            txthtThanhToan.Texts = "";
         }
 
         private void FakeData()
