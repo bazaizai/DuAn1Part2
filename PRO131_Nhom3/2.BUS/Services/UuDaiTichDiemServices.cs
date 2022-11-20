@@ -28,6 +28,7 @@ namespace _2.BUS.Services
                     Ma = obj.Ma,
                     LoaiHinhKm = obj.LoaiHinhKm,
                     MucUuDai = obj.MucUuDai,
+                    SoDiem = obj.SoDiem,
                     TrangThai = obj.TrangThai
                 };
                 if (_iUuDaiTichDiemRepos.Add(x)) return "Thành Công";
@@ -66,6 +67,7 @@ namespace _2.BUS.Services
                            Ma = a.Ma,
                            LoaiHinhKm = a.LoaiHinhKm,
                            MucUuDai = a.MucUuDai,
+                           SoDiem = a.SoDiem,
                            TrangThai = a.TrangThai
                        }).OrderBy(c => c.Ma).ToList();
             return lst;
@@ -80,6 +82,7 @@ namespace _2.BUS.Services
                 Ma = a.Ma,
                 LoaiHinhKm = a.LoaiHinhKm,
                 MucUuDai = a.MucUuDai,
+                SoDiem = a.SoDiem,
                 TrangThai = a.TrangThai
             };
             return x;
@@ -100,6 +103,7 @@ namespace _2.BUS.Services
                     Ma = obj.Ma,
                     LoaiHinhKm = obj.LoaiHinhKm,
                     MucUuDai = obj.MucUuDai,
+                    SoDiem = obj.SoDiem,
                     TrangThai = obj.TrangThai
                 };
                 if (_iUuDaiTichDiemRepos.Update(x)) return "Thành Công";

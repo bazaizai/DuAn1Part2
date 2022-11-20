@@ -38,13 +38,15 @@
             this.btn_sua = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_sodiem = new System.Windows.Forms.TextBox();
+            this.lb_sodiem = new System.Windows.Forms.Label();
             this.cbb_loaihinhkm = new System.Windows.Forms.ComboBox();
             this.rdb_khd = new System.Windows.Forms.RadioButton();
             this.rdb_hd = new System.Windows.Forms.RadioButton();
             this.tb_mucUudai = new System.Windows.Forms.TextBox();
             this.tb_ma = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lb_mucuudai = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
@@ -59,7 +61,7 @@
             this.groupBox2.Controls.Add(this.tb_timkiem);
             this.groupBox2.Controls.Add(this.dtg_show);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(18, 401);
+            this.groupBox2.Location = new System.Drawing.Point(23, 460);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1097, 339);
             this.groupBox2.TabIndex = 4;
@@ -103,16 +105,16 @@
             this.groupBox3.Controls.Add(this.btn_sua);
             this.groupBox3.Controls.Add(this.btn_them);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.Location = new System.Drawing.Point(777, 26);
+            this.groupBox3.Location = new System.Drawing.Point(777, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(338, 369);
+            this.groupBox3.Size = new System.Drawing.Size(338, 442);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chức năng";
             // 
             // btn_clear
             // 
-            this.btn_clear.Location = new System.Drawing.Point(83, 284);
+            this.btn_clear.Location = new System.Drawing.Point(90, 322);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(175, 48);
             this.btn_clear.TabIndex = 3;
@@ -122,7 +124,7 @@
             // 
             // btn_xoa
             // 
-            this.btn_xoa.Location = new System.Drawing.Point(83, 205);
+            this.btn_xoa.Location = new System.Drawing.Point(90, 243);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(175, 48);
             this.btn_xoa.TabIndex = 2;
@@ -132,7 +134,7 @@
             // 
             // btn_sua
             // 
-            this.btn_sua.Location = new System.Drawing.Point(83, 126);
+            this.btn_sua.Location = new System.Drawing.Point(90, 164);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(175, 48);
             this.btn_sua.TabIndex = 1;
@@ -142,7 +144,7 @@
             // 
             // btn_them
             // 
-            this.btn_them.Location = new System.Drawing.Point(83, 47);
+            this.btn_them.Location = new System.Drawing.Point(90, 85);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(175, 48);
             this.btn_them.TabIndex = 0;
@@ -152,22 +154,40 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tb_sodiem);
+            this.groupBox1.Controls.Add(this.lb_sodiem);
             this.groupBox1.Controls.Add(this.cbb_loaihinhkm);
             this.groupBox1.Controls.Add(this.rdb_khd);
             this.groupBox1.Controls.Add(this.rdb_hd);
             this.groupBox1.Controls.Add(this.tb_mucUudai);
             this.groupBox1.Controls.Add(this.tb_ma);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lb_mucuudai);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(18, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(739, 383);
+            this.groupBox1.Size = new System.Drawing.Size(739, 442);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
+            // 
+            // tb_sodiem
+            // 
+            this.tb_sodiem.Location = new System.Drawing.Point(280, 293);
+            this.tb_sodiem.Name = "tb_sodiem";
+            this.tb_sodiem.Size = new System.Drawing.Size(413, 37);
+            this.tb_sodiem.TabIndex = 12;
+            // 
+            // lb_sodiem
+            // 
+            this.lb_sodiem.AutoSize = true;
+            this.lb_sodiem.Location = new System.Drawing.Point(33, 296);
+            this.lb_sodiem.Name = "lb_sodiem";
+            this.lb_sodiem.Size = new System.Drawing.Size(94, 30);
+            this.lb_sodiem.TabIndex = 11;
+            this.lb_sodiem.Text = "Số điểm";
             // 
             // cbb_loaihinhkm
             // 
@@ -175,7 +195,7 @@
             this.cbb_loaihinhkm.Items.AddRange(new object[] {
             "Siêu khuyến mãi",
             "Khuyến mãi siêu khủng khiếp"});
-            this.cbb_loaihinhkm.Location = new System.Drawing.Point(280, 132);
+            this.cbb_loaihinhkm.Location = new System.Drawing.Point(280, 136);
             this.cbb_loaihinhkm.Name = "cbb_loaihinhkm";
             this.cbb_loaihinhkm.Size = new System.Drawing.Size(413, 38);
             this.cbb_loaihinhkm.TabIndex = 19;
@@ -183,7 +203,7 @@
             // rdb_khd
             // 
             this.rdb_khd.AutoSize = true;
-            this.rdb_khd.Location = new System.Drawing.Point(453, 296);
+            this.rdb_khd.Location = new System.Drawing.Point(481, 363);
             this.rdb_khd.Name = "rdb_khd";
             this.rdb_khd.Size = new System.Drawing.Size(212, 34);
             this.rdb_khd.TabIndex = 18;
@@ -194,7 +214,7 @@
             // rdb_hd
             // 
             this.rdb_hd.AutoSize = true;
-            this.rdb_hd.Location = new System.Drawing.Point(291, 296);
+            this.rdb_hd.Location = new System.Drawing.Point(296, 363);
             this.rdb_hd.Name = "rdb_hd";
             this.rdb_hd.Size = new System.Drawing.Size(144, 34);
             this.rdb_hd.TabIndex = 17;
@@ -204,7 +224,7 @@
             // 
             // tb_mucUudai
             // 
-            this.tb_mucUudai.Location = new System.Drawing.Point(280, 207);
+            this.tb_mucUudai.Location = new System.Drawing.Point(280, 215);
             this.tb_mucUudai.Name = "tb_mucUudai";
             this.tb_mucUudai.Size = new System.Drawing.Size(413, 37);
             this.tb_mucUudai.TabIndex = 10;
@@ -219,25 +239,25 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(33, 298);
+            this.label7.Location = new System.Drawing.Point(38, 365);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 30);
             this.label7.TabIndex = 8;
             this.label7.Text = "Trạng thái";
             // 
-            // label3
+            // lb_mucuudai
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 219);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 30);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Mức ưu đãi";
+            this.lb_mucuudai.AutoSize = true;
+            this.lb_mucuudai.Location = new System.Drawing.Point(33, 219);
+            this.lb_mucuudai.Name = "lb_mucuudai";
+            this.lb_mucuudai.Size = new System.Drawing.Size(126, 30);
+            this.lb_mucuudai.TabIndex = 2;
+            this.lb_mucuudai.Text = "Mức ưu đãi";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 140);
+            this.label2.Location = new System.Drawing.Point(33, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(227, 30);
             this.label2.TabIndex = 1;
@@ -246,7 +266,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 61);
+            this.label1.Location = new System.Drawing.Point(33, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 30);
             this.label1.TabIndex = 0;
@@ -256,7 +276,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1132, 752);
+            this.ClientSize = new System.Drawing.Size(1132, 811);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
@@ -289,9 +309,11 @@
         private System.Windows.Forms.TextBox tb_mucUudai;
         private System.Windows.Forms.TextBox tb_ma;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lb_mucuudai;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbb_loaihinhkm;
+        private System.Windows.Forms.TextBox tb_sodiem;
+        private System.Windows.Forms.Label lb_sodiem;
     }
 }

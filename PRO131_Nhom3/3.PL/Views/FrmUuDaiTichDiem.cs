@@ -36,21 +36,22 @@ namespace _3.PL.Views
         public void LoadData()
         {
             int stt = 1;
-            dtg_show.ColumnCount = 6;
+            dtg_show.ColumnCount = 7;
             dtg_show.Columns[0].Name = "Id";
             dtg_show.Columns[0].Visible = false;
             dtg_show.Columns[1].Name = "STT";
             dtg_show.Columns[2].Name = "Mã";
             dtg_show.Columns[3].Name = "Loại hình khuyến mãi";
             dtg_show.Columns[4].Name = "Mức ưu đãi";
-            dtg_show.Columns[5].Name = "Trạng thái";
+            dtg_show.Columns[5].Name = "Số điểm";
+            dtg_show.Columns[6].Name = "Trạng thái";
 
 
             dtg_show.Rows.Clear();
             var lst = _iUuDaiTichDiemServices.GetAll();
             foreach (var item in lst)
             {
-                dtg_show.Rows.Add(item.Id, stt++, item.Ma, item.LoaiHinhKm,item.MucUuDai, item.TrangThai == 1 ? "Hoạt động" : "Không hoạt động");
+                dtg_show.Rows.Add(item.Id, stt++, item.Ma, item.LoaiHinhKm,item.MucUuDai,item.SoDiem, item.TrangThai == 1 ? "Hoạt động" : "Không hoạt động");
             }
         }
         private void btn_them_Click(object sender, EventArgs e)
@@ -61,6 +62,7 @@ namespace _3.PL.Views
                 Ma = tb_ma.Text,
                 LoaiHinhKm = cbb_loaihinhkm.Text,
                 MucUuDai = Convert.ToDecimal(tb_mucUudai.Text),
+                SoDiem = Convert.ToDecimal(tb_sodiem.Text),
                 TrangThai = rdb_hd.Checked ? 1 : 0
             };
             MessageBox.Show(_iUuDaiTichDiemServices.Add(x));
@@ -78,6 +80,7 @@ namespace _3.PL.Views
             _uuDaiTichDiemView.Ma = tb_ma.Text;
             _uuDaiTichDiemView.LoaiHinhKm = cbb_loaihinhkm.Text;
             _uuDaiTichDiemView.MucUuDai = Convert.ToDecimal(tb_mucUudai.Text);
+            _uuDaiTichDiemView.SoDiem = Convert.ToDecimal(tb_sodiem.Text);
             _uuDaiTichDiemView.TrangThai = rdb_hd.Checked ? 1 : 0;
             MessageBox.Show(_iUuDaiTichDiemServices.Update(_uuDaiTichDiemView));
             ClearForm();
@@ -97,9 +100,11 @@ namespace _3.PL.Views
                 tb_ma.Text = _uuDaiTichDiemView.Ma;
                 cbb_loaihinhkm.Text = _uuDaiTichDiemView.LoaiHinhKm;
                 tb_mucUudai.Text = Convert.ToString(_uuDaiTichDiemView.MucUuDai);
+                tb_sodiem.Text = Convert.ToString(_uuDaiTichDiemView.SoDiem);
                 rdb_hd.Checked = _uuDaiTichDiemView.TrangThai == 1;
                 rdb_khd.Checked = _uuDaiTichDiemView.TrangThai == 0;
             }
         }
+
     }
 }

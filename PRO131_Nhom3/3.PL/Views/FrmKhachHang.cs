@@ -120,10 +120,6 @@ namespace _3.PL.Views
                 {
                     MessageBox.Show("Ngày sinh không hợp lệ!");
                 }
-                else if (DateTime.Now.Year - dtp_ngaysinh.Value.Year < 18)
-                {
-                    MessageBox.Show("Bạn chưa đủ tuổi!");
-                }
                 else if (tb_sdt.Text == "")
                 {
                     MessageBox.Show("Không được để trống số điện thoại!");
