@@ -31,6 +31,21 @@ namespace _1.DAL.Repositories
                 return false;
             }
         }
+        public bool Delete(HoaDonChiTiet obj)
+        {
+            try
+            {
+                if (obj == null) return false;
+                var temp = context.HoaDonChiTiets.FirstOrDefault(c => c.Id == obj.Id);
+                context.HoaDonChiTiets.Remove(temp);
+                context.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
 
         public List<HoaDonChiTiet> GetAll()
         {

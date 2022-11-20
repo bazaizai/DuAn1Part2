@@ -51,8 +51,9 @@ namespace _1.DAL.Repositories
             {
                 if (obj == null) return false;
                 var temp = context.HoaDons.FirstOrDefault(c => c.Id == obj.Id);
+                temp.Id = obj.Id;
                 temp.IdPttt = obj.IdPttt;
-                temp.IdHt = obj.IdHt;   
+                temp.IdHt = obj.IdHt;
                 temp.IdKh = obj.IdKh;
                 temp.IdNv = obj.IdNv;
                 temp.IdUdtichDiem = obj.IdUdtichDiem;

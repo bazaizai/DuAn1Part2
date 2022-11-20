@@ -13,5 +13,6 @@ namespace _1.DAL.IRepositories
         bool Update(HoaDonChiTiet obj);
         HoaDonChiTiet GetID(Guid id);
         List<HoaDonChiTiet> GetAll();
+        bool Delete(HoaDonChiTiet obj);
     }
 }
