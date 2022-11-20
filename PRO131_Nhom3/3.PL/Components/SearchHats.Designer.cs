@@ -41,7 +41,7 @@
             this.SoLuong.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SoLuong.AutoSize = true;
             this.SoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SoLuong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(124)))), ((int)(((byte)(189)))));
+            this.SoLuong.ForeColor = System.Drawing.Color.Black;
             this.SoLuong.Location = new System.Drawing.Point(111, 70);
             this.SoLuong.Name = "SoLuong";
             this.SoLuong.Size = new System.Drawing.Size(60, 16);
@@ -78,7 +78,7 @@
             this.TenSP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TenSP.AutoSize = true;
             this.TenSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TenSP.ForeColor = System.Drawing.Color.White;
+            this.TenSP.ForeColor = System.Drawing.Color.Black;
             this.TenSP.Location = new System.Drawing.Point(92, 32);
             this.TenSP.Name = "TenSP";
             this.TenSP.Size = new System.Drawing.Size(99, 25);
@@ -105,12 +105,13 @@
             // SearchHats
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(200)))), ((int)(((byte)(234)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
             this.Controls.Add(this.SoLuong);
             this.Controls.Add(this.IdSPCT);
             this.Controls.Add(this.Gia);
             this.Controls.Add(this.TenSP);
             this.Controls.Add(this.Anh);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "SearchHats";
             this.Size = new System.Drawing.Size(347, 96);
             this.Click += new System.EventHandler(this.SearchHats_Click);

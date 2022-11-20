@@ -303,20 +303,20 @@ namespace _3.PL.Views
         private void dtgView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             _SelectID = Guid.Parse(Cell(0));
-            anhthongtin.Image= anhtt.Image = Image.FromStream(new MemoryStream((byte[])GetListAnh(_SelectID)[0].DuongDan));
+            anhthongtin.Image = anhtt.Image = Image.FromStream(new MemoryStream((byte[])GetListAnh(_SelectID)[0].DuongDan));
             Anhtt1.Image = Image.FromStream(new MemoryStream((byte[])GetListAnh(_SelectID)[1].DuongDan));
             anhtt.Image = Image.FromStream(new MemoryStream((byte[])GetListAnh(_SelectID)[0].DuongDan));
             anhtt.SizeMode = PictureBoxSizeMode.StretchImage;
             Anhtt1.Image = Image.FromStream(new MemoryStream((byte[])GetListAnh(_SelectID)[1].DuongDan));
             Anhtt1.SizeMode = PictureBoxSizeMode.StretchImage;
-            
+
             lbltensp1.Text = Cell(2);
             lblGiaSP.Text = "Giá: " + double.Parse(Cell(7)).ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + " đ";
-            lblChatLieuSP.Text ="Chất liệu: " + Cell(3);
-            lblsizesp.Text = "Size: "+ Cell(6);
-            lblSoLuongSP.Text = "Số lượng: "+ Cell(9);
-            lblmauSacSP.Text ="Màu: "+ Cell(5);
-            lblTeamSP.Text ="Team: "+ Cell(4);
+            lblChatLieuSP.Text = "Chất liệu: " + Cell(3);
+            lblsizesp.Text = "Size: " + Cell(6);
+            lblSoLuongSP.Text = "Số lượng: " + Cell(9);
+            lblmauSacSP.Text = "Màu: " + Cell(5);
+            lblTeamSP.Text = "Team: " + Cell(4);
         }
 
         private void dtgView_DoubleClick(object sender, EventArgs e)
@@ -369,7 +369,7 @@ namespace _3.PL.Views
                     Anhtt1.Image = Image.FromFile(ofd.FileName);
                 }
             }
-           
+
         }
 
         private void btnAddSP_Click(object sender, EventArgs e)
@@ -381,9 +381,9 @@ namespace _3.PL.Views
 
         private void btnAddMauSac_Click(object sender, EventArgs e)
         {
-            //FrmMauSac frmMauSac = FrmMauSac();
-            //frmMauSac.ShowDialog();
-            //LoadCbb();
+            FrmMauSac frmMauSac = new FrmMauSac();
+            frmMauSac.ShowDialog();
+            LoadCbb();
         }
 
         private void btnAddTeam_Click(object sender, EventArgs e)

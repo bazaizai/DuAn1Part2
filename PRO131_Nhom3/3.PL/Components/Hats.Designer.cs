@@ -53,8 +53,8 @@
             // Add
             // 
             this.Add.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.Add.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
+            this.Add.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
             this.Add.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.Add.BorderRadius = 15;
             this.Add.BorderSize = 0;
@@ -77,7 +77,7 @@
             this.Gia.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Gia.AutoSize = true;
             this.Gia.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Gia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.Gia.ForeColor = System.Drawing.Color.Red;
             this.Gia.Location = new System.Drawing.Point(116, 72);
             this.Gia.Name = "Gia";
             this.Gia.Size = new System.Drawing.Size(90, 16);
@@ -89,7 +89,7 @@
             this.TenSP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TenSP.AutoSize = true;
             this.TenSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TenSP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.TenSP.ForeColor = System.Drawing.Color.Black;
             this.TenSP.Location = new System.Drawing.Point(97, 3);
             this.TenSP.Name = "TenSP";
             this.TenSP.Size = new System.Drawing.Size(99, 25);
@@ -118,7 +118,7 @@
             this.SoLuong.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SoLuong.AutoSize = true;
             this.SoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SoLuong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.SoLuong.ForeColor = System.Drawing.Color.Black;
             this.SoLuong.Location = new System.Drawing.Point(116, 47);
             this.SoLuong.Name = "SoLuong";
             this.SoLuong.Size = new System.Drawing.Size(60, 16);
@@ -129,7 +129,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(48)))), ((int)(((byte)(58)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
             this.Controls.Add(this.SoLuong);
             this.Controls.Add(this.IdSPCT);
             this.Controls.Add(this.Add);
