@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 
 namespace _3.PL.Views
@@ -30,6 +31,8 @@ namespace _3.PL.Views
             _iNhanVien = new NhanVienServices();
             loadData();
             loadComboBox();
+            cbb_chucvu.SelectedIndex = 0;
+            cbb_gioitinh.SelectedIndex = 0;
         }
         public void loadData()
         {
@@ -50,6 +53,10 @@ namespace _3.PL.Views
             dtgv_show.Columns[12].Name = "Trạng thái";
             dtgv_show.Rows.Clear();
             var lstViewNV = _iNhanVien.GetAll();
+            if (tb_timkiem.Text != "")
+            {
+                lstViewNV = lstViewNV.Where(x => x.Ma.ToLower().Contains(tb_timkiem.Text.ToLower()) || x.Ten.ToLower().Contains(tb_timkiem.Text.ToLower())).ToList();
+            }
             foreach (var item in lstViewNV)
             {
                 dtgv_show.Rows.Add(
@@ -257,12 +264,12 @@ namespace _3.PL.Views
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
-            cbb_chucvu.SelectedValue = 0;
+            cbb_chucvu.SelectedIndex = 0;
             tb_ma.Text = "";
             tb_ho.Text = "";
             tb_tendem.Text = "";
             tb_ten.Text = "";
-            cbb_gioitinh.SelectedValue = 0;
+            cbb_gioitinh.SelectedIndex = 0;
             dtp_ngaysinh.Value = DateTime.Now;
             tb_diachi.Text = "";
             tb_sdt.Text = "";
@@ -292,6 +299,10 @@ namespace _3.PL.Views
             tb_taikhoan.Text = dtgv_show.CurrentRow.Cells[11].Value.ToString();
             rdb_hoatdong.Checked = _nvv.TrangThai == 0;
             rdb_khonghd.Checked = _nvv.TrangThai == 1;
+        }
+        private void tb_timkiem_TextChanged(object sender, EventArgs e)
+        {
+            loadData();
         }
     }
 }

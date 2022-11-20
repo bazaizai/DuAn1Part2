@@ -154,7 +154,7 @@ namespace _2.BUS.Services
             HoaDon temp = new HoaDon()
             {
                 Id = obj.Id,
-                Ma = obj.MaUD,
+                Ma = obj.MaHD,
                 IdKh = obj.IdKh,
                 IdNv = obj.IdNv,
                 IdHt = obj.IdHt,

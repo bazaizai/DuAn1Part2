@@ -21,8 +21,6 @@ namespace _3.PL.Views
         public ITichDiemServices _itichDiemServices;
         public KhachHangView _khachHangView;
         public TichDiemView _tichDiemView;
-        public Guid IdKH;
-        public Guid IdTD;
         public FrmKhachHang()
         {
             InitializeComponent();
@@ -32,7 +30,12 @@ namespace _3.PL.Views
             _tichDiemView = new TichDiemView();
             LoadData();
         }
-
+        private string _message;
+        public FrmKhachHang(string Message) : this()
+        {
+            _message = Message;
+            tb_sdt.Text = _message;
+        }
         public void LoadData()
         {
             int stt = 1;
@@ -49,6 +52,8 @@ namespace _3.PL.Views
             dtg_show.Columns[8].Name = "Số điểm";
             dtg_show.Columns[9].Name = "Trạng thái";
             tb_sodiem.Enabled = false;
+            tb_ma.Enabled = false;
+            tb_ma.Text = MaTS();
 
             dtg_show.Rows.Clear();
             var lst = _iKhachHangServices.GetAll();
@@ -66,7 +71,7 @@ namespace _3.PL.Views
         {
             LoadData();
             _khachHangView.Id = Guid.Empty;
-            tb_ma.Text = "";
+            tb_ma.Text = MaTS();
             tb_ten.Text = "";
             tb_tendem.Text = "";
             tb_ho.Text = "";
@@ -78,17 +83,24 @@ namespace _3.PL.Views
             rdb_hd.Checked = false;
             rdb_khd.Checked = false;
         }
-
-        private void btn_them_Click(object sender, EventArgs e)
+        private string MaTS()
+        {
+            if (_iKhachHangServices.GetAll().Count > 0)
+            {
+                return "KH" + Convert.ToString(_iKhachHangServices.GetAll().Max(c => Convert.ToInt32(c.Ma.Substring(2, c.Ma.Length - 2)) + 1));
+            }
+            else return "KH1";
+        }
+            private void btn_them_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có muốn thêm không?", "Cảnh báo!", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                if (tb_ma.Text == "")
-                {
-                    MessageBox.Show("Không được để trống mã!");
-                }
-                else if (_iKhachHangServices.GetAll().Any(c => c.Ma == tb_ma.Text))
+                //if (tb_ma.Text == "")
+                //{
+                //    MessageBox.Show("Không được để trống mã!");
+                //}
+                if (_iKhachHangServices.GetAll().Any(c => c.Ma == tb_ma.Text))
                 {
                     MessageBox.Show("Mã bị trùng");
                 }
@@ -347,6 +359,9 @@ namespace _3.PL.Views
             //this.Size = new Size(w, h);
         }
 
-
+        private void tb_ma_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
