@@ -1,6 +1,7 @@
 ﻿using _2.BUS.IServices;
 using _2.BUS.Services;
 using _2.BUS.ViewModels;
+using _3.PL.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -106,5 +107,13 @@ namespace _3.PL.Views
             }
         }
 
+        private void tb_sodiem_TextChanged(object sender, EventArgs e)
+        {
+            //if (tb_sodiem.Text != "" && CheckValidate.InputIsOnlyNumber(tb_sodiem.Text) && tb_sodiem.Text.Length < 3)
+            //{
+            //    tb_mucUudai.Text = (Convert.ToDecimal(_iUuDaiTichDiemServices.GetAll().FirstOrDefault(c => c.nsx.Ten == cb_nsx.Text && c.sanPham.Ten == cb_sanpham.Text && c.mauSac.Ten == cb_mausac.Text && c.dongSp.Ten == cb_dsp.Text).chiTietSp.GiaBan) * Convert.ToDecimal(tb_sl.Text)).ToString();
+            //    tb_giam.Text = (Convert.ToDecimal(tb_dongia.Text) * 95 / 100).ToString();
+            //}         
+        }
     }
 }
