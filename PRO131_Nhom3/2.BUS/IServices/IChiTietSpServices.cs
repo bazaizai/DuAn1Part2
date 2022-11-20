@@ -9,9 +9,9 @@ namespace _2.BUS.IServices
 {
     public interface IChiTietSpServices
     {
-        string Add(ChiTietSpViews Obj);
-        string Update(ChiTietSpViews Obj);
-        string Delete(ChiTietSpViews Obj);
+        bool Add(ChiTietSpViews Obj);
+        bool Update(ChiTietSpViews Obj);
+        bool Delete(ChiTietSpViews Obj);
         ChiTietSpViews GetById(Guid Id);
         List<ChiTietSpViews> GetAll();
     }

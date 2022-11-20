@@ -60,5 +60,21 @@ namespace _3.PL.Utilities
             if (a == 1 && s.Length > 8) return true;
             else return false;
         }
+        static public bool CheckDecimalInput(string s)
+        {
+            decimal i;
+            if (decimal.TryParse(s, out i))
+            {
+                return true;
+            }
+            else return false;
+        }
+
+        public static decimal RegexDecimal(string txt)
+        {
+            var indecimal = txt.Replace(".", string.Empty);
+            var outdecimal = indecimal.Replace("đ", string.Empty);
+            return Convert.ToDecimal(outdecimal);
+        }
     }
 }

@@ -24,7 +24,7 @@ namespace _3.PL.Views
             InitializeComponent();
             HidePanel();
             LeftBorderBtn = new Panel();
-            LeftBorderBtn.Size = new Size(7, 60);
+            LeftBorderBtn.Size = new Size(7, QLSP.Height);
             pnlMenu.Controls.Add(LeftBorderBtn);
             //Form
             this.Text = string.Empty;
@@ -35,7 +35,7 @@ namespace _3.PL.Views
         //Structs
         private struct RGBColors
         {
-            public static Color color1 = Color.FromArgb(172, 126, 241);
+            public static Color color1 = Color.FromArgb(254, 85, 0);
             public static Color color2 = Color.FromArgb(249, 118, 176);
             public static Color color3 = Color.FromArgb(253, 138, 114);
             public static Color color4 = Color.FromArgb(95, 77, 221);
@@ -50,7 +50,7 @@ namespace _3.PL.Views
                 DisableButton();
                 //Button
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.BackColor = Color.FromArgb(48, 143, 157);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -70,7 +70,7 @@ namespace _3.PL.Views
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(8, 8, 8);
+                currentBtn.BackColor = Color.FromArgb(48, 143, 157);
                 currentBtn.ForeColor = Color.Gainsboro;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.Gainsboro;
@@ -175,14 +175,29 @@ namespace _3.PL.Views
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color1);
-            ShowSubMenu(pnlbtn1);
+            
+            if (pnlbtn1.Visible == false)
+            {
+                ActivateButton(sender, RGBColors.color1);
+                ShowSubMenu(pnlbtn1);
+            }
+            else
+            {
+                pnlbtn1.Visible=false;  
+            }
+            
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
             lblHome.Text = btnCTSP.Text;
             OpenChildForm(new frmQLChiTietSp());
+            HideSubMenu();
+        }
+        private void btnSP_Click(object sender, EventArgs e)
+        {
+            //lblHome.Text = btnSP.Text;
+            //OpenChildForm(new frm());
             HideSubMenu();
         }
         private void iconButton1_Click_1(object sender, EventArgs e)
@@ -205,9 +220,16 @@ namespace _3.PL.Views
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
+            if (pnlbtn5.Visible == false)
+            {
+                ActivateButton(sender, RGBColors.color1);
+                ShowSubMenu(pnlbtn5);
+            }
+            else
+            {
+                pnlbtn5.Visible=false;
+            }
             
-            ActivateButton(sender, RGBColors.color3);
-            ShowSubMenu(pnlbtn5);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -246,6 +268,58 @@ namespace _3.PL.Views
             HideSubMenu();
         }
 
+        private void btnMauSac_Click(object sender, EventArgs e)
+        {
+            //lblHome.Text = btnMauSac.Text;
+            OpenChildForm(new FrmMauSac());
+            HideSubMenu();
+        }
 
+        private void btnChatLieu_Click(object sender, EventArgs e)
+        {
+            //lblHome.Text = btnChatLieu.Text;
+            //OpenChildForm(new frmchat());
+            HideSubMenu();
+        }
+
+        private void btnKichThuoc_Click(object sender, EventArgs e)
+        {
+            //lblHome.Text = btnKichThuoc.Text;
+            //OpenChildForm(new ());
+            HideSubMenu();
+        }
+
+        private void btnTeam_Click(object sender, EventArgs e)
+        {
+            //lblHome.Text = btnTeam.Text;
+            OpenChildForm(new FrmTeam());
+            HideSubMenu();
+        }
+
+        private void BtnGiaiDau_Click(object sender, EventArgs e)
+        {
+            lblHome.Text = BtnGiaiDau.Text;
+            OpenChildForm(new FrmGiaiDau());
+            HideSubMenu();
+        }
+
+        private void btnNhanvien_Click(object sender, EventArgs e)
+        {
+            lblHome.Text = btnNhanvien.Text;
+            OpenChildForm(new FrmNhanVien());
+            HideSubMenu();
+        }
+
+        private void btnChucvu_Click(object sender, EventArgs e)
+        {
+            lblHome.Text = btnChucvu.Text;
+            OpenChildForm(new FrmChucVu());
+            HideSubMenu();
+        }
+
+        private void pnlBody_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
