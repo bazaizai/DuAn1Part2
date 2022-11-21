@@ -42,15 +42,15 @@ namespace _3.PL.Views
         {
             MailAddress fromAddress = new MailAddress("anhptph25812@fpt.edu.vn", "Admin");
             MailAddress toAddress = new MailAddress(email, "User");
-            const string subject = "Reset mật khẩu Gmail, bạn đã mất nick";
-            string body = @"Bạn đã yêu cầu đổi mật khẩu gmail. Mật khẩu mới của bạn là: <b>" + pw + "</b>";
+            const string subject = "Đổi mật khẩu tài khoản phần mềm bán mũ 47 Brand";
+            string body = @"Bạn đã yêu cầu đổi mật khẩu. Mật khẩu mới của bạn là: <b>" + pw + "</b>";
 
             System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage(fromAddress.Address, toAddress.Address, subject, body);
             msg.IsBodyHtml = true;
 
             var client = new SmtpClient("smtp.gmail.com", 587)
             {
-                Credentials = new NetworkCredential("hackerlorddayhihi@gmail.com", "bviorifuprpnbvkv"),
+                Credentials = new NetworkCredential("anhptph25812@fpt.edu.vn", "j g f p o s l x y p s y w h a r"),
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
@@ -73,6 +73,19 @@ namespace _3.PL.Views
             }
         }
 
+      
+
+       
+
+        private void lb_SignIn_Click(object sender, EventArgs e)
+        {
+
+            FrmLogin frmLogin = new FrmLogin();
+            this.Hide();
+            frmLogin.ShowDialog();
+            
+        }
+
         private void btn_xacNhan_Click(object sender, EventArgs e)
         {
             var em = _iNhanVienServices.GetAll().FirstOrDefault(x => x.Email == tb_email.Text && x.TaiKhoan == tb_tk.Text);
@@ -90,17 +103,6 @@ namespace _3.PL.Views
                 MessageBox.Show($"Mật khẩu mới đã được gởi đến {tb_email.Text} . Vui lòng kiểm tra email để tiếp tục bước tiếp theo...");
                 this.Close();
             }
-        }
-
-       
-
-        private void lb_SignIn_Click(object sender, EventArgs e)
-        {
-
-            FrmLogin frmLogin = new FrmLogin();
-            this.Hide();
-            frmLogin.ShowDialog();
-            
         }
     }
 }

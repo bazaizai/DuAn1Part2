@@ -45,7 +45,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(23)))), ((int)(((byte)(62)))));
+            this.panel1.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel1.Controls.Add(this.tb_mk);
             this.panel1.Controls.Add(this.tb_tk);
             this.panel1.Controls.Add(this.lb_ForgotPassword);
@@ -63,9 +63,9 @@
             // 
             // tb_mk
             // 
-            this.tb_mk.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tb_mk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
             this.tb_mk.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tb_mk.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.tb_mk.ForeColor = System.Drawing.Color.Black;
             this.tb_mk.Location = new System.Drawing.Point(262, 531);
             this.tb_mk.Name = "tb_mk";
             this.tb_mk.PasswordChar = '*';
@@ -75,8 +75,8 @@
             // 
             // tb_tk
             // 
-            this.tb_tk.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tb_tk.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.tb_tk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
+            this.tb_tk.ForeColor = System.Drawing.Color.Black;
             this.tb_tk.Location = new System.Drawing.Point(262, 461);
             this.tb_tk.Name = "tb_tk";
             this.tb_tk.Size = new System.Drawing.Size(305, 31);
@@ -88,31 +88,31 @@
             this.lb_ForgotPassword.AutoSize = true;
             this.lb_ForgotPassword.BackColor = System.Drawing.Color.Transparent;
             this.lb_ForgotPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lb_ForgotPassword.ForeColor = System.Drawing.Color.Transparent;
-            this.lb_ForgotPassword.Location = new System.Drawing.Point(414, 607);
+            this.lb_ForgotPassword.ForeColor = System.Drawing.Color.Black;
+            this.lb_ForgotPassword.Location = new System.Drawing.Point(401, 607);
             this.lb_ForgotPassword.Name = "lb_ForgotPassword";
-            this.lb_ForgotPassword.Size = new System.Drawing.Size(153, 25);
+            this.lb_ForgotPassword.Size = new System.Drawing.Size(166, 25);
             this.lb_ForgotPassword.TabIndex = 20;
-            this.lb_ForgotPassword.Text = "Forgot password";
+            this.lb_ForgotPassword.Text = "Forgot password ?";
             this.lb_ForgotPassword.Click += new System.EventHandler(this.lb_ForgotPassword_Click);
             // 
             // btn_Login
             // 
-            this.btn_Login.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btn_Login.BackgroundColor = System.Drawing.Color.MediumTurquoise;
+            this.btn_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
+            this.btn_Login.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
             this.btn_Login.BorderColor = System.Drawing.Color.HotPink;
             this.btn_Login.BorderRadius = 0;
             this.btn_Login.BorderSize = 0;
             this.btn_Login.FlatAppearance.BorderSize = 0;
             this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Login.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Login.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Login.ForeColor = System.Drawing.Color.Black;
             this.btn_Login.Location = new System.Drawing.Point(123, 697);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(444, 38);
             this.btn_Login.TabIndex = 19;
             this.btn_Login.Text = "Sign In";
-            this.btn_Login.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Login.TextColor = System.Drawing.Color.Black;
             this.btn_Login.UseVisualStyleBackColor = false;
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
@@ -121,7 +121,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(284, 356);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 41);
@@ -151,12 +151,12 @@
             this.cb_save.AutoSize = true;
             this.cb_save.BackColor = System.Drawing.Color.Transparent;
             this.cb_save.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cb_save.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.cb_save.ForeColor = System.Drawing.Color.Black;
             this.cb_save.Location = new System.Drawing.Point(123, 607);
             this.cb_save.Name = "cb_save";
-            this.cb_save.Size = new System.Drawing.Size(155, 29);
+            this.cb_save.Size = new System.Drawing.Size(192, 29);
             this.cb_save.TabIndex = 14;
-            this.cb_save.Text = "Lưu mật khẩu";
+            this.cb_save.Text = "Duy trì đăng nhập";
             this.cb_save.UseVisualStyleBackColor = false;
             // 
             // label2
@@ -164,7 +164,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(123, 534);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 28);
@@ -176,7 +176,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(122, 459);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 28);

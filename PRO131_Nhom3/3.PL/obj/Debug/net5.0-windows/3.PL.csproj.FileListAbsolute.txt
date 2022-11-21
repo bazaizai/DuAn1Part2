@@ -120,3 +120,4 @@ C:\Users\chono\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\bin\Debug\net5.0-wi
 C:\Users\chono\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\bin\Debug\net5.0-windows\Bunifu.UI.WinForms.Deprecated.dll
 C:\Users\chono\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\chono\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmForgotPW.resources
+C:\Users\chono\OneDrive\Desktop\DuAn1Part2\PRO131_Nhom3\3.PL\obj\Debug\net5.0-windows\_3.PL.Views.FrmDoiMK.resources
