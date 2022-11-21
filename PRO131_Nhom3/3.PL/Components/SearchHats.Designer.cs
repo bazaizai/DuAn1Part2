@@ -111,6 +111,7 @@
             this.Controls.Add(this.Gia);
             this.Controls.Add(this.TenSP);
             this.Controls.Add(this.Anh);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "SearchHats";
             this.Size = new System.Drawing.Size(347, 96);

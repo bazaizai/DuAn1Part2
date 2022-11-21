@@ -58,6 +58,7 @@
             this.Add.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.Add.BorderRadius = 15;
             this.Add.BorderSize = 0;
+            this.Add.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Add.FlatAppearance.BorderSize = 0;
             this.Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

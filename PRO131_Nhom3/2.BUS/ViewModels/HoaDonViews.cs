@@ -30,7 +30,7 @@ namespace _2.BUS.ViewModels
         public Guid? IdHt { get; set; }
         public string MaHt { get; set; }
         public string TenHt { get; set; }
-        public Guid IdUD { get; set; }
+        public Guid? IdUD { get; set; }
         public string MaUD { get; set; }
         public string LoaiHinhKm { get; set; }
         public decimal? MucUuDai { get; set; }

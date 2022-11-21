@@ -142,7 +142,7 @@ namespace _3.PL.Views
                 //IdPttt = _IPtthanhToanServices.GetAll().Find(x => x.Ten == cbbPtThanhToan.Texts).Id,
                 //IdHt = _IHinhThucMhServices.GetAll().Find(x => x.Ten == cbbHinhThucMuaHang.Texts).Id,
                 MaHD = MaTT(),
-                IdUD = Guid.Parse("ab4137a1-c0de-44f0-96c2-ab35e7146932"),
+                //IdUD = Guid.Empty,
                 NgayTao = DateTime.Now,
                 TrangThai = 0,
             };
@@ -435,6 +435,7 @@ namespace _3.PL.Views
             txtChuyenKhoan.Texts = "";
             txtTienThua.Texts = "";
             txthtThanhToan.Texts = "";
+            cbbPtThanhToan.SelectedIndex = 0;
         }
 
         private void FakeData()
