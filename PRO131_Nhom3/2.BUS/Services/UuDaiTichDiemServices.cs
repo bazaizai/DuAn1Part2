@@ -25,9 +25,10 @@ namespace _2.BUS.Services
                 var x = new UdtichDiem()
                 {
                     Id = obj.Id,
-                    Ma = obj.Ma,
+                    Ma = MaTT(),
                     LoaiHinhKm = obj.LoaiHinhKm,
                     MucUuDai = obj.MucUuDai,
+                    SoDiem = obj.SoDiem,
                     TrangThai = obj.TrangThai
                 };
                 if (_iUuDaiTichDiemRepos.Add(x)) return "Thành Công";
@@ -66,6 +67,7 @@ namespace _2.BUS.Services
                            Ma = a.Ma,
                            LoaiHinhKm = a.LoaiHinhKm,
                            MucUuDai = a.MucUuDai,
+                           SoDiem = a.SoDiem,
                            TrangThai = a.TrangThai
                        }).OrderBy(c => c.Ma).ToList();
             return lst;
@@ -80,16 +82,11 @@ namespace _2.BUS.Services
                 Ma = a.Ma,
                 LoaiHinhKm = a.LoaiHinhKm,
                 MucUuDai = a.MucUuDai,
+                SoDiem = a.SoDiem,
                 TrangThai = a.TrangThai
             };
             return x;
         }
-
-        //public List<UuDaiTichDiemView> Search(string obj)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
         public string Update(UuDaiTichDiemView obj)
         {
             try
@@ -100,6 +97,7 @@ namespace _2.BUS.Services
                     Ma = obj.Ma,
                     LoaiHinhKm = obj.LoaiHinhKm,
                     MucUuDai = obj.MucUuDai,
+                    SoDiem = obj.SoDiem,
                     TrangThai = obj.TrangThai
                 };
                 if (_iUuDaiTichDiemRepos.Update(x)) return "Thành Công";
@@ -109,6 +107,14 @@ namespace _2.BUS.Services
             {
                 return e.Message.ToString();
             }
+        }
+        private string MaTT()
+        {
+            if (_iUuDaiTichDiemRepos.GetAll().Count > 0)
+            {
+                return "UD" + Convert.ToString(_iUuDaiTichDiemRepos.GetAll().Max(c => Convert.ToInt32(c.Ma.Substring(2, c.Ma.Length - 2)) + 1));
+            }
+            else return "UD1";
         }
     }
 }

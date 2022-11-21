@@ -29,7 +29,7 @@ namespace _2.BUS.Services
                 {
                     Id = obj.Id,
                     IdtichDiem = obj.IdtichDiem,
-                    Ma = obj.Ma,
+                    Ma = MaTT(),
                     Ten = obj.Ten,
                     TenDem = obj.TenDem,
                     Ho = obj.Ho,
@@ -81,6 +81,7 @@ namespace _2.BUS.Services
                            Ho = a.Ho,
                            NgaySinh = a.NgaySinh,
                            Sdt = a.Sdt,
+                           NhaMang = a.Sdt.StartsWith("03") || a.Sdt.StartsWith("09") ? "Viettel" : a.Sdt.StartsWith("07") ? "Mobifone" : a.Sdt.StartsWith("08") ? "Vinaphone" : "Nhà mạng vô danh",
                            DiaChi = a.DiaChi,
                            Email = a.Email,
                            SoDiem = b.SoDiem,
@@ -155,13 +156,13 @@ namespace _2.BUS.Services
                 return e.Message.ToString();
             }
         }
-        //private string MaTT()
-        //{
-        //    if (_iKhachHangRepos.GetAll().Count > 0)
-        //    {
-        //        return "KH" + Convert.ToString(_iKhachHangRepos.GetAll().Max(c => Convert.ToInt32(c.Ma.Substring(2, c.Ma.Length - 2)) + 1));
-        //    }
-        //    else return "KH1";
-        //}
+        private string MaTT()
+        {
+            if (_iKhachHangRepos.GetAll().Count > 0)
+            {
+                return "KH" + Convert.ToString(_iKhachHangRepos.GetAll().Max(c => Convert.ToInt32(c.Ma.Substring(2, c.Ma.Length - 2)) + 1));
+            }
+            else return "KH1";
+        }
     }
 }

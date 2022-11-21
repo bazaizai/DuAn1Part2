@@ -21,6 +21,7 @@ namespace _3.PL.Views
         public ITichDiemServices _itichDiemServices;
         public KhachHangView _khachHangView;
         public TichDiemView _tichDiemView;
+        public List<KhachHangView> _lstKhachHang;
         public FrmKhachHang()
         {
             InitializeComponent();
@@ -28,7 +29,9 @@ namespace _3.PL.Views
             _itichDiemServices = new TichDiemServices();
             _khachHangView = new KhachHangView();
             _tichDiemView = new TichDiemView();
+            _lstKhachHang = new List<KhachHangView>();
             LoadData();
+            LoadCbb();
         }
         private string _message;
         public FrmKhachHang(string Message) : this()
@@ -39,7 +42,7 @@ namespace _3.PL.Views
         public void LoadData()
         {
             int stt = 1;
-            dtg_show.ColumnCount = 10;
+            dtg_show.ColumnCount = 11;
             dtg_show.Columns[0].Name = "Id";
             dtg_show.Columns[0].Visible = false;
             dtg_show.Columns[1].Name = "STT";
@@ -47,23 +50,18 @@ namespace _3.PL.Views
             dtg_show.Columns[3].Name = "Họ và Tên";
             dtg_show.Columns[4].Name = "Ngày Sinh";
             dtg_show.Columns[5].Name = "SDT";
-            dtg_show.Columns[6].Name = "Địa chỉ";
-            dtg_show.Columns[7].Name = "Email";
-            dtg_show.Columns[8].Name = "Số điểm";
-            dtg_show.Columns[9].Name = "Trạng thái";
-            tb_sodiem.Enabled = false;
+            dtg_show.Columns[6].Name = "Nhà mạng";
+            dtg_show.Columns[7].Name = "Địa chỉ";
+            dtg_show.Columns[8].Name = "Email";
+            dtg_show.Columns[9].Name = "Số điểm";
+            dtg_show.Columns[10].Name = "Trạng thái";
             tb_ma.Enabled = false;
-            tb_ma.Text = MaTS();
 
             dtg_show.Rows.Clear();
-            var lst = _iKhachHangServices.GetAll();
-            if (tb_timkiem.Text != "")
+            _lstKhachHang = _iKhachHangServices.GetAll().Where(x => x.Ma.ToLower().Contains(tb_timkiem.Text.ToLower()) || x.Ten.ToLower().Contains(tb_timkiem.Text.ToLower()) || x.Sdt.ToLower().Contains(tb_timkiem.Text.ToLower())).ToList();
+            foreach (var item in _lstKhachHang)
             {
-                lst = lst.Where(x => x.Ma.ToLower().Contains(tb_timkiem.Text.ToLower()) || x.Ten.ToLower().Contains(tb_timkiem.Text.ToLower())).ToList();
-            }
-            foreach (var item in lst)
-            {
-                dtg_show.Rows.Add(item.Id, stt++, item.Ma, item.FullName, item.NgaySinh.ToString(), item.Sdt, item.DiaChi, item.Email, item.SoDiem, item.TrangThai == 1 ? "Hoạt động" : "Không hoạt động");
+                dtg_show.Rows.Add(item.Id, stt++, item.Ma, item.FullName, item.NgaySinh.ToString(), item.Sdt, item.NhaMang, item.DiaChi, item.Email, item.SoDiem, item.TrangThai == 1 ? "Hoạt động" : "Không hoạt động");
             }
         }
 
@@ -71,35 +69,21 @@ namespace _3.PL.Views
         {
             LoadData();
             _khachHangView.Id = Guid.Empty;
-            tb_ma.Text = MaTS();
             tb_ten.Text = "";
             tb_tendem.Text = "";
             tb_ho.Text = "";
             tb_diachi.Text = "";
             tb_email.Text = "";
             tb_sdt.Text = "";
-            tb_sodiem.Text = "";
             dtp_ngaysinh.Value = DateTime.Now;
             rdb_hd.Checked = false;
             rdb_khd.Checked = false;
-        }
-        private string MaTS()
-        {
-            if (_iKhachHangServices.GetAll().Count > 0)
-            {
-                return "KH" + Convert.ToString(_iKhachHangServices.GetAll().Max(c => Convert.ToInt32(c.Ma.Substring(2, c.Ma.Length - 2)) + 1));
-            }
-            else return "KH1";
         }
             private void btn_them_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có muốn thêm không?", "Cảnh báo!", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                //if (tb_ma.Text == "")
-                //{
-                //    MessageBox.Show("Không được để trống mã!");
-                //}
                 if (_iKhachHangServices.GetAll().Any(c => c.Ma == tb_ma.Text))
                 {
                     MessageBox.Show("Mã bị trùng");
@@ -119,10 +103,6 @@ namespace _3.PL.Views
                 else if (dtp_ngaysinh.Value > DateTime.Now)
                 {
                     MessageBox.Show("Ngày sinh không hợp lệ!");
-                }
-                else if (DateTime.Now.Year - dtp_ngaysinh.Value.Year < 18)
-                {
-                    MessageBox.Show("Bạn chưa đủ tuổi!");
                 }
                 else if (tb_sdt.Text == "")
                 {
@@ -166,7 +146,6 @@ namespace _3.PL.Views
                     {
                         Id = new Guid(),
                         IdtichDiem = tichdiem.Id,
-                        Ma = tb_ma.Text,
                         Ten = tb_ten.Text,
                         TenDem = tb_tendem.Text,
                         Ho = tb_ho.Text,
@@ -250,14 +229,12 @@ namespace _3.PL.Views
                 }
                 else
                 {
-                    _khachHangView.Ma = tb_ma.Text;
                     _khachHangView.Ten = tb_ten.Text;
                     _khachHangView.TenDem = tb_tendem.Text;
                     _khachHangView.Ho = tb_ho.Text;
                     _khachHangView.DiaChi = tb_diachi.Text;
                     _khachHangView.Email = tb_email.Text;
                     _khachHangView.Sdt = tb_sdt.Text;
-                    _khachHangView.SoDiem = Convert.ToInt32(tb_sodiem.Text);
                     _khachHangView.NgaySinh = dtp_ngaysinh.Value;
                     _khachHangView.TrangThai = rdb_hd.Checked ? 1 : 0;
                     MessageBox.Show(_iKhachHangServices.Update(_khachHangView));
@@ -311,7 +288,6 @@ namespace _3.PL.Views
                 tb_diachi.Text = _khachHangView.DiaChi;
                 tb_email.Text = _khachHangView.Email;
                 tb_sdt.Text = _khachHangView.Sdt;
-                tb_sodiem.Text = Convert.ToString(_khachHangView.SoDiem);
                 dtp_ngaysinh.Value = _khachHangView.NgaySinh.Value;
                 rdb_hd.Checked = _khachHangView.TrangThai == 1;
                 rdb_khd.Checked = _khachHangView.TrangThai == 0;
@@ -329,7 +305,6 @@ namespace _3.PL.Views
         private void tb_timkiem_TextChanged(object sender, EventArgs e)
         {
             LoadData();
-            _iKhachHangServices.Search(tb_timkiem.Text);
         }
 
         private void dtg_show_MouseClick(object sender, MouseEventArgs e)
@@ -350,18 +325,212 @@ namespace _3.PL.Views
                     menu.Show(dtg_show, new Point(e.X, e.Y));              
             }
         }
-
-        private void FrmKhachHang_Load(object sender, EventArgs e)
+        private void LoadCbb()
         {
-            //int w = Screen.PrimaryScreen.Bounds.Width;
-            //int h = Screen.PrimaryScreen.Bounds.Height;
-            //this.Location = new Point(0, 0);
-            //this.Size = new Size(w, h);
+            cbb_loctrangthai.Items.Add("Tất cả");
+            cbb_loctrangthai.Items.Add("Hoạt động");
+            cbb_loctrangthai.Items.Add("Không hoạt động");
+            cbb_loctrangthai.SelectedIndex = 0;
+            cbb_locsdt.Items.Add("Tất cả");
+            cbb_locsdt.Items.Add("Viettel");
+            cbb_locsdt.Items.Add("Mobifone");
+            cbb_locsdt.Items.Add("Vinaphone");
+            cbb_locsdt.SelectedIndex = 0;
         }
 
-        private void tb_ma_TextChanged(object sender, EventArgs e)
+        private void cbb_lockhachhang_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            if (cbb_loctrangthai.Text == "Tất cả")
+            {
+                LoadData();
+            }
+            else if (cbb_loctrangthai.Text == "Hoạt động")
+            {
+                int stt = 1;
+                dtg_show.ColumnCount = 11;
+                dtg_show.Columns[0].Name = "Id";
+                dtg_show.Columns[0].Visible = false;
+                dtg_show.Columns[1].Name = "STT";
+                dtg_show.Columns[2].Name = "Mã";
+                dtg_show.Columns[3].Name = "Họ và Tên";
+                dtg_show.Columns[4].Name = "Ngày Sinh";
+                dtg_show.Columns[5].Name = "SDT";
+                dtg_show.Columns[6].Name = "Nhà mạng";
+                dtg_show.Columns[7].Name = "Địa chỉ";
+                dtg_show.Columns[8].Name = "Email";
+                dtg_show.Columns[9].Name = "Số điểm";
+                dtg_show.Columns[10].Name = "Trạng thái";
+                tb_ma.Enabled = false;
+
+                dtg_show.Rows.Clear();
+                _lstKhachHang = _iKhachHangServices.GetAll().Where(c => c.TrangThai == 1).ToList();
+                foreach (var item in _lstKhachHang)
+                {
+                    dtg_show.Rows.Add(item.Id, stt++, item.Ma, item.FullName, item.NgaySinh.ToString(), item.Sdt, item.NhaMang, item.DiaChi, item.Email, item.SoDiem, item.TrangThai == 1 ? "Hoạt động" : "Không hoạt động");
+                }
+            }
+            else if (cbb_loctrangthai.Text == "Không hoạt động")
+            {
+                int stt = 1;
+                dtg_show.ColumnCount = 11;
+                dtg_show.Columns[0].Name = "Id";
+                dtg_show.Columns[0].Visible = false;
+                dtg_show.Columns[1].Name = "STT";
+                dtg_show.Columns[2].Name = "Mã";
+                dtg_show.Columns[3].Name = "Họ và Tên";
+                dtg_show.Columns[4].Name = "Ngày Sinh";
+                dtg_show.Columns[5].Name = "SDT";
+                dtg_show.Columns[6].Name = "Nhà mạng";
+                dtg_show.Columns[7].Name = "Địa chỉ";
+                dtg_show.Columns[8].Name = "Email";
+                dtg_show.Columns[9].Name = "Số điểm";
+                dtg_show.Columns[10].Name = "Trạng thái";
+                tb_ma.Enabled = false;
+
+                dtg_show.Rows.Clear(); ;
+                _lstKhachHang = _iKhachHangServices.GetAll().Where(c => c.TrangThai == 0).ToList();
+                foreach (var item in _lstKhachHang)
+                {
+                    dtg_show.Rows.Add(item.Id, stt++, item.Ma, item.FullName, item.NgaySinh.ToString(), item.Sdt, item.NhaMang, item.DiaChi, item.Email, item.SoDiem, item.TrangThai == 1 ? "Hoạt động" : "Không hoạt động");
+                }
+            }
         }
+
+        private void cbb_locsdt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbb_locsdt.Text == "Tất cả")
+            {
+                LoadData();
+            }
+            else if (cbb_locsdt.Text == "Viettel")
+            {
+                int stt = 1;
+                dtg_show.ColumnCount = 11;
+                dtg_show.Columns[0].Name = "Id";
+                dtg_show.Columns[0].Visible = false;
+                dtg_show.Columns[1].Name = "STT";
+                dtg_show.Columns[2].Name = "Mã";
+                dtg_show.Columns[3].Name = "Họ và Tên";
+                dtg_show.Columns[4].Name = "Ngày Sinh";
+                dtg_show.Columns[5].Name = "SDT";
+                dtg_show.Columns[6].Name = "Nhà mạng";
+                dtg_show.Columns[7].Name = "Địa chỉ";
+                dtg_show.Columns[8].Name = "Email";
+                dtg_show.Columns[9].Name = "Số điểm";
+                dtg_show.Columns[10].Name = "Trạng thái";
+                tb_ma.Enabled = false;
+
+                dtg_show.Rows.Clear();
+                _lstKhachHang = _iKhachHangServices.GetAll().Where(c => c.Sdt.StartsWith("03") || c.Sdt.StartsWith("09")).ToList();
+                foreach (var item in _lstKhachHang)
+                {
+                    dtg_show.Rows.Add(item.Id, stt++, item.Ma, item.FullName, item.NgaySinh.ToString(), item.Sdt, item.NhaMang, item.DiaChi, item.Email, item.SoDiem, item.TrangThai == 1 ? "Hoạt động" : "Không hoạt động");
+                }
+            }
+            else if (cbb_locsdt.Text == "Mobifone")
+            {
+                int stt = 1;
+                dtg_show.ColumnCount = 11;
+                dtg_show.Columns[0].Name = "Id";
+                dtg_show.Columns[0].Visible = false;
+                dtg_show.Columns[1].Name = "STT";
+                dtg_show.Columns[2].Name = "Mã";
+                dtg_show.Columns[3].Name = "Họ và Tên";
+                dtg_show.Columns[4].Name = "Ngày Sinh";
+                dtg_show.Columns[5].Name = "SDT";
+                dtg_show.Columns[6].Name = "Nhà mạng";
+                dtg_show.Columns[7].Name = "Địa chỉ";
+                dtg_show.Columns[8].Name = "Email";
+                dtg_show.Columns[9].Name = "Số điểm";
+                dtg_show.Columns[10].Name = "Trạng thái";
+                tb_ma.Enabled = false;
+
+                dtg_show.Rows.Clear();
+                _lstKhachHang = _iKhachHangServices.GetAll().Where(c => c.Sdt.StartsWith("07")).ToList();
+                foreach (var item in _lstKhachHang)
+                {
+                    dtg_show.Rows.Add(item.Id, stt++, item.Ma, item.FullName, item.NgaySinh.ToString(), item.Sdt, item.NhaMang, item.DiaChi, item.Email, item.SoDiem, item.TrangThai == 1 ? "Hoạt động" : "Không hoạt động");
+                }
+            }
+            else if (cbb_locsdt.Text == "Vinaphone")
+            {
+                int stt = 1;
+                dtg_show.ColumnCount = 11;
+                dtg_show.Columns[0].Name = "Id";
+                dtg_show.Columns[0].Visible = false;
+                dtg_show.Columns[1].Name = "STT";
+                dtg_show.Columns[2].Name = "Mã";
+                dtg_show.Columns[3].Name = "Họ và Tên";
+                dtg_show.Columns[4].Name = "Ngày Sinh";
+                dtg_show.Columns[5].Name = "SDT";
+                dtg_show.Columns[6].Name = "Nhà mạng";
+                dtg_show.Columns[7].Name = "Địa chỉ";
+                dtg_show.Columns[8].Name = "Email";
+                dtg_show.Columns[9].Name = "Số điểm";
+                dtg_show.Columns[10].Name = "Trạng thái";
+                tb_ma.Enabled = false;
+
+                dtg_show.Rows.Clear();
+                _lstKhachHang = _iKhachHangServices.GetAll().Where(c => c.Sdt.StartsWith("08")).ToList();
+                foreach (var item in _lstKhachHang)
+                {
+                    dtg_show.Rows.Add(item.Id, stt++, item.Ma, item.FullName, item.NgaySinh.ToString(), item.Sdt, item.NhaMang, item.DiaChi, item.Email, item.SoDiem, item.TrangThai == 1 ? "Hoạt động" : "Không hoạt động");
+                }
+            }
+        }
+
+        private static readonly string[] VietnameseSigns = new string[]
+        {
+            "aAeEoOuUiIdDyY",
+
+        "áàạảãâấầậẩẫăắằặẳẵ",
+
+        "ÁÀẠẢÃÂẤẦẬẨẪĂẮẰẶẲẴ",
+
+        "éèẹẻẽêếềệểễ",
+
+        "ÉÈẸẺẼÊẾỀỆỂỄ",
+
+        "óòọỏõôốồộổỗơớờợởỡ",
+
+        "ÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠ",
+
+        "úùụủũưứừựửữ",
+
+        "ÚÙỤỦŨƯỨỪỰỬỮ",
+
+        "íìịỉĩ",
+
+        "ÍÌỊỈĨ",
+
+        "đ",
+
+        "Đ",
+
+        "ýỳỵỷỹ",
+
+        "ÝỲỴỶỸ"
+        };
+
+
+
+
+        public static string RemoveDauTV(string str)
+        {
+            //Tiến hành thay thế , lọc bỏ dấu cho chuỗi
+
+            for (int i = 1; i < VietnameseSigns.Length; i++)
+
+            {
+
+                for (int j = 0; j < VietnameseSigns[i].Length; j++)
+
+                    str = str.Replace(VietnameseSigns[i][j], VietnameseSigns[0][i - 1]);
+
+            }
+
+            return str;
+        }
+
     }
 }
