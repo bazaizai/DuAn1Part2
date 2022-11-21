@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tb_sodiem = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.rdb_khd = new System.Windows.Forms.RadioButton();
             this.rdb_hd = new System.Windows.Forms.RadioButton();
             this.dtp_ngaysinh = new System.Windows.Forms.DateTimePicker();
@@ -51,6 +49,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbb_locsdt = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cbb_loctrangthai = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tb_timkiem = new System.Windows.Forms.TextBox();
             this.dtg_show = new System.Windows.Forms.DataGridView();
@@ -68,8 +70,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
-            this.groupBox1.Controls.Add(this.tb_sodiem);
-            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.rdb_khd);
             this.groupBox1.Controls.Add(this.rdb_hd);
             this.groupBox1.Controls.Add(this.dtp_ngaysinh);
@@ -98,27 +98,10 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
-            // tb_sodiem
-            // 
-            this.tb_sodiem.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_sodiem.Location = new System.Drawing.Point(650, 289);
-            this.tb_sodiem.Name = "tb_sodiem";
-            this.tb_sodiem.Size = new System.Drawing.Size(330, 37);
-            this.tb_sodiem.TabIndex = 8;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(487, 292);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(94, 30);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "Số điểm";
-            // 
             // rdb_khd
             // 
             this.rdb_khd.AutoSize = true;
-            this.rdb_khd.Location = new System.Drawing.Point(797, 362);
+            this.rdb_khd.Location = new System.Drawing.Point(797, 289);
             this.rdb_khd.Name = "rdb_khd";
             this.rdb_khd.Size = new System.Drawing.Size(212, 34);
             this.rdb_khd.TabIndex = 9;
@@ -129,7 +112,7 @@
             // rdb_hd
             // 
             this.rdb_hd.AutoSize = true;
-            this.rdb_hd.Location = new System.Drawing.Point(647, 362);
+            this.rdb_hd.Location = new System.Drawing.Point(647, 289);
             this.rdb_hd.Name = "rdb_hd";
             this.rdb_hd.Size = new System.Drawing.Size(144, 34);
             this.rdb_hd.TabIndex = 8;
@@ -199,12 +182,11 @@
             this.tb_ma.Name = "tb_ma";
             this.tb_ma.Size = new System.Drawing.Size(266, 37);
             this.tb_ma.TabIndex = 0;
-            this.tb_ma.TextChanged += new System.EventHandler(this.tb_ma_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(487, 362);
+            this.label7.Location = new System.Drawing.Point(487, 289);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 30);
             this.label7.TabIndex = 8;
@@ -285,6 +267,10 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.cbb_locsdt);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.cbb_loctrangthai);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.tb_timkiem);
             this.groupBox2.Controls.Add(this.dtg_show);
@@ -297,11 +283,51 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hiển thị";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(1033, 42);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(93, 30);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Lọc SĐT";
+            // 
+            // cbb_locsdt
+            // 
+            this.cbb_locsdt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_locsdt.FormattingEnabled = true;
+            this.cbb_locsdt.Location = new System.Drawing.Point(1132, 36);
+            this.cbb_locsdt.Name = "cbb_locsdt";
+            this.cbb_locsdt.Size = new System.Drawing.Size(205, 38);
+            this.cbb_locsdt.TabIndex = 22;
+            this.cbb_locsdt.SelectedIndexChanged += new System.EventHandler(this.cbb_locsdt_SelectedIndexChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(648, 39);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(150, 30);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Lọc trạng thái";
+            // 
+            // cbb_loctrangthai
+            // 
+            this.cbb_loctrangthai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_loctrangthai.FormattingEnabled = true;
+            this.cbb_loctrangthai.Location = new System.Drawing.Point(804, 36);
+            this.cbb_loctrangthai.Name = "cbb_loctrangthai";
+            this.cbb_loctrangthai.Size = new System.Drawing.Size(205, 38);
+            this.cbb_loctrangthai.TabIndex = 20;
+            this.cbb_loctrangthai.SelectedIndexChanged += new System.EventHandler(this.cbb_lockhachhang_SelectedIndexChanged);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(187, 44);
+            this.label6.Location = new System.Drawing.Point(32, 39);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 30);
             this.label6.TabIndex = 19;
@@ -310,16 +336,16 @@
             // tb_timkiem
             // 
             this.tb_timkiem.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_timkiem.Location = new System.Drawing.Point(338, 41);
+            this.tb_timkiem.Location = new System.Drawing.Point(183, 36);
             this.tb_timkiem.Name = "tb_timkiem";
-            this.tb_timkiem.Size = new System.Drawing.Size(671, 37);
+            this.tb_timkiem.Size = new System.Drawing.Size(449, 37);
             this.tb_timkiem.TabIndex = 14;
             this.tb_timkiem.TextChanged += new System.EventHandler(this.tb_timkiem_TextChanged);
             // 
             // dtg_show
             // 
             this.dtg_show.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtg_show.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dtg_show.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
             this.dtg_show.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtg_show.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_show.GridColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -409,7 +435,6 @@
             this.Name = "FrmKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmKhachHang";
-            this.Load += new System.EventHandler(this.FrmKhachHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -451,7 +476,9 @@
         private System.Windows.Forms.Button btn_xoa;
         private System.Windows.Forms.Button btn_sua;
         private System.Windows.Forms.Button btn_them;
-        private System.Windows.Forms.TextBox tb_sodiem;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox cbb_loctrangthai;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cbb_locsdt;
     }
 }

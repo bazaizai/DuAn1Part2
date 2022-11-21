@@ -17,6 +17,7 @@ namespace _2.BUS.ViewModels
         public string Ho { get; set; }
         public DateTime? NgaySinh { get; set; }
         public string Sdt { get; set; }
+        public string NhaMang { get; set; }
         public string DiaChi { get; set; }
         public string Email { get; set; }
         public int? TrangThai { get; set; }

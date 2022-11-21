@@ -29,10 +29,12 @@ namespace _3.PL.Views
         {
             LoadData();
             tb_ma.Text = "";
-            cbb_loaihinhkm.Text = "";
+            cbb_loaihinhkm.SelectedIndex = 0;
+            tb_sodiem.Text = "";
             tb_mucUudai.Text = "";
             rdb_hd.Checked = false;
             rdb_khd.Checked = false;
+
         }
         public void LoadData()
         {
@@ -46,8 +48,8 @@ namespace _3.PL.Views
             dtg_show.Columns[4].Name = "Mức ưu đãi";
             dtg_show.Columns[5].Name = "Số điểm";
             dtg_show.Columns[6].Name = "Trạng thái";
-
-
+            cbb_loaihinhkm.SelectedIndex = 0;
+            tb_ma.Enabled = false;
             dtg_show.Rows.Clear();
             var lst = _iUuDaiTichDiemServices.GetAll();
             foreach (var item in lst)
@@ -57,17 +59,33 @@ namespace _3.PL.Views
         }
         private void btn_them_Click(object sender, EventArgs e)
         {
-            var x = new UuDaiTichDiemView()
+            if (ValidateInput.CheckIntInput(tb_mucUudai.Text) == false || Convert.ToDecimal(tb_mucUudai.Text) < 0)
             {
-                Id = new Guid(),
-                Ma = tb_ma.Text,
-                LoaiHinhKm = cbb_loaihinhkm.Text,
-                MucUuDai = Convert.ToDecimal(tb_mucUudai.Text),
-                SoDiem = Convert.ToDecimal(tb_sodiem.Text),
-                TrangThai = rdb_hd.Checked ? 1 : 0
-            };
-            MessageBox.Show(_iUuDaiTichDiemServices.Add(x));
-            ClearForm();
+                MessageBox.Show("Vui lòng nhập đúng mức ưu đãi");
+            }
+            else if (ValidateInput.CheckIntInput(tb_sodiem.Text) == false || Convert.ToDecimal(tb_sodiem.Text) < 0)
+            {
+                MessageBox.Show("Vui lòng nhập đúng số điểm");
+            }
+            else if (rdb_hd.Checked == false && rdb_khd.Checked == false)
+            {
+                MessageBox.Show("Vui lòng chọn trạng thái");
+            }
+            else
+            {
+                var x = new UuDaiTichDiemView()
+                {
+                    Id = new Guid(),
+                    Ma = tb_ma.Text,
+                    LoaiHinhKm = cbb_loaihinhkm.Text,
+                    MucUuDai = Convert.ToDecimal(tb_mucUudai.Text),
+                    SoDiem = Convert.ToDecimal(tb_sodiem.Text),
+                    TrangThai = rdb_hd.Checked ? 1 : 0
+                };
+                MessageBox.Show(_iUuDaiTichDiemServices.Add(x));
+                ClearForm();
+            }
+           
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -111,9 +129,14 @@ namespace _3.PL.Views
         {
             //if (tb_sodiem.Text != "" && CheckValidate.InputIsOnlyNumber(tb_sodiem.Text) && tb_sodiem.Text.Length < 3)
             //{
-            //    tb_mucUudai.Text = (Convert.ToDecimal(_iUuDaiTichDiemServices.GetAll().FirstOrDefault(c => c.nsx.Ten == cb_nsx.Text && c.sanPham.Ten == cb_sanpham.Text && c.mauSac.Ten == cb_mausac.Text && c.dongSp.Ten == cb_dsp.Text).chiTietSp.GiaBan) * Convert.ToDecimal(tb_sl.Text)).ToString();
-            //    tb_giam.Text = (Convert.ToDecimal(tb_dongia.Text) * 95 / 100).ToString();
-            //}         
+            //    tb_mucUudai.Text = (Convert.ToDecimal(_iUuDaiTichDiemServices.GetAll().FirstOrDefault(c => c.MucUuDai = tb_mucUudai.Text).chiTietSp.GiaBan) * Convert.ToDecimal(tb_sl.Text)).ToString();
+            //    tb_sodiem.Text = (Convert.ToDecimal(tb_mucUudai.Text) * 95 / 100).ToString();
+            //}
+        }
+
+        private void tb_mucUudai_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

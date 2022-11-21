@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -169,10 +169,10 @@
             this.tabPage1.Controls.Add(this.txtMaHD);
             this.tabPage1.Controls.Add(this.txtChuyenKhoan);
             this.tabPage1.Controls.Add(this.txthtThanhToan);
-            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(454, 528);
+            this.tabPage1.Size = new System.Drawing.Size(454, 524);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hóa đơn";
             // 
@@ -184,7 +184,7 @@
             "$"});
             this.CbbGiamGia.Location = new System.Drawing.Point(377, 153);
             this.CbbGiamGia.Name = "CbbGiamGia";
-            this.CbbGiamGia.Size = new System.Drawing.Size(56, 26);
+            this.CbbGiamGia.Size = new System.Drawing.Size(56, 30);
             this.CbbGiamGia.TabIndex = 19;
             this.CbbGiamGia.SelectedIndexChanged += new System.EventHandler(this.CbbGiamGia_SelectedIndexChanged);
             // 
@@ -227,7 +227,7 @@
             this.txtTenNV.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtTenNV.PlaceholderText = "";
             this.txtTenNV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTenNV.Size = new System.Drawing.Size(280, 35);
+            this.txtTenNV.Size = new System.Drawing.Size(280, 39);
             this.txtTenNV.TabIndex = 17;
             this.txtTenNV.Texts = "";
             this.txtTenNV.UnderlinedStyle = true;
@@ -251,7 +251,7 @@
             this.txtTienThua.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtTienThua.PlaceholderText = "";
             this.txtTienThua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTienThua.Size = new System.Drawing.Size(280, 35);
+            this.txtTienThua.Size = new System.Drawing.Size(280, 39);
             this.txtTienThua.TabIndex = 16;
             this.txtTienThua.Texts = "";
             this.txtTienThua.UnderlinedStyle = true;
@@ -264,7 +264,7 @@
             this.lblTienThua.ForeColor = System.Drawing.Color.White;
             this.lblTienThua.Location = new System.Drawing.Point(3, 352);
             this.lblTienThua.Name = "lblTienThua";
-            this.lblTienThua.Size = new System.Drawing.Size(78, 20);
+            this.lblTienThua.Size = new System.Drawing.Size(102, 25);
             this.lblTienThua.TabIndex = 15;
             this.lblTienThua.Text = "Tiền thừa";
             this.lblTienThua.Visible = false;
@@ -276,7 +276,7 @@
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(3, 389);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(148, 20);
+            this.label11.Size = new System.Drawing.Size(195, 25);
             this.label11.TabIndex = 15;
             this.label11.Text = "Tiền chuyển khoản";
             this.label11.Visible = false;
@@ -288,7 +288,7 @@
             this.lblHTThanhToan.ForeColor = System.Drawing.Color.White;
             this.lblHTThanhToan.Location = new System.Drawing.Point(3, 315);
             this.lblHTThanhToan.Name = "lblHTThanhToan";
-            this.lblHTThanhToan.Size = new System.Drawing.Size(74, 20);
+            this.lblHTThanhToan.Size = new System.Drawing.Size(95, 25);
             this.lblHTThanhToan.TabIndex = 15;
             this.lblHTThanhToan.Text = "Tiền mặt";
             this.lblHTThanhToan.Visible = false;
@@ -300,7 +300,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(3, 278);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 20);
+            this.label8.Size = new System.Drawing.Size(148, 25);
             this.label8.TabIndex = 13;
             this.label8.Text = "HT thanh toán";
             // 
@@ -352,7 +352,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(3, 241);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 20);
+            this.label7.Size = new System.Drawing.Size(141, 25);
             this.label7.TabIndex = 11;
             this.label7.Text = "HT mua hàng";
             // 
@@ -362,7 +362,7 @@
             this.dtgNgayTao.Enabled = false;
             this.dtgNgayTao.Location = new System.Drawing.Point(152, 89);
             this.dtgNgayTao.Name = "dtgNgayTao";
-            this.dtgNgayTao.Size = new System.Drawing.Size(281, 24);
+            this.dtgNgayTao.Size = new System.Drawing.Size(281, 28);
             this.dtgNgayTao.TabIndex = 10;
             // 
             // label5
@@ -372,7 +372,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(3, 130);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 20);
+            this.label5.Size = new System.Drawing.Size(156, 25);
             this.label5.TabIndex = 9;
             this.label5.Text = "Tổng tiền hàng";
             // 
@@ -383,7 +383,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(3, 204);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 20);
+            this.label6.Size = new System.Drawing.Size(102, 25);
             this.label6.TabIndex = 8;
             this.label6.Text = "Tổng tiền";
             // 
@@ -394,7 +394,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(3, 167);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 20);
+            this.label4.Size = new System.Drawing.Size(97, 25);
             this.label4.TabIndex = 8;
             this.label4.Text = "Giảm giá";
             // 
@@ -405,7 +405,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 56);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 20);
+            this.label3.Size = new System.Drawing.Size(84, 25);
             this.label3.TabIndex = 7;
             this.label3.Text = "Tên NV";
             // 
@@ -416,7 +416,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.Size = new System.Drawing.Size(98, 25);
             this.label2.TabIndex = 6;
             this.label2.Text = "Ngày tạo";
             // 
@@ -427,7 +427,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 20);
+            this.label1.Size = new System.Drawing.Size(78, 25);
             this.label1.TabIndex = 5;
             this.label1.Text = "Mã HD";
             // 
@@ -450,7 +450,7 @@
             this.txtTongTien.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtTongTien.PlaceholderText = "";
             this.txtTongTien.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTongTien.Size = new System.Drawing.Size(280, 35);
+            this.txtTongTien.Size = new System.Drawing.Size(280, 39);
             this.txtTongTien.TabIndex = 3;
             this.txtTongTien.Texts = "";
             this.txtTongTien.UnderlinedStyle = true;
@@ -472,7 +472,7 @@
             this.txtGiamGia.PasswordChar = false;
             this.txtGiamGia.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtGiamGia.PlaceholderText = "0";
-            this.txtGiamGia.Size = new System.Drawing.Size(280, 35);
+            this.txtGiamGia.Size = new System.Drawing.Size(280, 39);
             this.txtGiamGia.TabIndex = 3;
             this.txtGiamGia.Texts = "";
             this.txtGiamGia.UnderlinedStyle = true;
@@ -497,7 +497,7 @@
             this.txtTongTienPTra.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtTongTienPTra.PlaceholderText = "";
             this.txtTongTienPTra.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTongTienPTra.Size = new System.Drawing.Size(280, 35);
+            this.txtTongTienPTra.Size = new System.Drawing.Size(280, 39);
             this.txtTongTienPTra.TabIndex = 1;
             this.txtTongTienPTra.Texts = "";
             this.txtTongTienPTra.UnderlinedStyle = true;
@@ -521,7 +521,7 @@
             this.txtMaHD.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtMaHD.PlaceholderText = "";
             this.txtMaHD.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtMaHD.Size = new System.Drawing.Size(280, 35);
+            this.txtMaHD.Size = new System.Drawing.Size(280, 39);
             this.txtMaHD.TabIndex = 0;
             this.txtMaHD.Texts = "";
             this.txtMaHD.UnderlinedStyle = true;
@@ -544,7 +544,7 @@
             this.txtChuyenKhoan.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtChuyenKhoan.PlaceholderText = "";
             this.txtChuyenKhoan.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtChuyenKhoan.Size = new System.Drawing.Size(280, 35);
+            this.txtChuyenKhoan.Size = new System.Drawing.Size(280, 39);
             this.txtChuyenKhoan.TabIndex = 16;
             this.txtChuyenKhoan.Texts = "";
             this.txtChuyenKhoan.UnderlinedStyle = true;
@@ -568,7 +568,7 @@
             this.txthtThanhToan.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txthtThanhToan.PlaceholderText = "";
             this.txthtThanhToan.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txthtThanhToan.Size = new System.Drawing.Size(280, 35);
+            this.txthtThanhToan.Size = new System.Drawing.Size(280, 39);
             this.txthtThanhToan.TabIndex = 16;
             this.txthtThanhToan.Texts = "";
             this.txthtThanhToan.UnderlinedStyle = true;
@@ -594,10 +594,10 @@
             this.tabPage3.Controls.Add(this.rjCircularPictureBox2);
             this.tabPage3.Controls.Add(this.rjCircularPictureBox1);
             this.tabPage3.Controls.Add(this.txtsearchKH);
-            this.tabPage3.Location = new System.Drawing.Point(4, 27);
+            this.tabPage3.Location = new System.Drawing.Point(4, 31);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(454, 184);
+            this.tabPage3.Size = new System.Drawing.Size(454, 180);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Thông Tin";
             // 
@@ -638,7 +638,7 @@
             this.lblMucTichLuy.ForeColor = System.Drawing.Color.Black;
             this.lblMucTichLuy.Location = new System.Drawing.Point(23, 90);
             this.lblMucTichLuy.Name = "lblMucTichLuy";
-            this.lblMucTichLuy.Size = new System.Drawing.Size(107, 20);
+            this.lblMucTichLuy.Size = new System.Drawing.Size(130, 25);
             this.lblMucTichLuy.TabIndex = 0;
             this.lblMucTichLuy.Text = "lblMucTichLuy";
             // 
@@ -649,7 +649,7 @@
             this.lblDiaChi.ForeColor = System.Drawing.Color.Black;
             this.lblDiaChi.Location = new System.Drawing.Point(23, 65);
             this.lblDiaChi.Name = "lblDiaChi";
-            this.lblDiaChi.Size = new System.Drawing.Size(71, 20);
+            this.lblDiaChi.Size = new System.Drawing.Size(86, 25);
             this.lblDiaChi.TabIndex = 0;
             this.lblDiaChi.Text = "lblDiaChi";
             // 
@@ -660,7 +660,7 @@
             this.lblSoDT.ForeColor = System.Drawing.Color.Black;
             this.lblSoDT.Location = new System.Drawing.Point(23, 40);
             this.lblSoDT.Name = "lblSoDT";
-            this.lblSoDT.Size = new System.Drawing.Size(61, 20);
+            this.lblSoDT.Size = new System.Drawing.Size(76, 25);
             this.lblSoDT.TabIndex = 0;
             this.lblSoDT.Text = "lblSoDT";
             // 
@@ -671,7 +671,7 @@
             this.lblTen.ForeColor = System.Drawing.Color.Black;
             this.lblTen.Location = new System.Drawing.Point(23, 15);
             this.lblTen.Name = "lblTen";
-            this.lblTen.Size = new System.Drawing.Size(50, 20);
+            this.lblTen.Size = new System.Drawing.Size(62, 25);
             this.lblTen.TabIndex = 0;
             this.lblTen.Text = "lblTen";
             // 
@@ -743,7 +743,7 @@
             this.txtsearchKH.PasswordChar = false;
             this.txtsearchKH.PlaceholderColor = System.Drawing.Color.White;
             this.txtsearchKH.PlaceholderText = "Tìm khách hàng";
-            this.txtsearchKH.Size = new System.Drawing.Size(343, 33);
+            this.txtsearchKH.Size = new System.Drawing.Size(343, 37);
             this.txtsearchKH.TabIndex = 3;
             this.txtsearchKH.Texts = "";
             this.txtsearchKH.UnderlinedStyle = true;
@@ -751,10 +751,10 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 27);
+            this.tabPage4.Location = new System.Drawing.Point(4, 31);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(454, 184);
+            this.tabPage4.Size = new System.Drawing.Size(454, 180);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Giao Hàng";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -776,24 +776,24 @@
             this.dgview.AllowUserToAddRows = false;
             this.dgview.AllowUserToDeleteRows = false;
             this.dgview.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.dgview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dgview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgview.ColumnHeadersHeight = 50;
             this.dgview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -805,27 +805,27 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.XoaSP});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Aqua;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgview.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Aqua;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgview.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgview.EnableHeadersVisualStyles = false;
             this.dgview.Location = new System.Drawing.Point(130, 8);
             this.dgview.Name = "dgview";
             this.dgview.ReadOnly = true;
             this.dgview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgview.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgview.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgview.RowHeadersWidth = 51;
             this.dgview.RowTemplate.Height = 50;
             this.dgview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -864,7 +864,7 @@
             this.TangSP.Name = "TangSP";
             this.TangSP.ReadOnly = true;
             this.TangSP.Text = "+";
-            this.TangSP.Width = 45;
+            this.TangSP.Width = 56;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -880,7 +880,7 @@
             this.GiamSP.MinimumWidth = 6;
             this.GiamSP.Name = "GiamSP";
             this.GiamSP.ReadOnly = true;
-            this.GiamSP.Width = 48;
+            this.GiamSP.Width = 56;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -908,7 +908,7 @@
             this.XoaSP.Name = "XoaSP";
             this.XoaSP.ReadOnly = true;
             this.XoaSP.Text = "X";
-            this.XoaSP.Width = 39;
+            this.XoaSP.Width = 46;
             // 
             // btnAddTab
             // 
@@ -1057,7 +1057,7 @@
             this.btnThemSP.FlatAppearance.BorderSize = 0;
             this.btnThemSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemSP.ForeColor = System.Drawing.Color.White;
-            this.btnThemSP.Location = new System.Drawing.Point(0, 315);
+            this.btnThemSP.Location = new System.Drawing.Point(0, 319);
             this.btnThemSP.Name = "btnThemSP";
             this.btnThemSP.Size = new System.Drawing.Size(389, 50);
             this.btnThemSP.TabIndex = 16;
@@ -1070,7 +1070,7 @@
             this.flpSP.AutoScroll = true;
             this.flpSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.flpSP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flpSP.Location = new System.Drawing.Point(0, 90);
+            this.flpSP.Location = new System.Drawing.Point(0, 94);
             this.flpSP.Name = "flpSP";
             this.flpSP.Size = new System.Drawing.Size(389, 225);
             this.flpSP.TabIndex = 15;
@@ -1080,7 +1080,7 @@
             // 
             this.pnlKhongTimThay.Controls.Add(this.label9);
             this.pnlKhongTimThay.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlKhongTimThay.Location = new System.Drawing.Point(0, 33);
+            this.pnlKhongTimThay.Location = new System.Drawing.Point(0, 37);
             this.pnlKhongTimThay.Name = "pnlKhongTimThay";
             this.pnlKhongTimThay.Size = new System.Drawing.Size(389, 57);
             this.pnlKhongTimThay.TabIndex = 14;
@@ -1092,7 +1092,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(21, 13);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(347, 29);
+            this.label9.Size = new System.Drawing.Size(413, 32);
             this.label9.TabIndex = 0;
             this.label9.Text = "Không tìm thấy kết quả phù hợp";
             // 
@@ -1114,7 +1114,7 @@
             this.txtSearch.PasswordChar = false;
             this.txtSearch.PlaceholderColor = System.Drawing.Color.White;
             this.txtSearch.PlaceholderText = "Search Product";
-            this.txtSearch.Size = new System.Drawing.Size(389, 33);
+            this.txtSearch.Size = new System.Drawing.Size(389, 37);
             this.txtSearch.TabIndex = 13;
             this.txtSearch.Texts = "";
             this.txtSearch.UnderlinedStyle = false;
@@ -1141,7 +1141,7 @@
             // 
             // frmQLBanHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 774);
             this.Controls.Add(this.panel3);
