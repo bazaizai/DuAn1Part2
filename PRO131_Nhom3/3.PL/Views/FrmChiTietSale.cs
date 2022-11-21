@@ -26,6 +26,7 @@ namespace _3.PL.Views
         private List<ChiTietSpViews> ChiTietSpViews;
         private Guid IDCtsle;
         private Guid IDsale;
+        private ChiTietSpViews chiTietSpViews;
         public FrmChiTietSale()
         {
             InitializeComponent();

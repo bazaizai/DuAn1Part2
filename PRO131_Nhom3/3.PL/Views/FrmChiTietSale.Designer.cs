@@ -62,8 +62,9 @@
             this.tb_timkiemkm = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.cbb_loaiKM = new CustomControls.RJControls.RJComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_sp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_show)).BeginInit();
             this.panel1.SuspendLayout();
@@ -209,13 +210,14 @@
             this.bt_sua.BorderSize = 0;
             this.bt_sua.FlatAppearance.BorderSize = 0;
             this.bt_sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_sua.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.bt_sua.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.bt_sua.ForeColor = System.Drawing.Color.White;
             this.bt_sua.Location = new System.Drawing.Point(343, 532);
             this.bt_sua.Name = "bt_sua";
-            this.bt_sua.Size = new System.Drawing.Size(150, 34);
+            this.bt_sua.Size = new System.Drawing.Size(150, 40);
             this.bt_sua.TabIndex = 108;
             this.bt_sua.Text = "Sửa";
-            this.bt_sua.TextColor = System.Drawing.SystemColors.WindowFrame;
+            this.bt_sua.TextColor = System.Drawing.Color.White;
             this.bt_sua.UseVisualStyleBackColor = false;
             this.bt_sua.Click += new System.EventHandler(this.bt_sua_Click);
             // 
@@ -231,13 +233,14 @@
             this.bt_them.BorderSize = 0;
             this.bt_them.FlatAppearance.BorderSize = 0;
             this.bt_them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_them.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.bt_them.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.bt_them.ForeColor = System.Drawing.Color.White;
             this.bt_them.Location = new System.Drawing.Point(103, 532);
             this.bt_them.Name = "bt_them";
-            this.bt_them.Size = new System.Drawing.Size(150, 34);
+            this.bt_them.Size = new System.Drawing.Size(150, 40);
             this.bt_them.TabIndex = 107;
             this.bt_them.Text = "Thêm";
-            this.bt_them.TextColor = System.Drawing.SystemColors.WindowFrame;
+            this.bt_them.TextColor = System.Drawing.Color.White;
             this.bt_them.UseVisualStyleBackColor = false;
             this.bt_them.Click += new System.EventHandler(this.bt_them_Click);
             // 
@@ -393,6 +396,8 @@
             this.dtg_sp.AllowUserToDeleteRows = false;
             this.dtg_sp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_sp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_sp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
             this.dtg_sp.Location = new System.Drawing.Point(28, 368);
             this.dtg_sp.Name = "dtg_sp";
             this.dtg_sp.ReadOnly = true;
@@ -413,14 +418,16 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(260, 328);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 11;
             this.button1.Text = "Tìm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // comboBox3
             // 
@@ -495,14 +502,17 @@
             // 
             // bt_timkm
             // 
+            this.bt_timkm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
+            this.bt_timkm.FlatAppearance.BorderSize = 2;
             this.bt_timkm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_timkm.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.bt_timkm.ForeColor = System.Drawing.Color.White;
             this.bt_timkm.Location = new System.Drawing.Point(210, 60);
             this.bt_timkm.Name = "bt_timkm";
             this.bt_timkm.Size = new System.Drawing.Size(75, 23);
             this.bt_timkm.TabIndex = 3;
             this.bt_timkm.Text = "Tìm";
-            this.bt_timkm.UseVisualStyleBackColor = true;
+            this.bt_timkm.UseVisualStyleBackColor = false;
             // 
             // cbb_locKM
             // 
@@ -560,6 +570,29 @@
             this.panel1.Size = new System.Drawing.Size(585, 630);
             this.panel1.TabIndex = 109;
             // 
+            // cbb_loaiKM
+            // 
+            this.cbb_loaiKM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbb_loaiKM.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbb_loaiKM.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.cbb_loaiKM.BorderSize = 1;
+            this.cbb_loaiKM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbb_loaiKM.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbb_loaiKM.ForeColor = System.Drawing.Color.Black;
+            this.cbb_loaiKM.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cbb_loaiKM.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbb_loaiKM.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbb_loaiKM.Location = new System.Drawing.Point(252, 217);
+            this.cbb_loaiKM.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cbb_loaiKM.Name = "cbb_loaiKM";
+            this.cbb_loaiKM.Padding = new System.Windows.Forms.Padding(1);
+            this.cbb_loaiKM.Size = new System.Drawing.Size(241, 30);
+            this.cbb_loaiKM.TabIndex = 105;
+            this.cbb_loaiKM.Texts = "";
+            this.cbb_loaiKM.OnSelectedIndexChanged += new System.EventHandler(this.cbb_loaiKM_OnSelectedIndexChanged);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
@@ -584,28 +617,11 @@
             this.panel2.Size = new System.Drawing.Size(622, 630);
             this.panel2.TabIndex = 109;
             // 
-            // cbb_loaiKM
+            // Column1
             // 
-            this.cbb_loaiKM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbb_loaiKM.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbb_loaiKM.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.cbb_loaiKM.BorderSize = 1;
-            this.cbb_loaiKM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbb_loaiKM.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbb_loaiKM.ForeColor = System.Drawing.Color.Black;
-            this.cbb_loaiKM.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cbb_loaiKM.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cbb_loaiKM.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbb_loaiKM.Location = new System.Drawing.Point(252, 217);
-            this.cbb_loaiKM.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cbb_loaiKM.Name = "cbb_loaiKM";
-            this.cbb_loaiKM.Padding = new System.Windows.Forms.Padding(1);
-            this.cbb_loaiKM.Size = new System.Drawing.Size(241, 30);
-            this.cbb_loaiKM.TabIndex = 105;
-            this.cbb_loaiKM.Texts = "";
-            this.cbb_loaiKM.OnSelectedIndexChanged += new System.EventHandler(this.cbb_loaiKM_OnSelectedIndexChanged);
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // FrmChiTietSale
             // 
@@ -615,6 +631,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FrmChiTietSale";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmChiTietSale";
             ((System.ComponentModel.ISupportInitialize)(this.dtg_sp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_show)).EndInit();
@@ -663,5 +680,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private CustomControls.RJControls.RJComboBox cbb_loaiKM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }
