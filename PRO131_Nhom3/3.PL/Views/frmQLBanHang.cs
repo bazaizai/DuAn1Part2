@@ -545,7 +545,7 @@ namespace _3.PL.Views
                                 else hoadon.TienChuyenKhoan = Convert.ToDecimal(txthtThanhToan.Texts);
                                 hoadon.MaHD = TabHoaDon.SelectedTab.Name;
                                 hoadon.TongTien = Convert.ToInt32(_IChiTietHDServices.GetAll().Where(x => x.MaHD == TabHoaDon.SelectedTab.Name).Sum(x => x.SoLuong * x.DonGia));
-                                hoadon.IdUD = Guid.Parse("ab4137a1-c0de-44f0-96c2-ab35e7146932");
+                                //hoadon.IdUD = Guid.Parse("ab4137a1-c0de-44f0-96c2-ab35e7146932");
                                 hoadon.TongTienSauKhiGiam = ValidateInput.RegexDecimal(txtTongTienPTra.Texts);
                                 hoadon.TongTien = ValidateInput.RegexDecimal(txtTongTien.Texts);
                                 if (txtsearchKH.Texts != "")
