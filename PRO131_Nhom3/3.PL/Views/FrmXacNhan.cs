@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _3.PL.Views
 {
-    public partial class FrmResetCa : Form
+    public partial class FrmXacNhan : Form
     {
-        public FrmResetCa()
+        public FrmXacNhan()
         {
             InitializeComponent();
         }

@@ -60,7 +60,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(55, 110);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 20);
@@ -71,7 +71,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(55, 481);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 20);
@@ -82,7 +82,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(55, 426);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 20);
@@ -93,7 +93,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(55, 270);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(119, 20);
@@ -104,7 +104,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(55, 232);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(132, 20);
@@ -115,7 +115,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(55, 191);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 20);
@@ -126,7 +126,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(55, 150);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 20);
@@ -137,7 +137,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(55, 386);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 20);
@@ -148,7 +148,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(55, 523);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 20);
@@ -157,8 +157,8 @@
             // 
             // rjTextBox4
             // 
-            this.rjTextBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.rjTextBox4.BorderColor = System.Drawing.Color.White;
+            this.rjTextBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
+            this.rjTextBox4.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox4.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox4.BorderRadius = 0;
             this.rjTextBox4.BorderSize = 2;
@@ -181,8 +181,8 @@
             // 
             // rjTextBox3
             // 
-            this.rjTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.rjTextBox3.BorderColor = System.Drawing.Color.White;
+            this.rjTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
+            this.rjTextBox3.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox3.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox3.BorderRadius = 0;
             this.rjTextBox3.BorderSize = 2;
@@ -205,8 +205,8 @@
             // 
             // rjTextBox2
             // 
-            this.rjTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.rjTextBox2.BorderColor = System.Drawing.Color.White;
+            this.rjTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
+            this.rjTextBox2.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox2.BorderRadius = 0;
             this.rjTextBox2.BorderSize = 2;
@@ -229,8 +229,8 @@
             // 
             // rjTextBox1
             // 
-            this.rjTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.rjTextBox1.BorderColor = System.Drawing.Color.White;
+            this.rjTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
+            this.rjTextBox1.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox1.BorderRadius = 0;
             this.rjTextBox1.BorderSize = 2;
@@ -253,8 +253,8 @@
             // 
             // txtMaHD
             // 
-            this.txtMaHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.txtMaHD.BorderColor = System.Drawing.Color.White;
+            this.txtMaHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
+            this.txtMaHD.BorderColor = System.Drawing.Color.Black;
             this.txtMaHD.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtMaHD.BorderRadius = 0;
             this.txtMaHD.BorderSize = 2;
@@ -277,8 +277,8 @@
             // 
             // rjTextBox5
             // 
-            this.rjTextBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.rjTextBox5.BorderColor = System.Drawing.Color.White;
+            this.rjTextBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
+            this.rjTextBox5.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox5.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox5.BorderRadius = 0;
             this.rjTextBox5.BorderSize = 2;
@@ -301,8 +301,8 @@
             // 
             // rjTextBox6
             // 
-            this.rjTextBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.rjTextBox6.BorderColor = System.Drawing.Color.White;
+            this.rjTextBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
+            this.rjTextBox6.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox6.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox6.BorderRadius = 0;
             this.rjTextBox6.BorderSize = 2;
@@ -325,9 +325,9 @@
             // 
             // rjTextBox7
             // 
-            this.rjTextBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.rjTextBox7.BorderColor = System.Drawing.Color.White;
-            this.rjTextBox7.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rjTextBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
+            this.rjTextBox7.BorderColor = System.Drawing.Color.Black;
+            this.rjTextBox7.BorderFocusColor = System.Drawing.SystemColors.HotTrack;
             this.rjTextBox7.BorderRadius = 0;
             this.rjTextBox7.BorderSize = 2;
             this.rjTextBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -349,6 +349,7 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.ForeColor = System.Drawing.Color.Black;
             this.textBox1.Location = new System.Drawing.Point(207, 515);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -357,13 +358,14 @@
             // 
             // rjButton2
             // 
-            this.rjButton2.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjButton2.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
+            this.rjButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
             this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjButton2.BorderRadius = 15;
             this.rjButton2.BorderSize = 0;
             this.rjButton2.FlatAppearance.BorderSize = 0;
             this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rjButton2.ForeColor = System.Drawing.Color.White;
             this.rjButton2.Location = new System.Drawing.Point(335, 700);
             this.rjButton2.Name = "rjButton2";
@@ -375,13 +377,14 @@
             // 
             // rjButton1
             // 
-            this.rjButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
+            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
             this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjButton1.BorderRadius = 15;
             this.rjButton1.BorderSize = 0;
             this.rjButton1.FlatAppearance.BorderSize = 0;
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rjButton1.ForeColor = System.Drawing.Color.White;
             this.rjButton1.Location = new System.Drawing.Point(207, 700);
             this.rjButton1.Name = "rjButton1";
@@ -393,13 +396,14 @@
             // 
             // rjButton3
             // 
-            this.rjButton3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjButton3.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
+            this.rjButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(143)))), ((int)(((byte)(157)))));
             this.rjButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjButton3.BorderRadius = 15;
             this.rjButton3.BorderSize = 0;
             this.rjButton3.FlatAppearance.BorderSize = 0;
             this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rjButton3.ForeColor = System.Drawing.Color.White;
             this.rjButton3.Location = new System.Drawing.Point(82, 700);
             this.rjButton3.Name = "rjButton3";
@@ -414,7 +418,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(151, 20);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(173, 50);
@@ -423,8 +427,8 @@
             // 
             // rjTextBox8
             // 
-            this.rjTextBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.rjTextBox8.BorderColor = System.Drawing.Color.White;
+            this.rjTextBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
+            this.rjTextBox8.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox8.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox8.BorderRadius = 0;
             this.rjTextBox8.BorderSize = 2;
@@ -449,7 +453,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(55, 309);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(68, 20);
@@ -458,8 +462,8 @@
             // 
             // rjTextBox9
             // 
-            this.rjTextBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.rjTextBox9.BorderColor = System.Drawing.Color.White;
+            this.rjTextBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
+            this.rjTextBox9.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox9.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox9.BorderRadius = 0;
             this.rjTextBox9.BorderSize = 2;
@@ -484,7 +488,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(55, 348);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(108, 20);
@@ -495,8 +499,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(587, 814);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
+            this.ClientSize = new System.Drawing.Size(564, 809);
             this.Controls.Add(this.rjTextBox9);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.rjTextBox8);

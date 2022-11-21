@@ -37,6 +37,10 @@ namespace _3.PL.Views
             dtg_show.Columns[3].Name = "Trạng thái";
             dtg_show.Columns[0].Visible = false;
             var lstChucVu = _iChucVu.GetAll();
+            if (tb_timkiem.Text != "")
+            {
+                lstChucVu = lstChucVu.Where(x => x.Ma.ToLower().Contains(tb_timkiem.Text.ToLower()) || x.Ten.ToLower().Contains(tb_timkiem.Text.ToLower())).ToList();
+            }
             foreach (var item in lstChucVu)
             {
                 dtg_show.Rows.Add(item.Id, item.Ma, item.Ten, item.TrangThai == 0 ? "Hoạt động" : "Không hoạt động");
@@ -147,6 +151,16 @@ namespace _3.PL.Views
             tbt_ten.Text = "";
             rdb_hoatdong.Checked = false;
             rdb_khonghd.Checked = false;
+        }
+
+        private void dtg_show_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tb_timkiem_TextChanged(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

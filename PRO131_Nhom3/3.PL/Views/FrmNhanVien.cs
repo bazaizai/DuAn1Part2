@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 
 namespace _3.PL.Views
@@ -30,6 +31,9 @@ namespace _3.PL.Views
             _iNhanVien = new NhanVienServices();
             loadData();
             loadComboBox();
+            cbb_chucvu.SelectedIndex = 0;
+            cbb_gioitinh.SelectedIndex = 0;
+            //cbb_loc.SelectedIndex = 0;
         }
         public void loadData()
         {
@@ -50,6 +54,10 @@ namespace _3.PL.Views
             dtgv_show.Columns[12].Name = "Trạng thái";
             dtgv_show.Rows.Clear();
             var lstViewNV = _iNhanVien.GetAll();
+            if (tb_timkiem.Text != "")
+            {
+                lstViewNV = lstViewNV.Where(x => x.Ma.ToLower().Contains(tb_timkiem.Text.ToLower()) || x.Ten.ToLower().Contains(tb_timkiem.Text.ToLower())).ToList();
+            }
             foreach (var item in lstViewNV)
             {
                 dtgv_show.Rows.Add(
@@ -72,6 +80,7 @@ namespace _3.PL.Views
         }
         public void loadComboBox()
         {
+            cbb_loc.Items.Clear();
             cbb_chucvu.Items.Clear();
             cbb_gioitinh.Items.Clear();
             foreach (var item in _iChucVu.GetAll())
@@ -80,6 +89,9 @@ namespace _3.PL.Views
             }
             cbb_gioitinh.Items.Add("Nam");
             cbb_gioitinh.Items.Add("Nữ");
+            cbb_loc.Items.Add("Tất cả");
+            cbb_loc.Items.Add("Nam");
+            cbb_loc.Items.Add("Nữ");
         }
 
         public NhanVienView GetData()
@@ -257,12 +269,12 @@ namespace _3.PL.Views
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
-            cbb_chucvu.SelectedValue = 0;
+            cbb_chucvu.SelectedIndex = 0;
             tb_ma.Text = "";
             tb_ho.Text = "";
             tb_tendem.Text = "";
             tb_ten.Text = "";
-            cbb_gioitinh.SelectedValue = 0;
+            cbb_gioitinh.SelectedIndex = 0;
             dtp_ngaysinh.Value = DateTime.Now;
             tb_diachi.Text = "";
             tb_sdt.Text = "";
@@ -272,6 +284,7 @@ namespace _3.PL.Views
             tb_taikhoan.Text = "";
             rdb_hoatdong.Checked = false;
             rdb_khonghd.Checked = false;
+            //cbb_loc.SelectedIndex = 0;
         }
 
         private void dtgv_show_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -292,6 +305,104 @@ namespace _3.PL.Views
             tb_taikhoan.Text = dtgv_show.CurrentRow.Cells[11].Value.ToString();
             rdb_hoatdong.Checked = _nvv.TrangThai == 0;
             rdb_khonghd.Checked = _nvv.TrangThai == 1;
+        }
+        private void tb_timkiem_TextChanged(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
+        private void cbb_loc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbb_loc.Text == "Tất cả")
+            {
+                loadData();
+            }
+            else if (cbb_loc.Text == "Nam")
+            {
+                dtgv_show.ColumnCount = 13;
+                dtgv_show.Columns[0].Name = "Id";
+                dtgv_show.Columns[0].Visible = false;
+                dtgv_show.Columns[1].Name = "Chức vụ";
+                dtgv_show.Columns[2].Name = "Mã";
+                dtgv_show.Columns[3].Name = "Tên";
+                dtgv_show.Columns[4].Name = "Giới tính";
+                dtgv_show.Columns[5].Name = "Ngày sinh";
+                dtgv_show.Columns[6].Name = "Địa chỉ";
+                dtgv_show.Columns[7].Name = "SĐT";
+                dtgv_show.Columns[8].Name = "CCCD";
+                dtgv_show.Columns[9].Name = "Mật khẩu";
+                dtgv_show.Columns[10].Name = "Email";
+                dtgv_show.Columns[11].Name = "Tài khoản";
+                dtgv_show.Columns[12].Name = "Trạng thái";
+                dtgv_show.Rows.Clear();
+                var lstViewNV = _iNhanVien.GetAll().Where(c => c.GioiTinh == "Nam").ToList();
+                if (tb_timkiem.Text != "")
+                {
+                    lstViewNV = lstViewNV.Where(x => x.Ma.ToLower().Contains(tb_timkiem.Text.ToLower()) || x.Ten.ToLower().Contains(tb_timkiem.Text.ToLower())).ToList();
+                }
+                foreach (var item in lstViewNV)
+                {
+                    dtgv_show.Rows.Add(
+                        item.Id,
+                        item.TenCV,
+                        item.Ma,
+                        item.HoVaTen,
+                        item.GioiTinh,
+                        item.NgaySinh.ToString(),
+                        item.DiaChi,
+                        item.Sdt,
+                        item.Cccd,
+                        item.MatKhau,
+                        item.Email,
+                        item.TaiKhoan,
+                        item.TrangThai == 0 ? "Hoạt động" : "Không hoạt động"
+                        );
+                }
+                loadComboBox();
+            }
+            else
+            {
+                dtgv_show.ColumnCount = 13;
+                dtgv_show.Columns[0].Name = "Id";
+                dtgv_show.Columns[0].Visible = false;
+                dtgv_show.Columns[1].Name = "Chức vụ";
+                dtgv_show.Columns[2].Name = "Mã";
+                dtgv_show.Columns[3].Name = "Tên";
+                dtgv_show.Columns[4].Name = "Giới tính";
+                dtgv_show.Columns[5].Name = "Ngày sinh";
+                dtgv_show.Columns[6].Name = "Địa chỉ";
+                dtgv_show.Columns[7].Name = "SĐT";
+                dtgv_show.Columns[8].Name = "CCCD";
+                dtgv_show.Columns[9].Name = "Mật khẩu";
+                dtgv_show.Columns[10].Name = "Email";
+                dtgv_show.Columns[11].Name = "Tài khoản";
+                dtgv_show.Columns[12].Name = "Trạng thái";
+                dtgv_show.Rows.Clear();
+                var lstViewNV = _iNhanVien.GetAll().Where(c => c.GioiTinh == "Nữ").ToList();
+                if (tb_timkiem.Text != "")
+                {
+                    lstViewNV = lstViewNV.Where(x => x.Ma.ToLower().Contains(tb_timkiem.Text.ToLower()) || x.Ten.ToLower().Contains(tb_timkiem.Text.ToLower())).ToList();
+                }
+                foreach (var item in lstViewNV)
+                {
+                    dtgv_show.Rows.Add(
+                        item.Id,
+                        item.TenCV,
+                        item.Ma,
+                        item.HoVaTen,
+                        item.GioiTinh,
+                        item.NgaySinh.ToString(),
+                        item.DiaChi,
+                        item.Sdt,
+                        item.Cccd,
+                        item.MatKhau,
+                        item.Email,
+                        item.TaiKhoan,
+                        item.TrangThai == 0 ? "Hoạt động" : "Không hoạt động"
+                        );
+                }
+                loadComboBox();
+            }
         }
     }
 }

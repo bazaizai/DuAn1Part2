@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-=======
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
->>>>>>> Cien
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -271,18 +264,16 @@
             this.lblTienThua.ForeColor = System.Drawing.Color.Black;
             this.lblTienThua.Location = new System.Drawing.Point(15, 381);
             this.lblTienThua.Name = "lblTienThua";
-<<<<<<< HEAD
+
             this.lblTienThua.Size = new System.Drawing.Size(83, 23);
-=======
-            this.lblTienThua.Size = new System.Drawing.Size(102, 25);
->>>>>>> Cien
+
             this.lblTienThua.TabIndex = 15;
             this.lblTienThua.Text = "Tiền thừa";
             this.lblTienThua.Visible = false;
             // 
             // lblChuyenTien
             // 
-<<<<<<< HEAD
+
             this.lblChuyenTien.AutoSize = true;
             this.lblChuyenTien.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblChuyenTien.ForeColor = System.Drawing.Color.Black;
@@ -292,17 +283,7 @@
             this.lblChuyenTien.TabIndex = 15;
             this.lblChuyenTien.Text = "Tiền CK";
             this.lblChuyenTien.Visible = false;
-=======
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(3, 389);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(195, 25);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "Tiền chuyển khoản";
-            this.label11.Visible = false;
->>>>>>> Cien
+
             // 
             // lblHTThanhToan
             // 
@@ -311,11 +292,9 @@
             this.lblHTThanhToan.ForeColor = System.Drawing.Color.Black;
             this.lblHTThanhToan.Location = new System.Drawing.Point(15, 338);
             this.lblHTThanhToan.Name = "lblHTThanhToan";
-<<<<<<< HEAD
+
             this.lblHTThanhToan.Size = new System.Drawing.Size(77, 23);
-=======
-            this.lblHTThanhToan.Size = new System.Drawing.Size(95, 25);
->>>>>>> Cien
+
             this.lblHTThanhToan.TabIndex = 15;
             this.lblHTThanhToan.Text = "Tiền mặt";
             this.lblHTThanhToan.Visible = false;
@@ -327,11 +306,9 @@
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(15, 295);
             this.label8.Name = "label8";
-<<<<<<< HEAD
+
             this.label8.Size = new System.Drawing.Size(122, 23);
-=======
-            this.label8.Size = new System.Drawing.Size(148, 25);
->>>>>>> Cien
+
             this.label8.TabIndex = 13;
             this.label8.Text = "HT thanh toán";
             // 
@@ -383,11 +360,7 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(15, 257);
             this.label7.Name = "label7";
-<<<<<<< HEAD
             this.label7.Size = new System.Drawing.Size(115, 23);
-=======
-            this.label7.Size = new System.Drawing.Size(141, 25);
->>>>>>> Cien
             this.label7.TabIndex = 11;
             this.label7.Text = "HT mua hàng";
             // 
@@ -407,11 +380,7 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(15, 133);
             this.label5.Name = "label5";
-<<<<<<< HEAD
             this.label5.Size = new System.Drawing.Size(127, 23);
-=======
-            this.label5.Size = new System.Drawing.Size(156, 25);
->>>>>>> Cien
             this.label5.TabIndex = 9;
             this.label5.Text = "Tổng tiền hàng";
             // 
@@ -422,11 +391,7 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(15, 219);
             this.label6.Name = "label6";
-<<<<<<< HEAD
             this.label6.Size = new System.Drawing.Size(83, 23);
-=======
-            this.label6.Size = new System.Drawing.Size(102, 25);
->>>>>>> Cien
             this.label6.TabIndex = 8;
             this.label6.Text = "Tổng tiền";
             // 
@@ -437,11 +402,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(15, 176);
             this.label4.Name = "label4";
-<<<<<<< HEAD
             this.label4.Size = new System.Drawing.Size(78, 23);
-=======
-            this.label4.Size = new System.Drawing.Size(97, 25);
->>>>>>> Cien
             this.label4.TabIndex = 8;
             this.label4.Text = "Giảm giá";
             // 
@@ -452,11 +413,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(15, 58);
             this.label3.Name = "label3";
-<<<<<<< HEAD
             this.label3.Size = new System.Drawing.Size(65, 23);
-=======
-            this.label3.Size = new System.Drawing.Size(84, 25);
->>>>>>> Cien
             this.label3.TabIndex = 7;
             this.label3.Text = "Tên NV";
             // 
@@ -467,11 +424,8 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(15, 91);
             this.label2.Name = "label2";
-<<<<<<< HEAD
+
             this.label2.Size = new System.Drawing.Size(81, 23);
-=======
-            this.label2.Size = new System.Drawing.Size(98, 25);
->>>>>>> Cien
             this.label2.TabIndex = 6;
             this.label2.Text = "Ngày tạo";
             // 
@@ -482,11 +436,8 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(15, 15);
             this.label1.Name = "label1";
-<<<<<<< HEAD
+
             this.label1.Size = new System.Drawing.Size(65, 23);
-=======
-            this.label1.Size = new System.Drawing.Size(78, 25);
->>>>>>> Cien
             this.label1.TabIndex = 5;
             this.label1.Text = "Mã HD";
             // 
@@ -817,7 +768,6 @@
             this.dgview.AllowUserToAddRows = false;
             this.dgview.AllowUserToDeleteRows = false;
             this.dgview.AllowUserToResizeRows = false;
-<<<<<<< HEAD
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
@@ -835,26 +785,6 @@
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-=======
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dgview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgview.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
->>>>>>> Cien
             this.dgview.ColumnHeadersHeight = 50;
             this.dgview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -866,7 +796,6 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.XoaSP});
-<<<<<<< HEAD
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -875,22 +804,11 @@
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgview.DefaultCellStyle = dataGridViewCellStyle11;
-=======
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Aqua;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgview.DefaultCellStyle = dataGridViewCellStyle3;
->>>>>>> Cien
             this.dgview.EnableHeadersVisualStyles = false;
             this.dgview.Location = new System.Drawing.Point(130, 8);
             this.dgview.Name = "dgview";
             this.dgview.ReadOnly = true;
             this.dgview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-<<<<<<< HEAD
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -899,16 +817,6 @@
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgview.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-=======
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgview.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
->>>>>>> Cien
             this.dgview.RowHeadersWidth = 51;
             this.dgview.RowTemplate.Height = 50;
             this.dgview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -963,11 +871,8 @@
             this.GiamSP.MinimumWidth = 6;
             this.GiamSP.Name = "GiamSP";
             this.GiamSP.ReadOnly = true;
-<<<<<<< HEAD
             this.GiamSP.Width = 60;
-=======
-            this.GiamSP.Width = 56;
->>>>>>> Cien
+
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -995,11 +900,8 @@
             this.XoaSP.Name = "XoaSP";
             this.XoaSP.ReadOnly = true;
             this.XoaSP.Text = "X";
-<<<<<<< HEAD
             this.XoaSP.Width = 48;
-=======
-            this.XoaSP.Width = 46;
->>>>>>> Cien
+
             // 
             // btnAddTab
             // 
