@@ -36,6 +36,10 @@ namespace _3.PL.Views
             dtg_show.Columns[3].Name = "Trạng thái";
             dtg_show.Columns[0].Visible = false;
             var lstMauSac = _iMauSac.GetAll();
+            if (tb_timkiem.Text != "")
+            {
+                lstMauSac = lstMauSac.Where(x => x.Ma.ToLower().Contains(tb_timkiem.Text.ToLower()) || x.Ten.ToLower().Contains(tb_timkiem.Text.ToLower())).ToList();
+            }
             foreach (var item in lstMauSac)
             {
                 dtg_show.Rows.Add(item.Id, item.Ma, item.Ten, item.TrangThai == 0 ? "Hoạt động" : "Không hoạt động");
@@ -148,5 +152,9 @@ namespace _3.PL.Views
             rdb_khonghd.Checked = false;
         }
 
+        private void tb_timkiem_TextChanged(object sender, EventArgs e)
+        {
+            LoadData();
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace _3.PL.Utilities
         {
             if (string.IsNullOrEmpty(phoneNum))
                 return false;
-            string sMailPattern = @"^((0(\d){9}))$";
+            string sMailPattern = @"^((0(\d){9,3,7,5}))$";
             return Regex.IsMatch(phoneNum.Trim(), sMailPattern);
         }
 

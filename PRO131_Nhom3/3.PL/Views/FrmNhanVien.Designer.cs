@@ -64,6 +64,8 @@
             this.btn_clear = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.tb_timkiem = new System.Windows.Forms.TextBox();
+            this.cbb_loc = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_show)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +74,7 @@
             this.dtgv_show.AllowUserToAddRows = false;
             this.dtgv_show.AllowUserToDeleteRows = false;
             this.dtgv_show.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgv_show.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.dtgv_show.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.dtgv_show.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgv_show.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_show.Location = new System.Drawing.Point(26, 315);
@@ -444,7 +446,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(90, 280);
+            this.label15.Location = new System.Drawing.Point(23, 286);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(71, 20);
@@ -454,19 +456,45 @@
             // tb_timkiem
             // 
             this.tb_timkiem.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_timkiem.Location = new System.Drawing.Point(196, 279);
+            this.tb_timkiem.Location = new System.Drawing.Point(100, 278);
             this.tb_timkiem.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_timkiem.Multiline = true;
             this.tb_timkiem.Name = "tb_timkiem";
-            this.tb_timkiem.Size = new System.Drawing.Size(471, 23);
+            this.tb_timkiem.Size = new System.Drawing.Size(274, 28);
             this.tb_timkiem.TabIndex = 71;
             this.tb_timkiem.TextChanged += new System.EventHandler(this.tb_timkiem_TextChanged);
+            // 
+            // cbb_loc
+            // 
+            this.cbb_loc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_loc.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cbb_loc.FormattingEnabled = true;
+            this.cbb_loc.Location = new System.Drawing.Point(431, 278);
+            this.cbb_loc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbb_loc.Name = "cbb_loc";
+            this.cbb_loc.Size = new System.Drawing.Size(106, 28);
+            this.cbb_loc.TabIndex = 73;
+            this.cbb_loc.SelectedIndexChanged += new System.EventHandler(this.cbb_loc_SelectedIndexChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(393, 281);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(32, 20);
+            this.label16.TabIndex = 74;
+            this.label16.Text = "Lọc";
             // 
             // FrmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.ClientSize = new System.Drawing.Size(892, 588);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.cbb_loc);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.tb_timkiem);
             this.Controls.Add(this.btn_clear);
@@ -549,5 +577,7 @@
         private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox tb_timkiem;
+        private System.Windows.Forms.ComboBox cbb_loc;
+        private System.Windows.Forms.Label label16;
     }
 }

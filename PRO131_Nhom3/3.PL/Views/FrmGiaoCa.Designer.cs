@@ -157,7 +157,7 @@
             // 
             // rjTextBox4
             // 
-            this.rjTextBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.rjTextBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.rjTextBox4.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox4.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox4.BorderRadius = 0;
@@ -181,7 +181,7 @@
             // 
             // rjTextBox3
             // 
-            this.rjTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.rjTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.rjTextBox3.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox3.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox3.BorderRadius = 0;
@@ -205,7 +205,7 @@
             // 
             // rjTextBox2
             // 
-            this.rjTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.rjTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.rjTextBox2.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox2.BorderRadius = 0;
@@ -229,7 +229,7 @@
             // 
             // rjTextBox1
             // 
-            this.rjTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.rjTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.rjTextBox1.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox1.BorderRadius = 0;
@@ -253,7 +253,7 @@
             // 
             // txtMaHD
             // 
-            this.txtMaHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.txtMaHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.txtMaHD.BorderColor = System.Drawing.Color.Black;
             this.txtMaHD.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtMaHD.BorderRadius = 0;
@@ -277,7 +277,7 @@
             // 
             // rjTextBox5
             // 
-            this.rjTextBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.rjTextBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.rjTextBox5.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox5.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox5.BorderRadius = 0;
@@ -301,7 +301,7 @@
             // 
             // rjTextBox6
             // 
-            this.rjTextBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.rjTextBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.rjTextBox6.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox6.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox6.BorderRadius = 0;
@@ -325,7 +325,7 @@
             // 
             // rjTextBox7
             // 
-            this.rjTextBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.rjTextBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.rjTextBox7.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox7.BorderFocusColor = System.Drawing.SystemColors.HotTrack;
             this.rjTextBox7.BorderRadius = 0;
@@ -366,13 +366,13 @@
             this.rjButton2.FlatAppearance.BorderSize = 0;
             this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rjButton2.ForeColor = System.Drawing.Color.Black;
+            this.rjButton2.ForeColor = System.Drawing.Color.White;
             this.rjButton2.Location = new System.Drawing.Point(335, 700);
             this.rjButton2.Name = "rjButton2";
             this.rjButton2.Size = new System.Drawing.Size(95, 51);
             this.rjButton2.TabIndex = 39;
             this.rjButton2.Text = "Hủy";
-            this.rjButton2.TextColor = System.Drawing.Color.Black;
+            this.rjButton2.TextColor = System.Drawing.Color.White;
             this.rjButton2.UseVisualStyleBackColor = false;
             // 
             // rjButton1
@@ -385,13 +385,13 @@
             this.rjButton1.FlatAppearance.BorderSize = 0;
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rjButton1.ForeColor = System.Drawing.Color.Black;
+            this.rjButton1.ForeColor = System.Drawing.Color.White;
             this.rjButton1.Location = new System.Drawing.Point(207, 700);
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(95, 51);
             this.rjButton1.TabIndex = 40;
             this.rjButton1.Text = "Xác nhận";
-            this.rjButton1.TextColor = System.Drawing.Color.Black;
+            this.rjButton1.TextColor = System.Drawing.Color.White;
             this.rjButton1.UseVisualStyleBackColor = false;
             // 
             // rjButton3
@@ -404,13 +404,13 @@
             this.rjButton3.FlatAppearance.BorderSize = 0;
             this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rjButton3.ForeColor = System.Drawing.Color.Black;
+            this.rjButton3.ForeColor = System.Drawing.Color.White;
             this.rjButton3.Location = new System.Drawing.Point(82, 700);
             this.rjButton3.Name = "rjButton3";
             this.rjButton3.Size = new System.Drawing.Size(95, 51);
             this.rjButton3.TabIndex = 41;
             this.rjButton3.Text = "Reset ca";
-            this.rjButton3.TextColor = System.Drawing.Color.Black;
+            this.rjButton3.TextColor = System.Drawing.Color.White;
             this.rjButton3.UseVisualStyleBackColor = false;
             this.rjButton3.Click += new System.EventHandler(this.rjButton3_Click);
             // 
@@ -427,7 +427,7 @@
             // 
             // rjTextBox8
             // 
-            this.rjTextBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.rjTextBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.rjTextBox8.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox8.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox8.BorderRadius = 0;
@@ -462,7 +462,7 @@
             // 
             // rjTextBox9
             // 
-            this.rjTextBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.rjTextBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.rjTextBox9.BorderColor = System.Drawing.Color.Black;
             this.rjTextBox9.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox9.BorderRadius = 0;
@@ -499,7 +499,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.ClientSize = new System.Drawing.Size(564, 809);
             this.Controls.Add(this.rjTextBox9);
             this.Controls.Add(this.label12);
