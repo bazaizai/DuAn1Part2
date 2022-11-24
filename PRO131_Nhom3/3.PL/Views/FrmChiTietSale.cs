@@ -102,24 +102,11 @@ namespace _3.PL.Views
         private void loadCTSP()
         {
             dtg_sp.Rows.Clear();
-            dtg_sp.ColumnCount = 5;
-            dtg_sp.Columns[0].Name = "ID";
-            dtg_sp.Columns[1].Name = "TenSP";
-            dtg_sp.Columns[2].Name = "Tên màu";
-            dtg_sp.Columns[3].Name = "Giá cũ";
-            dtg_sp.Columns[4].Name = "Giá mới";
-            DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
-            checkColumn.Name = "X";
-            checkColumn.HeaderText = "X";
-            checkColumn.Width = 50;
-            checkColumn.ReadOnly = false;
-            checkColumn.FillWeight = 50; //if the datagridview is resized (on form resize) the checkbox won't take up too much; value is relative to the other columns' fill values
-            dtg_sp.Columns.Add(checkColumn);
+           
             foreach (var item in _chiTietSpServices.GetAll())
             {
-                dtg_sp.Rows.Add(item.Id, item.TenSP, item.TenMauSac, item.GiaBan, item.GiaBan);
+                dtg_sp.Rows.Add(item.Id, item.TenSP, item.TenMauSac, item.TenTeam, item.GiaBan);
             }
-
 
         }
 

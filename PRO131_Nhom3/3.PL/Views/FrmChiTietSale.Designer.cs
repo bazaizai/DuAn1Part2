@@ -64,7 +64,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbb_loaiKM = new CustomControls.RJControls.RJComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDMauSac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdTeam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Giaban = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ckb = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_sp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_show)).BeginInit();
             this.panel1.SuspendLayout();
@@ -397,7 +403,13 @@
             this.dtg_sp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_sp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_sp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
+            this.ID,
+            this.IDSP,
+            this.IDMauSac,
+            this.IdTeam,
+            this.Giaban,
+            this.GiaSale,
+            this.ckb});
             this.dtg_sp.Location = new System.Drawing.Point(28, 368);
             this.dtg_sp.Name = "dtg_sp";
             this.dtg_sp.ReadOnly = true;
@@ -617,11 +629,49 @@
             this.panel2.Size = new System.Drawing.Size(622, 630);
             this.panel2.TabIndex = 109;
             // 
-            // Column1
+            // ID
             // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // IDSP
+            // 
+            this.IDSP.HeaderText = "TênSP";
+            this.IDSP.Name = "IDSP";
+            this.IDSP.ReadOnly = true;
+            // 
+            // IDMauSac
+            // 
+            this.IDMauSac.HeaderText = "Màu Sắc";
+            this.IDMauSac.Name = "IDMauSac";
+            this.IDMauSac.ReadOnly = true;
+            // 
+            // IdTeam
+            // 
+            this.IdTeam.HeaderText = "Team";
+            this.IdTeam.Name = "IdTeam";
+            this.IdTeam.ReadOnly = true;
+            // 
+            // Giaban
+            // 
+            this.Giaban.HeaderText = "Giá bán";
+            this.Giaban.Name = "Giaban";
+            this.Giaban.ReadOnly = true;
+            // 
+            // GiaSale
+            // 
+            this.GiaSale.HeaderText = "Giá sale";
+            this.GiaSale.Name = "GiaSale";
+            this.GiaSale.ReadOnly = true;
+            // 
+            // ckb
+            // 
+            this.ckb.FillWeight = 50F;
+            this.ckb.HeaderText = "";
+            this.ckb.Name = "ckb";
+            this.ckb.ReadOnly = true;
             // 
             // FrmChiTietSale
             // 
@@ -680,6 +730,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private CustomControls.RJControls.RJComboBox cbb_loaiKM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDMauSac;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdTeam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Giaban;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaSale;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ckb;
     }
 }
